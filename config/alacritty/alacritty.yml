@@ -1,0 +1,508 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator
+
+# Any items in the `env` entry below will be added as
+# environment variables. Some entries may override variables
+# set by alacritty it self.
+# env:
+# TERM env customization.
+#
+# If this property is not set, alacritty will set it to xterm-256color.
+#
+# Note that some xterm terminfo databases don't declare support for italics.
+# You can verify this by checking for the presence of `smso` and `sitm` in
+# `infocmp xterm-256color`.
+# TERM: xterm-256color-italic
+window:
+    # opacity: 0.8
+    # Window dimensions (changes require restart)
+    #
+    # Specified in number of columns/lines, not pixels. If both are zero this
+    # setting is ignored.
+    dimensions:
+        columns: 85
+        lines: 20
+
+    # Window padding (changes require restart)
+    #
+    # Blank space added around the window in pixels. This padding is not scaled by
+    # DPI and the specified value is always added at both opposing sides.
+    padding:
+        x: 0
+        y: 0
+
+    # Spread additional padding evenly around the terminal content.
+    dynamic_padding: false
+
+    # Window decorations
+    #
+    # Available values:
+    # - full: borders and title bar
+    # - none: neither borders nor title bar
+    # - transparent: title bar, transparent background and title bar buttons
+    # - buttonless: title bar, transparent background, but no title bar buttons
+    #decorations: buttonless
+
+    # Startup Mode (changes require restart)
+    #
+    # Values for `startup_mode`:
+    #   - Windowed
+    #   - Maximized
+    #   - Fullscreen
+    #
+    # Values for `startup_mode` (macOS only):
+    #   - SimpleFullscreen
+    startup_mode: Windowed
+
+scrolling:
+    # maximum number of lines in the scrollback buffer. Specifying '0' will
+    # disable scrolling.
+    history: 5000
+
+    # Number of lines the viewport will move for every line scrolled when
+    # scrollback is enabled (history > 0).
+    multiplier: 3
+
+# Font configuration (changes require restart)
+font:
+    # The normal (roman) font face to use.
+    # Style can be specified to pick a specific face.
+    normal:
+        family: Iosevka
+        # family: Fantasque Sans Mono
+        style: Regular
+        # family: "Fira Code"
+        # family:  Iosevka
+        # style: Retina
+
+    # The bold font face
+    bold:
+        family: Iosevka
+        # family: Fantasque Sans Mono
+        style: Bold
+        # family: "Fira Code"
+        # family:  terminus
+
+    # The italic font face
+    italic:
+        family: Iosevka
+        # family: Fantasque Sans Mono
+        style: Italic
+        # style: "Light Oblique"
+        # family: "Fira Code"
+        # family: "Source Code Pro"
+        # style: "Medium Italic"
+
+    # Point size of the font
+    size: 20.0
+
+    # Offset is the extra space around each character. offset.y can be thought of
+    # as modifying the linespacing, and offset.x as modifying the letter spacing.
+    offset:
+        x: 0
+        y: 0
+
+    # Glyph offset determines the locations of the glyphs within their cells with
+    # the default being at the bottom. Increase the x offset to move the glyph to
+    # the right, increase the y offset to move the glyph upward.
+    glyph_offset:
+        x: 0
+        y: 0
+
+    # Thin stroke font rendering (macOS only)
+    #
+    # Thin strokes are suitable for retina displays, but for non-retina you
+    # probably want this set to false.
+    #
+    # macOS >= 10.14.x:
+    #
+    # If the font quality on non-retina display looks bad then set
+    # `use_thin_strokes` to `true` and enable font smoothing by running the
+    # following command:
+    #   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
+    #
+    # This is a global setting and will require a log out or restart to take
+    # effect.
+    use_thin_strokes: true
+
+# When true, bold text is drawn using the bright variant of colors.
+draw_bold_text_with_bright_colors: false
+
+# Use custom cursor colors. If true, display the cursor in the cursor.foreground
+# and cursor.background colors, otherwise invert the colors of the cursor.
+custom_cursor_colors: true
+
+bell:
+    animation: EaseOutExpo
+    color: "0xffffff"
+    duration: 0
+
+mouse:
+    # Click settings
+    #
+    # The `double_click` and `triple_click` settings control the time
+    # alacritty should wait for accepting multiple clicks as one double
+    # or triple click.
+    double_click: { threshold: 300 }
+    triple_click: { threshold: 300 }
+
+    # If this is `true`, the cursor is temporarily hidden when typing.
+    hide_when_typing: true
+
+selection:
+    semantic_escape_chars: ',│`|:"'' ()[]{}<>'
+
+    # When set to `true`, selected text will be copied to the primary clipboard.
+    save_to_clipboard: false
+
+# Mouse bindings
+#
+# Available fields:
+# - mouse
+# - action
+# - mods (optional)
+#
+# Values for `mouse`:
+# - Middle
+# - Left
+# - Right
+# - Numeric identifier such as `5`
+#
+# All available `mods` and `action` values are documented in the key binding
+# section.
+mouse_bindings:
+    - { mouse: Middle, action: PasteSelection }
+
+cursor:
+    # Cursor style
+    #
+    # Values for 'style':
+    #   - ▇ Block
+    #   - _ Underline
+    #   - | Beam
+    style: Block
+
+    # If this is `true`, the cursor will be rendered as a hollow box when the
+    # window is not focused.
+    unfocused_hollow: true
+
+# dynamic_title: false
+
+# Live config reload (changes require restart)
+live_config_reload: true
+
+debug:
+    # Should display the render timer
+    render_timer: false
+
+    # Keep the log file after quitting Alacritty.
+    persistent_logging: false
+
+    # Log level
+    #
+    # Values for `log_level`:
+    #   - OFF
+    #   - ERROR
+    #   - WARN
+    #   - INFO
+    #   - DEBUG
+    #   - TRACE
+    log_level: OFF
+
+    # Print all received window events.
+    print_events: false
+
+    # Record all characters and escape sequences as test data.
+    ref_test: false
+
+#######################################
+##      START OF COLOR SCHEMES       ##
+#######################################
+schemes:
+    ### Dracula ###
+    Dracula: &Dracula
+        primary:
+            background: "#282a36"
+            foreground: "#f8f8f2"
+        cursor:
+            text: CellBackground
+            cursor: CellForeground
+        vi_mode_cursor:
+            text: CellBackground
+            cursor: CellForeground
+        search:
+            matches:
+                foreground: "#44475a"
+                background: "#50fa7b"
+            focused_match:
+                foreground: "#44475a"
+                background: "#ffb86c"
+            bar:
+                background: "#282a36"
+                foreground: "#f8f8f2"
+        line_indicator:
+            foreground: None
+            background: None
+        selection:
+            text: CellForeground
+            background: "#44475a"
+        normal:
+            black: "#000000"
+            red: "#ff5555"
+            green: "#50fa7b"
+            yellow: "#f1fa8c"
+            blue: "#bd93f9"
+            magenta: "#ff79c6"
+            cyan: "#8be9fd"
+            white: "#bfbfbf"
+        bright:
+            black: "#4d4d4d"
+            red: "#ff6e67"
+            green: "#5af78e"
+            yellow: "#f4f99d"
+            blue: "#caa9fa"
+            magenta: "#ff92d0"
+            cyan: "#9aedfe"
+            white: "#e6e6e6"
+        dim:
+            black: "#14151b"
+            red: "#ff2222"
+            green: "#1ef956"
+            yellow: "#ebf85b"
+            blue: "#4d5b86"
+            magenta: "#ff46b0"
+            cyan: "#59dffc"
+            white: "#e6e6d1"
+
+    ### Nord ###
+    Nord: &Nord # Default colors
+        primary:
+            background: "#2E3440"
+            foreground: "#D8DEE9"
+
+        # Normal colors
+        normal:
+            black: "#3B4252"
+            red: "#BF616A"
+            green: "#A3BE8C"
+            yellow: "#EBCB8B"
+            blue: "#81A1C1"
+            magenta: "#B48EAD"
+            cyan: "#88C0D0"
+            white: "#E5E9F0"
+
+        # Bright colors
+        bright:
+            black: "#4C566A"
+            red: "#BF616A"
+            green: "#A3BE8C"
+            yellow: "#EBCB8B"
+            blue: "#81A1C1"
+            magenta: "#B48EAD"
+            cyan: "#8FBCBB"
+            white: "#ECEFF4"
+
+    ### Onedark ###
+    Onedark: &Onedark
+        primary:
+            background: "#282c34"
+            foreground: "#abb2bf"
+        cursor:
+            text: CellBackground
+            cursor: "#528bff" # syntax-cursor-color
+        selection:
+            text: CellForeground
+            background: "#3e4451" # syntax-selection-color
+        normal:
+            black: "#5c6370" # mono-3
+            red: "#e06c75" # red 1
+            green: "#98c379"
+            yellow: "#e5c07b" # orange 2
+            blue: "#61afef"
+            magenta: "#c678dd"
+            cyan: "#56b6c2"
+            white: "#828997" # mono-2
+
+    ### Doom-one ###
+    Doom-one: &Doom-one
+      # Default colors
+      primary:
+        background: '0x282c34'
+        foreground: '0xbbc2cf'
+      # Normal colors
+      normal:
+        black:   '0x282c34'
+        red:     '0xff6c6b'
+        green:   '0x98be65'
+        yellow:  '0xecbe7b'
+        blue:    '0x51afef'
+        magenta: '0xc678dd'
+        cyan:    '0x46d9ff'
+        white:   '0xbbc2cf'
+
+    Solarized_dark: &Solarized_dark
+        # Default colors
+        primary:
+            background: '#002b36' # base03
+            foreground: '#839496' # base0
+        # Cursor colors
+        cursor:
+            text:   '#002b36' # base03
+            cursor: '#839496' # base0
+        # Normal colors
+        normal:
+            black:   '#073642' # base02
+            red:     '#dc322f' # red
+            green:   '#859900' # green
+            yellow:  '#b58900' # yellow
+            blue:    '#268bd2' # blue
+            magenta: '#d33682' # magenta
+            cyan:    '#2aa198' # cyan
+            white:   '#eee8d5' # base2
+    ### Gruvbox-dark ###
+    Gruvbox-dark: &Gruvbox-dark
+      # Default colors
+      primary:
+        # hard contrast: background = '0x1d2021'
+        background: '0x282828'
+        # soft contrast: background = '0x32302f'
+        foreground: '0xebdbb2'
+
+      # Normal colors
+      normal:
+        black:   '0x282828'
+        red:     '0xcc241d'
+        green:   '0x98971a'
+        yellow:  '0xd79921'
+        blue:    '0x458588'
+        magenta: '0xb16286'
+        cyan:    '0x689d6a'
+        white:   '0xa89984'
+      # Bright colors
+      bright:
+        black:   '0x928374'
+        red:     '0xfb4934'
+        green:   '0xb8bb26'
+        yellow:  '0xfabd2f'
+        blue:    '0x83a598'
+        magenta: '0xd3869b'
+        cyan:    '0x8ec07c'
+        white:   '0xebdbb2'
+
+    Gruber-darker: &Gruber-darker
+        # Default colors
+        primary:
+            background: '#181818' # base03
+            foreground: '#e4e4ef' # base0
+        # Cursor colors
+        cursor:
+            text:   '#181818' # base03
+            cursor: '#EEEEEC' # base0
+        # Normal colors
+        normal:
+            black:   '#181818' # base02
+            red:     '#EF2929' # red
+            green:   '#8AE234' # green
+            yellow:  '#FCE94F' # yellow
+            blue:    '#729FCF' # blue
+            magenta: '#AD7FA8' # magenta
+            cyan:    '#3465A4' # cyan
+            white:   '#e4e4ef' # base2
+    Palenight: &Palenight
+      # Default colors
+      primary:
+        background: '0x292d3e'
+        foreground: '0xd0d0d0'
+
+      # Normal colors
+      normal:
+        black:   '0x292d3e'
+        red:     '0xf07178'
+        green:   '0xc3e88d'
+        yellow:  '0xffcb6b'
+        blue:    '0x82aaff'
+        magenta: '0xc792ea'
+        cyan:    '0x89ddff'
+        white:   '0xd0d0d0'
+
+      # Bright colors
+      bright:
+        black:   '0x434758'
+        red:     '0xff8b92'
+        green:   '0xddffa7'
+        yellow:  '0xffe585'
+        blue:    '0x9cc4ff'
+        magenta: '0xe1acff'
+        cyan:    '0xa3f7ff'
+        white:   '0xffffff'
+
+    Zenburn: &Zenburn
+        # Default colors
+        primary:
+            background: '#3f3f3f' # base03
+            foreground: '#dcdccc' # base0
+        # Cursor colors
+        cursor:
+            text:   '#3f3f3f' # base03
+            cursor: '#aaaaaa' # base0
+        # Normal colors
+        normal:
+            black:   '#3f3f3f' # base02
+            red:     '#cc9393' # red
+            green:   '#7f9f7f' # green
+            yellow:  '#d0bf8f' # yellow
+            blue:    '#6ca0a3' # blue
+            magenta: '#dc8cc3' # magenta
+            cyan:    '#93e0e3' # cyan
+            white:   '#dcdccc' # base2
+    Ubuntu: &Ubuntu
+        # Default colors
+        primary:
+            background: '#300a24' # base03
+            foreground: '#eeeeec' # base0
+        # Cursor colors
+        cursor:
+            text:   '#b5d5ff' # base03
+            cursor: '#bbbbbb' # base0
+        # Normal colors
+        normal:
+            black:   '#2e3436' # base02
+            red:     '#cc0000' # red
+            green:   '#4e9a06' # green
+            yellow:  '#fce94f' # yellow
+            blue:    '#3465a4' # blue
+            magenta: '#ad7fa8' # magenta
+            cyan:    '#06989a' # cyan
+            white:   '#d3d7cf' # base2
+######################################################################
+## SET THEME: Choose ONE color scheme from those in the above list. ##
+## ###################################################################
+# Available themes are:
+# *Dracula
+# *Nord
+# *Onedark
+# *Doom-one
+# *Solarized_dark
+# *Gruber-darker
+# *Palenight
+# *Zenburn
+# *Ubuntu
+colors: *Ubuntu
+
+key_bindings:
+    # (Windows, Linux, and BSD only)
+    - { key: V, mods: Control|Shift, action: Paste }
+    - { key: C, mods: Control|Shift, action: Copy }
+    - { key: Insert, mods: Shift, action: PasteSelection }
+    - { key: Key0, mods: Control, action: ResetFontSize }
+    - { key: Equals, mods: Control, action: IncreaseFontSize }
+    - { key: Plus, mods: Control, action: IncreaseFontSize }
+    - { key: Minus, mods: Control, action: DecreaseFontSize }
+    - { key: F11, mods: None, action: ToggleFullscreen }
+    - { key: Paste, mods: None, action: Paste }
+    - { key: Copy, mods: None, action: Copy }
+    - { key: L, mods: Control, action: ClearLogNotice }
+    - { key: L, mods: Control, chars: "\x0c" }
+    - { key: PageUp, mods: None, action: ScrollPageUp, mode: ~Alt }
+    - { key: PageDown, mods: None, action: ScrollPageDown, mode: ~Alt }
+    - { key: Home, mods: Shift, action: ScrollToTop, mode: ~Alt }
+    - { key: End, mods: Shift, action: ScrollToBottom, mode: ~Alt }

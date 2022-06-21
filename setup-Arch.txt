@@ -1,0 +1,43 @@
+# cập nhật
+sudo pacman -Syu
+sudo pacman -S xclip alacritty pulseaudio alsa-utils volumeicon i3 ibus
+
+# install yay
+yay -S ibus-bamboo
+yay -S cava
+
+# thêm vào .zshrc
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+pidof ibus-daemon > /dev/null || ibus-daemon -drx
+
+# neofetch, thêm dòng sau vào .zshrc
+neofetch
+
+# pacman
+sudo pacman -S python-pynvim nodejs npm  xarchiver p7zip zip unzip unrar tmux neovim-qt xclip gedit clang cmake ninja  i3 xorg-server xorg-xinit fzf ranger emacs vlc yarn vim-tagbar pavucontrol htop alacritty feh spectacle  ttf-fira-code rofi neovim  libreoffice-still tree xfce4 xfce4-goodies plank xfce4-whiskermenu-plugin sl cowsay python-pyqt5 font-manager bspwm sxhkd  python-psutil cmatrix  i3-gaps volumeicon mesa ttc-iosevka picom bat ttf-font-awesome  lsd lolcat git ripgrep ctags mpd 
+
+
+# yay
+yay -S python-ueberzug-git polybar usb-creator  bottles cava sublime-text cloudflared-bin bashtop-git bpytop  tty-clock ls-icons logo-ls cloudflare-warp-bin shell-color-scripts neovide
+
+
+# setup cloudflare-warp 
+yay -S cloudflared-bin cloudflare-warp-bin
+
+# gui
+git clone https://github.com/mrmoein/warp-cloudflare-gui.git
+cd warp-cloudflare-gui
+python3 install.py
+sudo chmod +x ~/.local/share/applications/warp-gui.desktop
+
+# use from commandline
+sudo systemctl start warp-svc
+warp-cli register
+warp-cli status
+warp-cli connect
+warp-cli disconnect
+
+# key github
+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
