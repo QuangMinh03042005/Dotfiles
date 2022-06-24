@@ -69,7 +69,8 @@ font:
     normal:
         family: Iosevka
         # family: Fantasque Sans Mono
-        style: Regular
+        # style: Regular
+        style: Medium
         # family: "Fira Code"
         # family:  Iosevka
         # style: Retina
@@ -486,7 +487,7 @@ schemes:
 # *Palenight
 # *Zenburn
 # *Ubuntu
-colors: *Ubuntu
+colors: *Gruber-darker
 
 key_bindings:
     # (Windows, Linux, and BSD only)

@@ -18,26 +18,26 @@ end
 --   פּ ﯟ   some other good icons
 local kind_icons = {
 	Text = "",
-	--[[ Method = "m",
-  Function = "",
-  Constructor = "", ]]
-	Method = "",
+	Method = "m",
+	Function = "",
+	Constructor = "",
+	--[[ Method = "",
 	Function = "",
-	Constructor = "",
+	Constructor = "", ]]
 	Field = "",
 	Variable = "",
-	-- Class = "",
-	Class = "פּ",
+	Class = "",
+	-- Class = "פּ",
 	Interface = "",
-	-- Module = "",
-	Module = "",
+	Module = "",
+	-- Module = "",
 	Property = "",
 	Unit = "",
 	Value = "",
 	Enum = "",
 	Keyword = "",
-	-- Snippet = "",
-	Snippet = "",
+	Snippet = "",
+	-- Snippet = "",
 	Color = "",
 	File = "",
 	Reference = "",
@@ -101,11 +101,11 @@ cmp.setup({
 		}),
 	},
 	formatting = {
-	--	fields = { "kind", "abbr", "menu" },
+		--	fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
 			-- Kind icons
-		--	vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+			--	vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+			vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			vim_item.menu = ({
 				--[[ nvim_lsp = "",
         path = "",

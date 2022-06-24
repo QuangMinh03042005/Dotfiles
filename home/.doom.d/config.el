@@ -77,7 +77,7 @@
 ;; they are implemented.
 
 ;; font
-(setq doom-theme 'zenburn
+(setq doom-theme 'gruber-darker
       doom-font (font-spec :family "Iosevka" :size 25 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "Iosevka" :size 20))
 
@@ -213,3 +213,11 @@
 (add-to-list 'display-buffer-alist '("*Async Shell Command*" . (display-buffer-no-window . nil)) )
 
 ;; (ido-mode t)
+
+(set-company-backend! '(c-mode c++-mode java-mode python-mode rust-mode text-mode)
+'(:separate
+        company-capf
+        company-dabbrev-code
+        company-files
+        company-semantic
+))
