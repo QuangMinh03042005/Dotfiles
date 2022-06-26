@@ -1,4 +1,7 @@
 # My dotfiles
 
-### background
-![thumbnail](./screenshots/background.png)
+### i3status
+![thumbnail](./screenshots/i3status.png)
+
+### polybar
+![thumbnail](./screenshots/polybar.png)
