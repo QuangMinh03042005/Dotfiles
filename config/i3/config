@@ -4,7 +4,7 @@
 #------------------------------ autostart ------------------------------
 
 # Wallpaper
-exec --no-startup-id feh --bg-fill ~/wallpapers/ubuntu_22-04.jpg
+exec --no-startup-id feh --bg-fill ~/wallpapers/nordic.jpg
 
 # Polybar
 exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
@@ -104,13 +104,21 @@ set $gruvbox-aqua #689d68
 # Window color settings
 # class                 border  backgr. text    indicator
 # Doom-one
-client.focused          $doom-dark_blue  $doom-dark_blue $doom-white #81a1c1
-client.unfocused        $doom-base3 $doom-base3 $doom-base9 $doom-base1
-client.focused_inactive $doom-base3 $doom-base3 $doom-base9 $doom-base1
-client.placeholder      $doom-base3 $doom-base3 $doom-base9 $doom-base1
-client.urgent           $doom-red $doom-red $doom-white $doom-red
+# client.focused          $doom-dark_blue  $doom-dark_blue $doom-white #81a1c1
+# client.unfocused        $doom-base3 $doom-base3 $doom-base9 $doom-base1
+# client.focused_inactive $doom-base3 $doom-base3 $doom-base9 $doom-base1
+# client.placeholder      $doom-base3 $doom-base3 $doom-base9 $doom-base1
+# client.urgent           $doom-red $doom-red $doom-white $doom-red
 
-# client.background       #242424
+# Window color settings
+# class                 border  backgr. text    indicator
+client.focused          #5e81ac #5e81ac #e5e9f0 #5e81ac 
+client.unfocused        #2e3440 #1f222d #888888 #1f222d
+client.focused_inactive #2e3440 #1f222d #888888 #1f222d
+client.placeholder      #2e3440 #1f222d #888888 #1f222d
+client.urgent           #900000 #900000 #ffffff #900000
+
+client.background       #242424
 
 # green gruvbox
 # class                 border|backgr|text|indicator|child_border

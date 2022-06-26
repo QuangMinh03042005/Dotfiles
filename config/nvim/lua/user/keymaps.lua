@@ -32,8 +32,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<tab>", ":bnext<CR>", opts)
+keymap("n", "<S-tab>", ":bprevious<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -66,4 +66,74 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+keymap("n", "<F1>", ":ToggleTerm<CR>", term_opts)
 
+--Tree
+keymap("n", "<F2>", ":NvimTreeToggle<CR>", opts)
+
+--FfzLua
+keymap("n", "<F3>", ":FzfLua files<CR>", opts)
+-- keymap("n", "<F3>", ":Telescope find_files<CR>", opts)
+
+--Tagbar
+keymap("n", "<F4>", ":SymbolsOutline<CR>", opts)
+--keymap("n", "<F4>", ":TagbarToggle<CR>", opts)
+--keymap("n", "<F4>", ":CocOutline<CR>", opts)
+
+--Ranger
+keymap("n", "<F5>", ":RnvimrToggle<CR>", opts)
+
+--comment
+require("kommentary.config").configure_language("java", {
+	prefer_single_line_comments = true,
+})
+keymap("n", "gcc", "<Plug>kommentary_line_default", {})
+keymap("n", "gc", "<Plug>kommentary_motion_default", {})
+keymap("v", "gc", "<Plug>kommentary_visual_default<C-c>", {})
+
+--move
+keymap("n", "<A-j>", ":MoveLine(1)<CR>", opts)
+keymap("n", "<A-k>", ":MoveLine(-1)<CR>", opts)
+keymap("v", "<A-j>", ":MoveBlock(1)<CR>", opts)
+keymap("v", "<A-k>", ":MoveBlock(-1)<CR>", opts)
+keymap("n", "<A-l>", ":MoveHChar(1)<CR>", opts)
+keymap("n", "<A-h>", ":MoveHChar(-1)<CR>", opts)
+keymap("v", "<A-l>", ":MoveHBlock(1)<CR>", opts)
+keymap("v", "<A-h>", ":MoveHBlock(-1)<CR>", opts)
+
+keymap("n", "<F6>", "<cmd>Trouble<cr>", opts)
+keymap("n", "<A-q>", "<cmd>Bdelete<cr>", opts)
+
+keymap("n", "<C-y>", "<C-v>", opts)
+
+vim.cmd([[
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
+]])
+
+vim.cmd([[
+	if has('win32')
+		nnoremap <silent> <F10> :AsyncRun -mode=term -pos=ToggleTerm -rows=10 make.bat<CR>
+	else
+		nnoremap <silent> <F10> :AsyncRun -mode=term -pos=ToggleTerm -rows=10 make<CR>
+	endif
+]])
+
+--Resize pane
+vim.cmd([[
+	nmap <M-Right> :vertical resize +1<CR> 		
+	nmap <M-Left> :vertical resize -1<CR>
+	nmap <M-Down> :resize +1<CR>
+	nmap <M-Up> :resize -1<CR>
+]])
+
+vim.cmd("nnoremap fm :Format<CR>")

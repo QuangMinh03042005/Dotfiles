@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/dracula",
     url = "https://github.com/dracula/vim"
   },
+  everforest = {
+    loaded = true,
+    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -208,6 +213,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
     url = "https://github.com/tamago324/nlsp-settings.nvim"
+  },
+  ["nord-vim"] = {
+    loaded = true,
+    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/nord-vim",
+    url = "https://github.com/arcticicestudio/nord-vim"
   },
   ["null-ls.nvim"] = {
     loaded = true,

@@ -31,7 +31,32 @@ vim.cmd [[
 ]]
 
 -- Autoformat
--- augroup _lsp
---   autocmd!
---   autocmd BufWritePre * lua vim.lsp.buf.formatting()
--- augroup end
+vim.cmd[[
+"augroup _lsp
+"  autocmd!
+"  autocmd BufWritePre * lua vim.lsp.buf.formatting()
+"augroup end
+]]
+
+-- i3 syntax highlight
+vim.cmd[[
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+aug end
+]]
+
+
+vim.cmd[[
+aug colorizer
+  au!
+  au BufNewFile,BufRead * ColorizerToggle
+aug end
+]]
+
+vim.cmd[[
+    aug polybarconfig_ft_detection
+        au!
+        au BufNewFile,BufRead ~/.config/polybar/i3wm/config set filetype=dosini
+    aug end
+]]

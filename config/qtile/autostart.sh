@@ -8,11 +8,11 @@ pidof ibus-daemon > /dev/null || ibus-daemon -drx
 
 # festival --tts $HOME/.config/qtile/welcome_msg &
 # lxsession &
-# picom --config ~/.config/picom/picom.conf &
+picom --config ~/.config/picom/picom.conf &
 # /usr/bin/emacs --daemon &
 # conky -c $HOME/.config/conky/doomone-qtile.conkyrc
 feh --bg-fill ~/wallpapers/ubuntu_22-04.jpg
-volumeicon &
+# volumeicon &
 nm-applet &
 
 ### UNCOMMENT ONLY ONE OF THE FOLLOWING THREE OPTIONS! ###
