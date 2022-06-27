@@ -25,11 +25,3 @@ require("user.symbols-outline")
 require("user.trouble")
 require("user.signature")
 require("user.fzflua")
-
---[[vim.cmd[[
-    hi Pmenu guibg=#3E4452 guifg=#ABB2BF
-    hi PmenuSel guibg=#61AFEF guifg=#2C323C
-    hi PmenuSbar guibg=#2C323C
-    hi PmenuThumb guibg=#ABB2BF
-]]
-

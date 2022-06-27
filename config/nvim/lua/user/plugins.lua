@@ -60,6 +60,7 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
 
 	-- Colorschemes
+	use("LunarVim/darkplus.nvim")
 	use("morhetz/gruvbox")
 	use("nanotech/jellybeans.vim")
 	use({
@@ -67,7 +68,6 @@ return packer.startup(function(use)
 		as = "dracula",
 	})
 	use("NTBBloodbath/doom-one.nvim")
-	use("lifepillar/vim-solarized8")
 	use("joshdick/onedark.vim")
 	use("marko-cerovac/material.nvim")
 	use("junegunn/seoul256.vim")

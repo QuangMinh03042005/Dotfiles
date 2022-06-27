@@ -176,5 +176,7 @@ autopair-init
 
 
 #find . | fzf
-export FZF_DEFAULT_COMMAND='find .'
-
+# export FZF_DEFAULT_COMMAND='find .'
+# export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+# export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+export FZF_DEFAULT_COMMAND="find -L"

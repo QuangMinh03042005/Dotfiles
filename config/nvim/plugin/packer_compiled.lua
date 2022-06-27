@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["darkplus.nvim"] = {
+    loaded = true,
+    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
+    url = "https://github.com/LunarVim/darkplus.nvim"
+  },
   ["doom-one.nvim"] = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/doom-one.nvim",
