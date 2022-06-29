@@ -10,7 +10,7 @@ static const char *fonts[] = {
 static const unsigned int bgalpha = 0xe0;
 static const unsigned int fgalpha = OPAQUE;
 static const char *prompt      = "";      /* -p  option; prompt to the left of input field */
-#include "colors/nord.h"
+#include "colors/dracula.h"
 
 static const unsigned int alphas[SchemeLast][2] = {
 	/*		fgalpha		bgalphga	*/

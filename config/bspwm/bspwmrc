@@ -37,10 +37,10 @@ bspc rule -a Screenkey manage=off
 # auto start
 sh ~/.config/polybar/launch.sh &
 
-feh --bg-fill ~/wallpapers/pacman-gruvbox.png &
+feh --bg-fill ~/wallpapers/nordic.jpg
  
-volumeicon &
+# volumeicon &
 
 sh ~/.config/i3/ibus.sh &
 
-picom --config ~/.config/picom/picom.conf
+# picom --config ~/.config/picom/picom.conf

@@ -15,10 +15,10 @@ ctrl + alt + {Up, Down}
 
 # program launcher
 ctrl + r
-    rofi -show drun
+    dmenu_run
 
 # program window
-ctrl + space
+super + w
     rofi -show window
 
 # make sxhkd reload its configuration files:

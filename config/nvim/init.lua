@@ -1,10 +1,20 @@
+
+--                         ██          ██   ██       ██
+--                        ░░          ░░   ░██      ░██
+--                         ██ ███████  ██ ██████    ░██ ██   ██  ██████
+--                        ░██░░██░░░██░██░░░██░     ░██░██  ░██ ░░░░░░██
+--                        ░██ ░██  ░██░██  ░██      ░██░██  ░██  ███████
+--                        ░██ ░██  ░██░██  ░██   ██ ░██░██  ░██ ██░░░░██
+--                        ░██ ███  ░██░██  ░░██ ░██ ███░░██████░░████████
+--                        ░░ ░░░   ░░ ░░    ░░  ░░ ░░░  ░░░░░░  ░░░░░░░░
+
 require("user.plugins")
 require("user.options")
 require("user.keymaps")
 require("user.colorscheme")
-require("user.cmp")
 require("user.lsp")
-require("user.telescope").setup()
+require("user.cmp")
+-- require("user.telescope").setup()
 require("user.treesitter")
 require("user.autopairs")
 require("user.comment")
@@ -24,4 +34,8 @@ require("user.renamer")
 require("user.symbols-outline")
 require("user.trouble")
 require("user.signature")
-require("user.fzflua")
+
+vim.cmd([[
+hi WinSeparator guibg=none
+]])
+

@@ -17,8 +17,8 @@ end
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
-	-- Text = "",
-	Text = "",
+	Text = "",
+	-- Text = "",
 	--[[ Method = "m",
 	Function = "", ]]
 	Constructor = "",
@@ -26,8 +26,8 @@ local kind_icons = {
 	Function = "",
 	Field = "",
 	Variable = "[]",
-	-- Class = "",
-	Class = "פּ",
+	Class = "",
+	-- Class = "פּ",
 	-- Interface = "",
 	Interface = "蘒",
 	-- Module = "",
@@ -38,7 +38,8 @@ local kind_icons = {
 	Enum = "",
 	Keyword = "",
 	-- Snippet = "",
-	Snippet = "",
+	-- Snippet = "",
+    Snippet = "",
 	Color = "",
 	File = "",
 	Reference = "",
@@ -135,6 +136,12 @@ cmp.setup({
 		select = false,
 	},
 	window = {
+		completion = {
+			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
+			col_offset = 0,
+			side_padding = 1,
+		},
 		documentation = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 		},
@@ -144,7 +151,6 @@ cmp.setup({
 		native_menu = false,
 	},
 })
-
 
 vim.cmd([[
 " gray

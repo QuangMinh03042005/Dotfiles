@@ -148,6 +148,7 @@ alias p_cpp="cd ~/Desktop/code/code/cpp"
 alias de="cd ~/Desktop"
 alias enw='emacs -nw'
 #alias neovide="neovide --multigrid"
+alias getPacmanPkg="pacman -Qet | awk '{print $1}' > ~/Desktop/MinhCoder-dotfiles/pacman.txt"
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus

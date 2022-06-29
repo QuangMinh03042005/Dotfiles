@@ -71,14 +71,11 @@ keymap("n", "<F1>", ":ToggleTerm<CR>", term_opts)
 --Tree
 keymap("n", "<F2>", ":NvimTreeToggle<CR>", opts)
 
---FfzLua
-keymap("n", "<F3>", ":FzfLua files<CR>", opts)
 -- keymap("n", "<F3>", ":Telescope find_files<CR>", opts)
+keymap("n", "<F3>", ":FZF<CR>", opts)
 
 --Tagbar
 keymap("n", "<F4>", ":SymbolsOutline<CR>", opts)
---keymap("n", "<F4>", ":TagbarToggle<CR>", opts)
---keymap("n", "<F4>", ":CocOutline<CR>", opts)
 
 --Ranger
 keymap("n", "<F5>", ":RnvimrToggle<CR>", opts)

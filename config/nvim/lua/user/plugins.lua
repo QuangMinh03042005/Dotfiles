@@ -40,22 +40,30 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
-	-- My plugins here
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
-	--use "numToStr/Comment.nvim" -- Easily comment stuff
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
 	use("moll/vim-bbye")
+
+    -- Status line
 	use("nvim-lualine/lualine.nvim")
+
+    -- Tabline
 	use("akinsho/bufferline.nvim")
+
+    -- Terminal
 	use("akinsho/toggleterm.nvim")
+
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
+
+    -- Dashboard
 	use("goolord/alpha-nvim")
+
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("folke/which-key.nvim")
 
@@ -72,39 +80,43 @@ return packer.startup(function(use)
 	use("marko-cerovac/material.nvim")
 	use("junegunn/seoul256.vim")
 	use({ "sthendev/mariana.vim", run = "make" })
-	use("mhartington/oceanic-next")
 	use("lifepillar/vim-solarized8")
 	use("sainnhe/everforest")
 	use("arcticicestudio/nord-vim")
 
 	-- cmp plugins
-	use("hrsh7th/nvim-cmp") -- The completion plugin
-	use("hrsh7th/cmp-buffer") -- buffer completions
-	use("hrsh7th/cmp-path") -- path completions
-	use("hrsh7th/cmp-cmdline") -- cmdline completions
-	use("saadparwaiz1/cmp_luasnip") -- snippet completions
+	use("hrsh7th/nvim-cmp")
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-path")
+	use("hrsh7th/cmp-cmdline")
+	use("saadparwaiz1/cmp_luasnip")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("ray-x/cmp-treesitter")
 
 	-- snippets
-	use("L3MON4D3/LuaSnip") --snippet engine
-	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+	use("L3MON4D3/LuaSnip")
+	use("rafamadriz/friendly-snippets")
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+	use({
+		"ray-x/lsp_signature.nvim",
+	})
 
-	-- Telescope
+	-- File search
 	use("nvim-telescope/telescope.nvim")
+	-- use'junegunn/fzf', { 'do': { -> fzf#install() } }
+	-- use({ "junegunn/fzf", run = "fzf#install()" })
+	use("junegunn/fzf.vim")
 
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
-	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
@@ -131,10 +143,10 @@ return packer.startup(function(use)
 	})
 
 	-- Better CodeActionMenu
-	--[[ use{
-      'weilbith/nvim-code-action-menu',
-      cmd = 'CodeActionMenu',
-    } ]]
+	-- use{
+ --      'weilbith/nvim-code-action-menu',
+ --      cmd = 'CodeActionMenu',
+ --    }
 
 	-- Better rename
 	use({
@@ -152,20 +164,17 @@ return packer.startup(function(use)
 			require("pretty-fold.preview").setup()
 		end,
 	})
+
 	-- Pretty preview color
 	use("norcalli/nvim-colorizer.lua")
 
-	-- fzf
-	use({
-		"ibhagwan/fzf-lua",
-		-- optional for icon support
-		requires = { "kyazdani42/nvim-web-devicons" },
-	})
+    -- Syntax highlight for i3 config file
 	use("mboughaba/i3config.vim")
-	use({
-		"ray-x/lsp_signature.nvim",
-	})
+
+    -- Run command
 	use("skywind3000/asyncrun.vim")
+
+    -- Toggle transparent background
 	use("xiyaowong/nvim-transparent")
 
 	-- Automatically set up your configuration after cloning packer.nvim

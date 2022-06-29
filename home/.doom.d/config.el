@@ -77,9 +77,9 @@
 ;; they are implemented.
 
 ;; font
-(setq doom-theme 'doom-one
-      doom-font (font-spec :family "JetBrains Mono" :size 25 :weight 'regular)
-      doom-variable-pitch-font (font-spec :family "JetBrains Mono" :size 20))
+(setq doom-theme 'gruber-darker
+      doom-font (font-spec :family "Iosevka" :size 25 :weight 'medium)
+      doom-variable-pitch-font (font-spec :family "Iosevka" :size 20))
 
 ;; neotree
 (after! neotree
