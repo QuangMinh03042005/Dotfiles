@@ -77,8 +77,8 @@
 ;; they are implemented.
 
 ;; font
-(setq doom-theme 'gruber-darker
-      doom-font (font-spec :family "Iosevka" :size 25 :weight 'medium)
+(setq doom-theme 'doom-one
+      doom-font (font-spec :family "Iosevka" :size 25 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "Iosevka" :size 20))
 
 ;; neotree
@@ -221,3 +221,8 @@
         company-files
         company-semantic
 ))
+
+(define-globalized-minor-mode my-global-rainbow-mode rainbow-mode
+  (lambda () (rainbow-mode 1)))
+
+(my-global-rainbow-mode 1)

@@ -20,7 +20,7 @@ myTerm = "alacritty"  # My terminal of choice
 myBrowser = "firefox"  # My browser of choice
 
 keys = [
-    Key(["mod1", "shift"], "q", lazy.shutdown()),
+    # Key(["mod1", "shift"], "q", lazy.shutdown()),
     # The essentials
     Key([mod], "Return", lazy.spawn(myTerm + ""), desc="Launches My Terminal"),
     Key(["control"], "r", lazy.spawn("dmenu_run"), desc="Run Launcher"),
@@ -153,9 +153,9 @@ dgroups_key_binder = simple_key_binder("mod4")
 
 layout_theme = {
     "border_width": 1,
-    "margin": 4,
-    "border_focus": "e1acff",
-    "border_normal": "1D2330",
+    "margin": 2,
+    "border_focus": "#B7BDF8",
+    "border_normal": "#1c1f24",
     "border_width_single": 1,
 }
 
@@ -206,17 +206,30 @@ layouts = [
     # layout.Floating(**layout_theme)
 ]
 
+# colors = [
+#     ["#282c34", "#282c34"],
+#     ["#1c1f24", "#1c1f24"],
+#     ["#dfdfdf", "#dfdfdf"],
+#     ["#ff6c6b", "#ff6c6b"],
+#     ["#98be65", "#98be65"],
+#     ["#da8548", "#da8548"],
+#     ["#51afef", "#51afef"],
+#     ["#c678dd", "#c678dd"],
+#     ["#46d9ff", "#46d9ff"],
+#     ["#a9a1e1", "#a9a1e1"],
+# ]
+
 colors = [
-    ["#282c34", "#282c34"],
-    ["#1c1f24", "#1c1f24"],
-    ["#dfdfdf", "#dfdfdf"],
-    ["#ff6c6b", "#ff6c6b"],
-    ["#98be65", "#98be65"],
-    ["#da8548", "#da8548"],
-    ["#51afef", "#51afef"],
-    ["#c678dd", "#c678dd"],
-    ["#46d9ff", "#46d9ff"],
-    ["#a9a1e1", "#a9a1e1"],
+    ["#494D64", "#494D64"],
+    ["#24273A", "#24273A"],
+    ["#CAD3F5", "#CAD3F5"],
+    ["#ED8796", "#ED8796"],
+    ["#A6DA95", "#A6DA95"],
+    ["#F5A97F", "#F5A97F"],
+    ["#8AADF4", "#8AADF4"],
+    ["#C6A0F6", "#C6A0F6"],
+    ["#8BD5CA", "#8BD5CA"],
+    ["#B7BDF8", "#B7BDF8"],
 ]
 
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())

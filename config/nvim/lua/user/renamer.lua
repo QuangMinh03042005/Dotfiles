@@ -1,3 +1,8 @@
+local status_ok = pcall(require, "renamer")
+if not status_ok then
+    return
+end
+
 local mappings_utils = require('renamer.mappings.utils')
 require('renamer').setup {
     -- The popup title, shown if `border` is true

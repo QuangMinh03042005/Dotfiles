@@ -17,10 +17,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="tjkirch"
+# ZSH_THEME="minh"
 ZSH_THEME="passion"
-# ZSH_THEME="minh2"
 #❱❱❱
-#ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -181,3 +181,4 @@ autopair-init
 # export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 # export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 export FZF_DEFAULT_COMMAND="find -L"
+export FZF_DEFAULT_OPTS='--color=bg+:#302D41,bg:#1E1E2E,spinner:#F8BD96,hl:#F28FAD --color=fg:#D9E0EE,header:#F28FAD,info:#DDB6F2,pointer:#F8BD96 --color=marker:#F8BD96,fg+:#F2CDCD,prompt:#DDB6F2,hl+:#F28FAD'

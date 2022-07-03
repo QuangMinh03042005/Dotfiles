@@ -1,7 +1,6 @@
 vim.cmd([[
 try
     lua require'colorizer'.setup()
-    let g:molokai_original = 1
     "let g:rehash256 = 1
     " seoul256 (dark):
     "   Range:   233 (darkest) ~ 239 (lightest)
@@ -15,7 +14,8 @@ try
     " For better performance
     let g:everforest_better_performance = 1
 
-    colorscheme dracula
+    let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
+    colorscheme catppuccin
 
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default

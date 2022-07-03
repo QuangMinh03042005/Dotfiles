@@ -16,12 +16,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
+-- vim.cmd([[
+--   augroup packer_user_config
+--     autocmd!
+--     autocmd BufWritePost plugins.lua source <afile> | PackerSync
+--   augroup end
+-- ]])
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
@@ -48,20 +48,20 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-tree.lua")
 	use("moll/vim-bbye")
 
-	-- Status line
+    -- Status line
 	use("nvim-lualine/lualine.nvim")
 
-	-- Tabline
+    -- Tabline
 	use("akinsho/bufferline.nvim")
 
-	-- Terminal
+    -- Terminal
 	use("akinsho/toggleterm.nvim")
 
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 
-	-- Dashboard
+    -- Dashboard
 	use("goolord/alpha-nvim")
 
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
@@ -83,10 +83,6 @@ return packer.startup(function(use)
 	use("lifepillar/vim-solarized8")
 	use("sainnhe/everforest")
 	use("arcticicestudio/nord-vim")
-	use({
-		"catppuccin/nvim",
-		as = "catppuccin",
-	})
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp")
@@ -148,9 +144,9 @@ return packer.startup(function(use)
 
 	-- Better CodeActionMenu
 	-- use{
-	--      'weilbith/nvim-code-action-menu',
-	--      cmd = 'CodeActionMenu',
-	--    }
+ --      'weilbith/nvim-code-action-menu',
+ --      cmd = 'CodeActionMenu',
+ --    }
 
 	-- Better rename
 	use({
@@ -172,13 +168,13 @@ return packer.startup(function(use)
 	-- Pretty preview color
 	use("norcalli/nvim-colorizer.lua")
 
-	-- Syntax highlight for i3 config file
+    -- Syntax highlight for i3 config file
 	use("mboughaba/i3config.vim")
 
-	-- Run command
+    -- Run command
 	use("skywind3000/asyncrun.vim")
 
-	-- Toggle transparent background
+    -- Toggle transparent background
 	use("xiyaowong/nvim-transparent")
 
 	-- Automatically set up your configuration after cloning packer.nvim

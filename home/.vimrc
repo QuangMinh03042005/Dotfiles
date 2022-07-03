@@ -1,6 +1,8 @@
 "set guifont=Iosevka\ 20
 "set guiheadroom=0
 set hidden
+set laststatus=3
+set nu rnu
 set showtabline=2
 set showmode
 set wildmenu
@@ -20,7 +22,7 @@ set foldmethod=indent 		"
 set foldlevelstart=99 		"  
 set number 					" Show line number
 set ignorecase 				" Enable case-sensitive 
-"set termguicolors
+" set termguicolors
 let mapleader=" "
 " Disable backup
 set nobackup
@@ -30,7 +32,7 @@ set encoding=UTF-8
 set linespace=0
 set scrolloff=4
 set sidescrolloff=4
-set laststatus=1
+" set laststatus=1
 
 " Enable copying from vim to clipboard
 if has('win32')
@@ -62,4 +64,10 @@ source ~/vim_config/floatterm.vim
 " Set colorscheme
 set background=dark
 let g:gruvbox_contrast_dark='hard'
-colorscheme hybrid
+colorscheme gruvbox
+
+" seoul256 (dark):
+"   Range:   233 (darkest) ~ 239 (lightest)
+"   Default: 237
+" let g:seoul256_background = 235 
+" colo seoul256

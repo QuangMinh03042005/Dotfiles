@@ -1,15 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Settings for neovim-qt
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Disable qt popup
-" GuiPopupmenu 0
-
-" " Enable line
-" GuiLinespace 1
-
-" " Disable qt tab line 
-" GuiTabline 0
-
 " Set format of tab name 
 set guitablabel=\[%N\]\ %t\ %M 
 " Disable GUI Tabline
@@ -28,11 +19,11 @@ if exists(':GuiScrollBar')
 endif
 
 let s:fontsize = 18
-set guifont=Hack:h18
+set guifont=JetBrains\ Mono:h18
 
 function! AdjustFontSize(amount)
   let s:fontsize = s:fontsize+a:amount
-:execute "GuiFont! Hack:h" . s:fontsize
+:execute "GuiFont! JetBrains\ Mono:h" . s:fontsize
 endfunction
 
 noremap <C-ScrollWheelUp> :call AdjustFontSize(1)<CR>
@@ -41,17 +32,22 @@ inoremap <C-ScrollWheelUp> <Esc>:call AdjustFontSize(1)<CR>a
 inoremap <C-ScrollWheelDown> <Esc>:call AdjustFontSize(-1)<CR>a
 
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Settings for neovide
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 function! NeovideAdjustFontSize(amount)
   let s:fontsize = s:fontsize+a:amount
 :execute "set guifont=Iosevka:h" . s:fontsize
 endfunction
 
-
-
 if exists('g:neovide')
     " set guifont=Iosevka:h15
     set guifont=Iosevka:h15
     let g:neovide_cursor_vfx_mode = "railgun"
+
+
     noremap <C-ScrollWheelUp> :call NeovideAdjustFontSize(1)<CR>
     noremap <C-ScrollWheelDown> :call NeovideAdjustFontSize(-1)<CR>
     inoremap <C-ScrollWheelUp> <Esc>:call NeovideAdjustFontSize(1)<CR>a

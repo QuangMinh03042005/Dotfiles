@@ -55,9 +55,7 @@
 (package! gruber-darker-theme :recipe (:host github :repo "rexim/gruber-darker-theme"))
 (package! zenburn-theme)
 (package! monokai-theme)
-;; (package! company)
 (package! solarized-theme)
-(package! atom-one-dark-theme)
 
 (package! hl-line :disable t)
 

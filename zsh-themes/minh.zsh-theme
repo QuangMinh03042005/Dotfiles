@@ -8,7 +8,5 @@ function prompt_char {
 	if [ $UID -eq 0 ]; then echo "%{$fg[red]%}#%{$red%}"; else echo  "%{$fg[blue]%}%{$blue%}$"; fi
 }
 
-PROMPT='%(?, ,%{$fg[red]%}FAIL: $?%{$reset_color%}
-)
-%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}: %{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info)
+PROMPT='%(?,,%{$fg[red]%}FAIL: $?%{$reset_color%})%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}: %{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info)
 $(prompt_char) '
