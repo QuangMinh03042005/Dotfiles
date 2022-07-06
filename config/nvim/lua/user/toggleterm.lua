@@ -2,12 +2,6 @@ local status_ok, toggleterm = pcall(require, "toggleterm")
 if not status_ok then
 	return
 end
-vim.cmd[[
-
-if has('win32')
-	set shell="pwsh.exe --nologo"
-endif
-]]
 
 toggleterm.setup({
 	size = 20,
