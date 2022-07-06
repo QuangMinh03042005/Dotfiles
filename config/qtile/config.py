@@ -128,21 +128,31 @@ keys = [
     ),
     # Window controls
     Key([mod, "shift"], "space", lazy.window.toggle_floating(), desc="toggle floating"),
-    Key([mod], "space", lazy.window.toggle_fullscreen(), desc="toggle fullscreen"),
+    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="toggle fullscreen"),
     Key([mod], "w", lazy.spawn("rofi -show window")),
 ]
 
 groups = [
-    Group("WWW", layout="Plasma"),
-    Group("DEV", layout="Plasma"),
-    Group("SYS", layout="Plasma"),
-    Group("SYS", layout="Plasma"),
-    Group("DOC", layout="Plasma"),
-    Group("VBOX", layout="Plasma"),
-    Group("CHAT", layout="Plasma"),
-    Group("MUS", layout="Plasma"),
-    Group("VID", layout="Plasma"),
-    Group("GFX", layout="Plasma"),
+    Group("1", layout="Plasma"),
+    Group("2", layout="Plasma"),
+    Group("3", layout="Plasma"),
+    Group("4", layout="Plasma"),
+    Group("5", layout="Plasma"),
+    Group("6", layout="Plasma"),
+    Group("7", layout="Plasma"),
+    Group("8", layout="Plasma"),
+    Group("9", layout="Plasma"),
+
+    # Group("WWW", layout="Plasma"),
+    # Group("DEV", layout="Plasma"),
+    # Group("SYS", layout="Plasma"),
+    # Group("SYS", layout="Plasma"),
+    # Group("DOC", layout="Plasma"),
+    # Group("VBOX", layout="Plasma"),
+    # Group("CHAT", layout="Plasma"),
+    # Group("MUS", layout="Plasma"),
+    # Group("VID", layout="Plasma"),
+    # Group("GFX", layout="Plasma"),
 ]
 
 # Allow MODKEY+[0 through 9] to bind to groups, see https://docs.qtile.org/en/stable/manual/config/groups.html
@@ -245,7 +255,7 @@ def init_widgets_list():
         widget.Image(
             filename="~/.config/qtile/icons/python.png",
             scale="False",
-            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(myTerm)},
+            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show drun")},
         ),
         widget.Sep(linewidth=0, padding=6, foreground=colors[2], background=colors[0]),
         widget.GroupBox(

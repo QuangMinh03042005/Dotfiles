@@ -1,6 +1,5 @@
 vim.cmd([[
 try
-    lua require'colorizer'.setup()
     "let g:rehash256 = 1
     " seoul256 (dark):
     "   Range:   233 (darkest) ~ 239 (lightest)

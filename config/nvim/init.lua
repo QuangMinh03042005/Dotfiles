@@ -34,6 +34,7 @@ require("user.renamer")
 require("user.symbols-outline")
 require("user.trouble")
 require("user.signature")
+require("user.colorizer")
 
 vim.cmd([[
 hi WinSeparator guibg=none

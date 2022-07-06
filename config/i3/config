@@ -19,6 +19,9 @@ exec --no-startup-id nm-applet
 exec --no-startup-id sh ~/.config/i3/ibus.sh
 # exec --no-startup-id volumeicon
 
+# Configura keyboard repeat speed
+exec --no-startup-id xset r rate 200 40 
+
 #-----------------------------------------------------------------------
 
 #------------------------------ settings ------------------------------

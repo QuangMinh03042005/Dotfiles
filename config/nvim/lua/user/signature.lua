@@ -1,3 +1,8 @@
+local status_ok = pcall(require, "lsp_signature")
+if not status_ok then
+	return
+end
+
 local cfg = {
 	debug = false, -- set to true to enable debug logging
 	log_path = vim.fn.stdpath("cache") .. "/lsp_signature.log", -- log dir when debug is on
@@ -29,7 +34,7 @@ local cfg = {
 	-- to view the hiding contents
 	max_width = 80, -- max_width of signature floating_window, line will be wrapped if exceed max_width
 	handler_opts = {
-		border = "rounded",   -- double, rounded, single, shadow, none
+		border = "rounded", -- double, rounded, single, shadow, none
 	},
 
 	always_trigger = false, -- sometime show signature on new line or in middle of parameter can be confusing, set it to false for #58

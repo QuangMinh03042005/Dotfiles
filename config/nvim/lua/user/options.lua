@@ -50,7 +50,6 @@ vim.cmd("set foldnestmax=10")
 vim.cmd("set foldenable")
 --vim.cmd "set foldlevel=2"
 
-vim.cmd("autocmd FileType * lua require'colorizer'.setup()")
 vim.cmd([[
 if !has('gui_running')
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1

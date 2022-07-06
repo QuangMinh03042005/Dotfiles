@@ -177,7 +177,7 @@
       "<f2>" #'neotree
       "<f4>" #'helm-lsp--workspace-symbol
       "<f6>" #'ranger
-      "C-'" #'swiper
+      ;; "C-'" #'swiper
       "C-;" #'smex
       "C-h" #'evil-window-left
       "C-j" #'evil-window-down
@@ -191,6 +191,7 @@
 (define-key evil-normal-state-map (kbd "<tab>") 'centaur-tabs-forward)
 (define-key evil-normal-state-map (kbd "<backtab>") 'centaur-tabs-backward)
 (define-key evil-normal-state-map (kbd "R") 'recompile)
+(define-key evil-normal-state-map (kbd "/") 'swiper)
 
 (setq lsp-eldoc-hook nil)
 (setq lsp-prefer-flymake nil)
