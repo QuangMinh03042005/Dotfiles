@@ -77,7 +77,7 @@
 ;; they are implemented.
 
 ;; font
-(setq doom-theme 'doom-one
+(setq doom-theme 'gruber-darker
       doom-font (font-spec :family "Iosevka" :size 25 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "Iosevka" :size 20))
 

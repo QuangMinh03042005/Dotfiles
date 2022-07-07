@@ -112,9 +112,6 @@ return packer.startup(function(use)
 
 	-- File search
 	use("nvim-telescope/telescope.nvim")
-	-- use'junegunn/fzf', { 'do': { -> fzf#install() } }
-	-- use({ "junegunn/fzf", run = "fzf#install()" })
-	use("junegunn/fzf.vim")
 
 	-- Treesitter
 	use({

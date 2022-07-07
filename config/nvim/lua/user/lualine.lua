@@ -37,3 +37,4 @@ configs.setup({
 	tabline = {},
 	extensions = { "nvim-tree" },
 })
+

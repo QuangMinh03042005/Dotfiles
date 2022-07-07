@@ -14,7 +14,8 @@ try
     let g:everforest_better_performance = 1
 
     let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
-    colorscheme catppuccin
+
+    colorscheme material
 
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default

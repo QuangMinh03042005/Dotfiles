@@ -820,7 +820,7 @@ schemes:
 # *frappe
 # *macchiato
 # *mocha
-colors: *macchiato
+colors: *Gruber-darker
 
 key_bindings:
     # (Windows, Linux, and BSD only)

@@ -17,8 +17,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="tjkirch"
-# ZSH_THEME="minh"
-ZSH_THEME="passion"
+ZSH_THEME="minh2"
+# ZSH_THEME="passion"
 #❱❱❱
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 # Set list of themes to pick from when loading at random

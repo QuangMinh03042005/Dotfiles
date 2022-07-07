@@ -35,7 +35,6 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<tab>", ":bnext<CR>", opts)
 keymap("n", "<S-tab>", ":bprevious<CR>", opts)
 
-
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
@@ -70,8 +69,8 @@ keymap("n", "<F1>", ":ToggleTerm<CR>", term_opts)
 --Tree
 keymap("n", "<F2>", ":NvimTreeToggle<CR>", opts)
 
--- keymap("n", "<F3>", ":Telescope find_files<CR>", opts)
-keymap("n", "<F3>", ":FZF<CR>", opts)
+-- Telescope
+keymap("n", "<F3>", ":Telescope find_files<CR>", opts)
 
 --Tagbar
 keymap("n", "<F4>", ":SymbolsOutline<CR>", opts)

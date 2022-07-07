@@ -11,7 +11,10 @@
 require("user.plugins")
 require("user.options")
 require("user.keymaps")
-require("user.colorscheme")
+--require("user.colorscheme")
+vim.cmd[[ 
+    source ~/.config/nvim/colorscheme/gruber-darker.vim
+]]
 require("user.lsp")
 require("user.cmp")
 require("user.telescope").setup()
@@ -37,5 +40,5 @@ require("user.signature")
 require("user.colorizer")
 
 vim.cmd([[
-hi WinSeparator guibg=none
+    hi WinSeparator guibg=none
 ]])
