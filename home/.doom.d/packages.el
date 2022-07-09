@@ -52,7 +52,6 @@
 
 
 (package! smex :recipe (:host github :repo "nonsequitur/smex"))
-(package! gruber-darker-theme :recipe (:host github :repo "rexim/gruber-darker-theme"))
 (package! zenburn-theme)
 (package! monokai-theme)
 (package! solarized-theme)

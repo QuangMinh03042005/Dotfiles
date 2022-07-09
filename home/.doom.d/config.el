@@ -77,7 +77,11 @@
 ;; they are implemented.
 
 ;; font
-(setq doom-theme 'gruber-darker
+
+(add-to-list 'custom-theme-load-path
+             "~/.doom.d/themes/gruber-darker-theme.el")
+
+(setq doom-theme 'gruber-darker 
       doom-font (font-spec :family "Iosevka" :size 25 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "Iosevka" :size 20))
 
@@ -227,3 +231,4 @@
   (lambda () (rainbow-mode 1)))
 
 (my-global-rainbow-mode 1)
+

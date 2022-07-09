@@ -1,7 +1,7 @@
 # My dotfiles
 
-### i3status
-![thumbnail](./screenshots/i3status.png)
-
-### polybar
+### Polybar
 ![thumbnail](./screenshots/polybar.png)
+
+### Neovim
+![thumbnail](./screenshots/nvim.png)

@@ -43,8 +43,8 @@ function! NeovideAdjustFontSize(amount)
 endfunction
 
 if exists('g:neovide')
-    " set guifont=Iosevka:h15
-    set guifont=Iosevka:h15
+    set guifont=Iosevka:h18
+
     let g:neovide_cursor_vfx_mode = "railgun"
 
 

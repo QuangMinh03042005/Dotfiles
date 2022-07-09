@@ -16,10 +16,12 @@ checkupdates+aur
 cloudflare-warp-bin
 cloudflared-bin
 cmatrix
+code
 cool-retro-term
 cowsay
 ctags
 dconf-editor
+dockbarx
 dolphin-plugins
 dwm
 emacs
@@ -33,7 +35,8 @@ ghc
 glew
 glfw-x11
 gnome-screenshot
-gohufont-otb gradle
+gohufont-otb
+gradle
 gtk-engine-murrine
 gtkmm
 gtkmm-4.0
@@ -53,7 +56,6 @@ khotkeys
 kitty
 kwallet-pam
 kwrited
-latte-dock
 libreoffice-still
 logo-ls
 lolcat
@@ -95,7 +97,6 @@ pcmanfm-qt
 picom
 pikopixel
 pixelorama
-plank
 plasma-browser-integration
 plasma-desktop
 plasma-disks
@@ -117,10 +118,8 @@ python-pyalsa
 python-ueberzug-git
 qtcreator
 qterminal
-qutebrowser
 ranger
 reflector
-ripgrep
 ristretto
 rofi-power-menu
 sassc
