@@ -55,6 +55,7 @@
 (package! zenburn-theme)
 (package! monokai-theme)
 (package! solarized-theme)
+(package! rust-mode)
 
 (package! hl-line :disable t)
 

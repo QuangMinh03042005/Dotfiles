@@ -144,8 +144,6 @@
 (setq indent-line-function t)
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
-
-
 ;;(add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 
 (setq ivy-height-alist
@@ -205,8 +203,6 @@
   (setq lsp-ui-sideline-enable nil  ; no more useful than flycheck
         lsp-ui-doc-enable nil))     ; redundant with K
 
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Compilation mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -231,4 +227,3 @@
   (lambda () (rainbow-mode 1)))
 
 (my-global-rainbow-mode 1)
-
