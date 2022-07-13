@@ -14,3 +14,4 @@ export QT_IM_MODULE=ibus
 pidof ibus-daemon > /dev/null || ibus-daemon -drx
 
 exec zsh
+. "$HOME/.cargo/env"

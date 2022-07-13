@@ -156,16 +156,6 @@ return packer.startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
-	-- Better fold code
-	use({
-		"anuvyklack/pretty-fold.nvim",
-		requires = "anuvyklack/nvim-keymap-amend", -- only for preview
-		config = function()
-			require("pretty-fold").setup()
-			require("pretty-fold.preview").setup()
-		end,
-	})
-
 	-- Pretty preview color
 	use("norcalli/nvim-colorizer.lua")
 
