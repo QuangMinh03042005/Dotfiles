@@ -3,27 +3,12 @@
 # https://www.youtube.com/watch?v=XQcCywaD4y4
 #------------------------------ autostart ------------------------------
 
-# Wallpaper
-exec --no-startup-id feh --bg-fill ~/wallpapers/pacman-macchiato.png
-
-# Polybar
-exec_always --no-startup-id sh $HOME/.config/polybar-minimal/launch.sh
-# exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
-# exec_always --no-startup-id sh $HOME/.config/polybar-no-seperator/launch.sh
-
-
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
-# Picom
-# exec --no-startup-id picom --config ~/.config/picom/picom.conf 
-
-exec --no-startup-id sh ~/.config/i3/ibus.sh
-
-# Configura keyboard repeat speed
-exec --no-startup-id xset r rate 200 36 
+# Autostart 
+exec_always --no-startup-id sh $HOME/.config/i3/autostart.sh
 
 #-----------------------------------------------------------------------
 

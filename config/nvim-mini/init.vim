@@ -35,6 +35,7 @@ set linespace=0
 set scrolloff=4
 set sidescrolloff=4
 set laststatus=3
+set cmdheight=0
 syntax on
 
 " Enable copying from vim to clipboard

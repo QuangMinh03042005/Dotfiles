@@ -40,7 +40,7 @@ window:
     # - none: neither borders nor title bar
     # - transparent: title bar, transparent background and title bar buttons
     # - buttonless: title bar, transparent background, but no title bar buttons
-    #decorations: buttonless
+    # decorations: buttonless
 
     # Startup Mode (changes require restart)
     #
@@ -820,7 +820,7 @@ schemes:
 # *frappe
 # *macchiato
 # *mocha
-colors: *Gruber-darker
+colors: *macchiato
 
 key_bindings:
     # (Windows, Linux, and BSD only)

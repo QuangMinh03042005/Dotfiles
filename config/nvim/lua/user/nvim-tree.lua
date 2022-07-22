@@ -95,14 +95,14 @@ nvim_tree.setup({
 		highlight_git = false,
 		highlight_opened_files = "none",
 		root_folder_modifier = ":~",
-		indent_markers = {
-			enable = true,
-			icons = {
-				corner = "└ ",
-				edge = "│ ",
-				none = "  ",
-			},
-		},
+		-- indent_markers = {
+		-- 	enable = true,
+		-- 	icons = {
+		-- 		corner = "└ ",
+		-- 		edge = "│ ",
+		-- 		none = "  ",
+		-- 	},
+		-- },
 		--  unknown options as of 22.05
 		--
 		--  update_to_buf_dir = {
