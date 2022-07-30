@@ -81,7 +81,7 @@
 (add-to-list 'custom-theme-load-path
              "~/.doom.d/themes/gruber-darker-theme.el")
 
-(setq doom-theme 'gruber-darker 
+(setq doom-theme 'gruber-darker
       doom-font (font-spec :family "Iosevka" :size 25 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "Iosevka" :size 20))
 
@@ -95,8 +95,10 @@
 ;; (add-hook 'after-init-hook 'global-company-mode)
 (after! company
   (setq company-idle-delay 0.0
+        company-echo-delay 0.0
+        company-tooltip-align-annotations t
         company-tooltip-minimum-width 1
-        ;; company-tooltip-maximum-width 40
+        company-tooltip-maximum-width 40
         company-frontends '(company-pseudo-tooltip-frontend)
         company-backends '((
                             company-dabbrev-code
@@ -179,7 +181,6 @@
       "<f2>" #'neotree
       "<f4>" #'helm-lsp--workspace-symbol
       "<f6>" #'ranger
-      ;; "C-'" #'swiper
       "C-;" #'smex
       "C-h" #'evil-window-left
       "C-j" #'evil-window-down
@@ -213,7 +214,7 @@
 
 (add-to-list 'display-buffer-alist '("*Async Shell Command*" . (display-buffer-no-window . nil)) )
 
-;; (ido-mode t)
+(ido-mode t)
 
 (set-company-backend! '(c-mode c++-mode java-mode python-mode rust-mode text-mode)
 '(:separate

@@ -43,4 +43,10 @@ feh --bg-fill ~/wallpapers/nordic.jpg
 
 sh ~/.config/i3/ibus.sh &
 
+xset r rate 200 36 &
+
+cpupower-gui -p &
+
+killall gsettings-helper &
+
 # picom --config ~/.config/picom/picom.conf

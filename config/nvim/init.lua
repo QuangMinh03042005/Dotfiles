@@ -36,4 +36,3 @@ require("user.symbols-outline")
 require("user.trouble")
 require("user.signature")
 require("user.colorizer")
-

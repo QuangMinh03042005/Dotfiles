@@ -54,7 +54,7 @@ autocmd FileChangedShellPost *
 		\ | echohl None
 
 source ~/vim_config/plug.vim
-source ~/vim_config/coc.vim
+" source ~/vim_config/coc.vim
 source ~/vim_config/ctrlp.vim
 source ~/vim_config/keymaps.vim
 source ~/vim_config/floatterm.vim

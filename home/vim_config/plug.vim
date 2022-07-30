@@ -11,7 +11,7 @@ call plug#begin("~/.vim/plugged")
 	Plug 'uiiaoo/java-syntax.vim'
 
 " Autocomplete
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	"Plug 'vim-scripts/AutoComplPop'
 
 " Terminal

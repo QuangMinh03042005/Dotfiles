@@ -15,7 +15,7 @@ try
 
     let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
 
-    colorscheme gruvbox
+    colorscheme catppuccin
 
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
