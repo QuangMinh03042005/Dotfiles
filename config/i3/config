@@ -57,7 +57,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Hide borders
 hide_edge_borders both
 # hide_edge_borders none
-for_window [class="Alacritty"] floating enable
+# for_window [class="Alacritty"] floating enable
+for_window [class="^.*"] floating enable
 # for_window [class="Pavucontrol"] floating enable, resize set 600px 300px, move position 1000 20
 # default_border pixel 1
 

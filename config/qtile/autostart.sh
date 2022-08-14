@@ -11,7 +11,7 @@ pidof ibus-daemon > /dev/null || ibus-daemon -drx
 # picom --config ~/.config/picom/picom.conf &
 # /usr/bin/emacs --daemon &
 # conky -c $HOME/.config/conky/doomone-qtile.conkyrc
-feh --bg-fill ~/wallpapers/ubuntu_22-04.jpg
+feh --bg-fill ~/wallpapers/pacman-macchiato.png
 # volumeicon &
 nm-applet &
 

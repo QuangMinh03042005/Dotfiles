@@ -144,15 +144,15 @@ _G.packer_plugins = {
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/dracula",
     url = "https://github.com/dracula/vim"
   },
+  ["dracula.nvim"] = {
+    loaded = true,
+    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/dracula.nvim",
+    url = "https://github.com/Mofiqul/dracula.nvim"
+  },
   everforest = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/everforest",
     url = "https://github.com/sainnhe/everforest"
-  },
-  ["friendly-snippets"] = {
-    loaded = true,
-    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/friendly-snippets",
-    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -213,6 +213,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/move.nvim",
     url = "https://github.com/fedepujol/move.nvim"
+  },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["nlsp-settings.nvim"] = {
     loaded = true,
@@ -348,6 +353,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/vim-solarized8",
     url = "https://github.com/lifepillar/vim-solarized8"
+  },
+  ["vscode.nvim"] = {
+    loaded = true,
+    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/vscode.nvim",
+    url = "https://github.com/Mofiqul/vscode.nvim"
   },
   ["which-key.nvim"] = {
     loaded = true,

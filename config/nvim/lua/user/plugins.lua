@@ -75,6 +75,7 @@ return packer.startup(function(use)
 		"dracula/vim",
 		as = "dracula",
 	})
+	use("Mofiqul/dracula.nvim")
 	use("NTBBloodbath/doom-one.nvim")
 	use("joshdick/onedark.vim")
 	use("marko-cerovac/material.nvim")
@@ -87,6 +88,8 @@ return packer.startup(function(use)
 		"catppuccin/nvim",
 		as = "catppuccin",
 	})
+	use({ "EdenEast/nightfox.nvim", run = ":NightfoxCompile" })
+	use("Mofiqul/vscode.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp")
@@ -99,7 +102,7 @@ return packer.startup(function(use)
 
 	-- snippets
 	use("L3MON4D3/LuaSnip")
-	use("rafamadriz/friendly-snippets")
+	-- use("rafamadriz/friendly-snippets")
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP

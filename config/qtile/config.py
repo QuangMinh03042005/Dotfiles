@@ -127,9 +127,15 @@ keys = [
         lazy.layout.reset_size(),
     ),
     # Window controls
-    Key([mod, "shift"], "space", lazy.window.toggle_floating(), desc="toggle floating"),
+    Key([mod, "shift"], "space",
+        lazy.window.toggle_floating(), desc="toggle floating"),
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="toggle fullscreen"),
     Key([mod], "w", lazy.spawn("rofi -show window")),
+
+    # Sound
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 0 +5%")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -5%")),
+    Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute 0 toggle")),
 ]
 
 groups = [
@@ -245,19 +251,23 @@ colors = [
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 ##### DEFAULT WIDGET SETTINGS #####
-widget_defaults = dict(font="Ubuntu Bold", fontsize=10, padding=2, background=colors[2])
+widget_defaults = dict(font="Ubuntu Bold", fontsize=10,
+                       padding=2, background=colors[2])
 extension_defaults = widget_defaults.copy()
 
 
 def init_widgets_list():
     widgets_list = [
-        widget.Sep(linewidth=0, padding=6, foreground=colors[2], background=colors[0]),
+        widget.Sep(linewidth=0, padding=6,
+                   foreground=colors[2], background=colors[0]),
         widget.Image(
             filename="~/.config/qtile/icons/python.png",
             scale="False",
-            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show drun")},
+            mouse_callbacks={
+                "Button1": lambda: qtile.cmd_spawn("rofi -show drun")},
         ),
-        widget.Sep(linewidth=0, padding=6, foreground=colors[2], background=colors[0]),
+        widget.Sep(linewidth=0, padding=6,
+                   foreground=colors[2], background=colors[0]),
         widget.GroupBox(
             font="Ubuntu Bold",
             fontsize=9,
@@ -293,7 +303,8 @@ def init_widgets_list():
             padding=0,
             scale=0.7,
         ),
-        widget.CurrentLayout(foreground=colors[2], background=colors[0], padding=5),
+        widget.CurrentLayout(
+            foreground=colors[2], background=colors[0], padding=5),
         widget.TextBox(
             text="|",
             font="Ubuntu Mono",
@@ -302,8 +313,10 @@ def init_widgets_list():
             padding=2,
             fontsize=14,
         ),
-        widget.WindowName(foreground=colors[6], background=colors[0], padding=0),
-        widget.Sep(linewidth=0, padding=6, foreground=colors[0], background=colors[0]),
+        widget.WindowName(
+            foreground=colors[6], background=colors[0], padding=0),
+        widget.Sep(linewidth=0, padding=6,
+                   foreground=colors[0], background=colors[0]),
         # widget.TextBox(
         #          text = '',
         #          font = "Ubuntu Mono",
@@ -362,7 +375,8 @@ def init_widgets_list():
         widget.Memory(
             foreground=colors[1],
             background=colors[6],
-            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(myTerm + " -e htop")},
+            mouse_callbacks={
+                "Button1": lambda: qtile.cmd_spawn(myTerm + " -e htop")},
             fmt="Mem: {}",
             padding=5,
         ),

@@ -159,7 +159,7 @@ let g:seoul256_background = 234
 let g:everforest_background = 'soft'
 " For better performance
 let g:everforest_better_performance = 1
-colorscheme everforest
+colorscheme onedark
 
 
 " Other setting
@@ -241,3 +241,4 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 " source ~/.config/nvim/colorscheme/gruber-darker.vim
+

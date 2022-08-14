@@ -148,6 +148,8 @@ alias p_py="cd ~/Desktop/code/python"
 alias p_cpp="cd ~/Desktop/code/cpp"
 alias p_java="cd ~/Desktop/code/java"
 alias p_rust="cd ~/Desktop/code/rust"
+alias p_fe="cd ~/Desktop/code/front_end"
+alias p_js="cd ~/Desktop/code/javascript"
 alias de="cd ~/Desktop"
 alias enw='emacs -nw'
 #alias neovide="neovide --multigrid"
@@ -184,4 +186,10 @@ autopair-init
 # export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 # export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 export FZF_DEFAULT_COMMAND="find -L"
-export FZF_DEFAULT_OPTS='--color=bg+:#302D41,bg:#1E1E2E,spinner:#F8BD96,hl:#F28FAD --color=fg:#D9E0EE,header:#F28FAD,info:#DDB6F2,pointer:#F8BD96 --color=marker:#F8BD96,fg+:#F2CDCD,prompt:#DDB6F2,hl+:#F28FAD'
+# fzf ctrl-r and alt-c behavior
+# export FZF_DEFAULT_OPTS='--color=bg+:#302D41,bg:#1E1E2E,spinner:#F8BD96,hl:#F28FAD --color=fg:#D9E0EE,header:#F28FAD,info:#DDB6F2,pointer:#F8BD96 --color=marker:#F8BD96,fg+:#F2CDCD,prompt:#DDB6F2,hl+:#F28FAD'
+
+# link cac khoa hoc
+# https://huydeveloper.glitch.me/?fbclid=IwAR3MeBjWzZG9QMGNvQ5gDSfuyPg9CUloD-5HkOJkP9CGMOnImKB7XiEodYI
+
+# https://github.com/luong-komorebi/Awesome-Linux-Software

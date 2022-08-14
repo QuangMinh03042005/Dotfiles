@@ -7,6 +7,12 @@
         "*"
     ],
     "clangd.inlayHints.enable": false,
+	"suggest.formatItems": [
+		"kind",
+		"abbr",
+		"menu",
+		"shortcut"
+	],
     "suggest.completionItemKindLabels": {
         "method": "  ",
         "function": "  ",

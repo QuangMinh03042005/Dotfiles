@@ -135,7 +135,8 @@ highlight TSParameter guifg=#e4e4ef
 highlight TSParameterReference guifg=#e4e4ef
 highlight TSMethod guifg=#96a6c8
 highlight TSField guifg=#565f73
-highlight TSProperty guifg=#565f73
+highlight TSProperty guifg=#95a99f
+" highlight TSProperty guifg=#565f73
 highlight TSConstructor guifg=#96a6c8
 
 " Keywords

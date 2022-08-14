@@ -40,4 +40,4 @@ warp-cli connect
 warp-cli disconnect
 
 # key github
-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
+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
