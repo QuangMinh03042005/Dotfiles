@@ -1,0 +1,16 @@
+# setup cloudflare-warp 
+yay -S cloudflared-bin cloudflare-warp-bin
+
+# use warp in commandline
+sudo systemctl start warp-svc
+warp-cli register
+warp-cli status
+warp-cli connect
+warp-cli disconnect
+
+pacman -Qqen > pacman.txt  # save
+pacman -S - < pacman.txt   # install
+
+# key github
+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
+
