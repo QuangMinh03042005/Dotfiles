@@ -3,6 +3,12 @@ if not status_ok then
 	return
 end
 
+local cmd = ":e ~/.config/nvim/init.lua <CR>"
+local BinaryFormat = package.cpath:match("%p[\\|/]?%p(%a+)")
+if BinaryFormat == "dll" then
+    cmd = ":e ~/Appdata/Local/nvim/init.lua <CR>"
+end
+
 local dashboard = require("alpha.themes.dashboard")
 -- dashboard.section.header.val = {
 -- [[          ████     ██ ████████   ███████   ██      ██ ██ ████     ████    ]],
@@ -15,16 +21,14 @@ local dashboard = require("alpha.themes.dashboard")
 -- [[         ░░      ░░░ ░░░░░░░░   ░░░░░░░       ░░     ░░ ░░         ░░     ]],
 -- }
 
-
 dashboard.section.header.val = {
 
-[[	███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗	]],
-[[	████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║  ]],
-[[	██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║  ]],
-[[	██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║  ]],
-[[	██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║	]],
-[[	╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝	]],
-
+	[[	███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗	]],
+	[[	████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║  ]],
+	[[	██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║  ]],
+	[[	██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║  ]],
+	[[	██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║	]],
+	[[	╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝	]],
 }
 
 -- dashboard.section.header.val = {
@@ -40,17 +44,11 @@ dashboard.section.buttons.val = {
 	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
 	dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-    dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
-    -- dashboard.button("c", "  Configuration", ":e ~/Appdata/Local/nvim/init.lua <CR>"),
+	dashboard.button("c", "  Configuration", cmd),
 	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 
 local function footer()
-	-- NOTE: requires the fortune-mod package to work
-	-- local handle = io.popen("fortune")
-	-- local fortune = handle:read("*a")
-	-- handle:close()
-	-- return fortune
 	return "NEOVIM CONFIGURATION BY MINH CODER"
 end
 

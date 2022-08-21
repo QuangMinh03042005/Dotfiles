@@ -45,7 +45,11 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("kyazdani42/nvim-web-devicons")
+
+    -- File manager
 	use("kyazdani42/nvim-tree.lua")
+
+    -- Tab close
 	use("moll/vim-bbye")
 
 	-- Status line
@@ -65,33 +69,25 @@ return packer.startup(function(use)
 	use("goolord/alpha-nvim")
 
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
+
+    -- Never forget your key bindings
 	use("folke/which-key.nvim")
 
 	-- Colorschemes
-	use("LunarVim/darkplus.nvim")
 	use("morhetz/gruvbox")
-	use("nanotech/jellybeans.vim")
 	use({
 		"dracula/vim",
 		as = "dracula",
 	})
-	use("Mofiqul/dracula.nvim")
 	use("NTBBloodbath/doom-one.nvim")
-	use("joshdick/onedark.vim")
-	use("marko-cerovac/material.nvim")
-	use("junegunn/seoul256.vim")
-	use({ "sthendev/mariana.vim", run = "make" })
-	use("lifepillar/vim-solarized8")
-	use("sainnhe/everforest")
-	use("arcticicestudio/nord-vim")
 	use({
 		"catppuccin/nvim",
 		as = "catppuccin",
 	})
-	use({ "EdenEast/nightfox.nvim", run = ":NightfoxCompile" })
 	use("Mofiqul/vscode.nvim")
+	use("tanvirtin/monokai.nvim")
 
-	-- cmp plugins
+	-- Cmp plugins
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
@@ -100,9 +96,9 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("ray-x/cmp-treesitter")
 
-	-- snippets
+	-- Code snippets
 	use("L3MON4D3/LuaSnip")
-	-- use("rafamadriz/friendly-snippets")
+	use("rafamadriz/friendly-snippets")
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
@@ -116,7 +112,7 @@ return packer.startup(function(use)
 	-- File search
 	use("nvim-telescope/telescope.nvim")
 
-	-- Treesitter
+	-- Treesitter for syntax highlighting
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
@@ -128,17 +124,18 @@ return packer.startup(function(use)
 	--Comment
 	use("b3nj5m1n/kommentary")
 
-	--Move
+	--Move text
 	use("fedepujol/move.nvim")
 
 	--Multiple cursors
 	use("terryma/vim-multiple-cursors")
+	use("otavioschwanck/cool-substitute.nvim")
 
-	--Ranger
+	--Using ranger file manager in neovim
 	use("kevinhwang91/rnvimr")
 
-	-- Symbols-outline
-	use("simrat39/symbols-outline.nvim")
+	-- Functions list
+	-- use("simrat39/symbols-outline.nvim")
 
 	-- Pretty list diagnostics
 	use({
@@ -170,6 +167,16 @@ return packer.startup(function(use)
 
 	-- Toggle transparent background
 	use("xiyaowong/nvim-transparent")
+
+	-- Format code without lsp
+	use("vim-autoformat/vim-autoformat")
+	use("rhysd/vim-clang-format")
+
+	-- Functions list without lsp
+	use("preservim/tagbar")
+
+	-- Picking windows
+	use("gbrlsnchs/winpick.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

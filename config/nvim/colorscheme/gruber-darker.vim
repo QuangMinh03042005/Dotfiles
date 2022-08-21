@@ -121,26 +121,24 @@ highlight TSCharacter guifg=#73c936
 highlight TSNumber guifg=#95a99f
 highlight TSBoolean guifg=#ffdd33 gui=bold
 highlight TSFloat guifg=#95a99f
-highlight TSAnnotation guifg=yellow gui=italic
+highlight TSAnnotation guifg=#95a99f gui=italic
 highlight TSAttribute guifg=#95a99f gui=italic
 highlight TSNamespace guifg=#95a99f
 
 
 " Functions
-" highlight TSFuncBuiltin guifg=#4EC9B0
 highlight TSFuncBuiltin guifg=#96a6c8
 highlight TSFunction guifg=#96a6c8
 highlight TSFuncMacro guifg=#96a6c8
 highlight TSParameter guifg=#e4e4ef
 highlight TSParameterReference guifg=#e4e4ef
 highlight TSMethod guifg=#96a6c8
-highlight TSField guifg=#565f73
+highlight TSField guifg=#e4e4ef
 highlight TSProperty guifg=#95a99f
-" highlight TSProperty guifg=#565f73
 highlight TSConstructor guifg=#96a6c8
 
 " Keywords
-highlight TSConditional guifg=#Cffdd33 gui=bold
+highlight TSConditional guifg=#ffdd33 gui=bold
 highlight TSRepeat guifg=#ffdd33 gui=bold
 highlight TSLabel guifg=#ffdd33 gui=bold
 " Does not work for yield and return they should be diff then class and def
@@ -150,8 +148,8 @@ highlight TSKeywordOperator guifg=#96a6c8
 highlight TSOperator guifg=#ABB2BF
 highlight TSException guifg=#ffdd33 gui=bold
 highlight TSType guifg=#ffdd33 gui=bold
-highlight TSTypeBuiltin guifg=#FF00FF
-highlight TSStructure guifg=#FF00FF
+highlight TSTypeBuiltin guifg=#ffdd33 gui=bold
+highlight TSStructure guifg=#ffdd33 gui=bold
 highlight TSInclude guifg=#95a99f
 
 " Variable
@@ -162,7 +160,7 @@ highlight TSVariableBuiltin guifg=#e4e4ef
 highlight TSText guifg=#FF00FF
 highlight TSStrong guifg=#FF00FF
 highlight TSEmphasis guifg=#FF00FF
-highlight TSUnderline guifg=#FF00FF
+highlight TSUnderline guifg=#cc8c3c
 highlight TSTitle guifg=#FF00FF
 highlight TSLiteral guifg=#FF00FF
 highlight TSURI guifg=#FF00FF
@@ -172,3 +170,18 @@ highlight TSTag guifg=#569CD6
 highlight TSTagDelimiter guifg=#5C6370
 
 highlight TSComment guifg=#cc8c3c
+
+
+
+highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
+highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
+highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
+highlight! CmpItemKindVariable guibg=NONE guifg=#e4e4ef
+highlight! CmpItemKindInterface guibg=NONE guifg=#e4e4ef
+highlight! CmpItemKindText guibg=NONE guifg=#73c936
+highlight! CmpItemKindFunction guibg=NONE guifg=#96a6c8
+highlight! CmpItemKindMethod guibg=NONE guifg=#96a6c8
+highlight! CmpItemKindKeyword guibg=NONE guifg=#ffdd33
+highlight! CmpItemKindProperty guibg=NONE guifg=#e4e4ef
+highlight! CmpItemKindUnit guibg=NONE guifg=#ffdd33
+highlight! CmpItemKindSnippet guibg=NONE guifg=#D4D4D4

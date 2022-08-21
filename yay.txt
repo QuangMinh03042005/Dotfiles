@@ -288,3 +288,4 @@ yarn
 zellij
 zip
 zsh
+zsh-autosuggestions

@@ -150,6 +150,7 @@ alias p_java="cd ~/Desktop/code/java"
 alias p_rust="cd ~/Desktop/code/rust"
 alias p_fe="cd ~/Desktop/code/front_end"
 alias p_js="cd ~/Desktop/code/javascript"
+alias p_sh="cd ~/Desktop/code/shellscript"
 alias de="cd ~/Desktop"
 alias enw='emacs -nw'
 #alias neovide="neovide --multigrid"
