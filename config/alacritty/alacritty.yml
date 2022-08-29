@@ -870,7 +870,7 @@ schemes:
 # *mocha
 # *Vscode
 # *Github_dark
-colors: *Gruber-darker
+colors: *macchiato
 
 key_bindings:
     # (Windows, Linux, and BSD only)

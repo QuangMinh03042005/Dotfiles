@@ -15,10 +15,10 @@ hi CursorLineNR    guifg=yellow    guibg=#282828
 " --------------------------------
 hi Constant        guifg=#95a99f3   gui=none
 hi String          guifg=#73c936    guibg=none    gui=none
-hi StringDelimiter guifg=none    guibg=none    gui=none
+hi StringDelimiter guifg=none       guibg=none    gui=none
 hi Character       guifg=#73c936    guibg=none    gui=none
 hi Number          guifg=#95a99f    guibg=none    gui=none
-hi Boolean         guifg=#ffdd33    guibg=none    gui=bold
+hi Boolean         guifg=#95a99f    guibg=none    gui=none
 hi Float           guifg=#95a99f    guibg=none    gui=none
 
 hi Identifier      guifg=#e4e4ef    guibg=none    gui=bold
@@ -32,9 +32,9 @@ hi Include         guifg=#95a99f    guibg=none    gui=none
 hi Define          guifg=#ffdd33    guibg=none    gui=bold
 hi Macro           guifg=#95a99f    guibg=none    gui=none
 hi PreCondit       guifg=#ffdd33    guibg=none    gui=bold
-hi Type            guifg=#ffdd33    guibg=none    gui=bold
-hi StorageClass    guifg=#ffdd33    guibg=none    gui=bold
-hi Structure       guifg=#ffdd33    guibg=none    gui=bold
+hi Type            guifg=#95a99f    guibg=none    gui=none
+hi StorageClass    guifg=#95a99f    guibg=none    gui=none
+hi Structure       guifg=#95a99f    guibg=none    gui=none
 hi Typedef         guifg=#ffdd33    guibg=none    gui=bold
 
 
@@ -44,7 +44,7 @@ hi Typedef         guifg=#ffdd33    guibg=none    gui=bold
 hi Statement       guifg=#ffdd33    guibg=none    gui=bold
 hi Conditional     guifg=#ffdd33    guibg=none    gui=bold
 hi Repeat          guifg=#ffdd33    guibg=none    gui=bold
-hi Label           guifg=#ffdd33    guibg=none    gui=none
+hi Label           guifg=#f5f5f5    guibg=none    gui=none
 hi Operator        guifg=#f5f5f5    guibg=none    gui=none
 hi Keyword         guifg=#ffdd33    guibg=none    gui=bold
 hi Exception       guifg=#ffdd33    guibg=none    gui=bold
@@ -119,7 +119,7 @@ highlight TSStringRegex guifg=#73c936
 highlight TSStringEscape guifg=#73c936
 highlight TSCharacter guifg=#73c936
 highlight TSNumber guifg=#95a99f
-highlight TSBoolean guifg=#ffdd33 gui=bold
+highlight TSBoolean guifg=#95a99f gui=none
 highlight TSFloat guifg=#95a99f
 highlight TSAnnotation guifg=#95a99f gui=italic
 highlight TSAttribute guifg=#95a99f gui=italic
@@ -147,9 +147,9 @@ highlight TSKeywordFunction guifg=#ffdd33 gui=bold
 highlight TSKeywordOperator guifg=#96a6c8
 highlight TSOperator guifg=#ABB2BF
 highlight TSException guifg=#ffdd33 gui=bold
-highlight TSType guifg=#ffdd33 gui=bold
-highlight TSTypeBuiltin guifg=#ffdd33 gui=bold
-highlight TSStructure guifg=#ffdd33 gui=bold
+highlight TSType guifg=#95a99f gui=none
+highlight TSTypeBuiltin guifg=#95a99f gui=none
+highlight TSStructure guifg=#95a99f gui=none
 highlight TSInclude guifg=#95a99f
 
 " Variable

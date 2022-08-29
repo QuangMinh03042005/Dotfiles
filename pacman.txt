@@ -33,6 +33,7 @@ exa
 exo
 fakeroot
 feh
+fff
 figlet
 firefox
 flex

@@ -29,9 +29,14 @@ require("user.alpha")
 require("user.whichkey")
 require("user.autocommands")
 require("user.renamer")
--- require("user.symbols-outline")
+require("user.symbolsoutline")
 require("user.trouble")
 require("user.signature")
 require("user.colorizer")
 require("user.autocommands")
 require("user.cool-substitute")
+
+vim.cmd [[ 
+    " Vertical split (NERDtree style).
+    let g:fff#split = "10new"
+]]

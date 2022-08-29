@@ -190,7 +190,10 @@ export FZF_DEFAULT_COMMAND="find -L"
 # fzf ctrl-r and alt-c behavior
 # export FZF_DEFAULT_OPTS='--color=bg+:#302D41,bg:#1E1E2E,spinner:#F8BD96,hl:#F28FAD --color=fg:#D9E0EE,header:#F28FAD,info:#DDB6F2,pointer:#F8BD96 --color=marker:#F8BD96,fg+:#F2CDCD,prompt:#DDB6F2,hl+:#F28FAD'
 
+export FFF_HIDDEN=1
+
 # link cac khoa hoc
 # https://huydeveloper.glitch.me/?fbclid=IwAR3MeBjWzZG9QMGNvQ5gDSfuyPg9CUloD-5HkOJkP9CGMOnImKB7XiEodYI
 
 # https://github.com/luong-komorebi/Awesome-Linux-Software
+

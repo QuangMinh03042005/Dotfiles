@@ -4,8 +4,8 @@
 (setq org-directory "~/org/")
 
 ;; theme and font
-(add-to-list 'custom-theme-load-path
-             "~/.doom.d/themes/gruber-darker-theme.el")
+;; (add-to-list 'custom-theme-load-path
+;;              "~/.doom.d/themes/gruber-darker-theme.el")
 
 (setq doom-theme 'doom-one
       doom-font (font-spec :family "Iosevka" :size 25 :weight 'regular)
@@ -157,3 +157,4 @@
   (lambda () (rainbow-mode 1)))
 
 (my-global-rainbow-mode 1)
+

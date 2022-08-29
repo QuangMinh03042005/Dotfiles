@@ -72,9 +72,11 @@ keymap("n", "<F2>", ":NvimTreeToggle<CR>", opts)
 -- Telescope
 keymap("n", "<F3>", ":Telescope find_files<CR>", opts)
 
+-- SymbolsOutline
+keymap("n", "<F4>", ":SymbolsOutline<CR>", opts)
+
 --Tagbar
--- keymap("n", "<F4>", ":SymbolsOutline<CR>", opts)
-keymap("n", "<F4>", ":TagbarToggle<CR>", opts)
+keymap("n", "<F7>", ":TagbarToggle<CR>", opts)
 
 --Ranger
 keymap("n", "<F5>", ":RnvimrToggle<CR>", opts)

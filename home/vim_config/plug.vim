@@ -31,6 +31,7 @@ call plug#begin("~/.vim/plugged")
 
 " File explorer
 	Plug 'preservim/nerdTree'
+	Plug 'dylanaraps/fff.vim'
 
 " Tabline
 	Plug 'pacha/vem-tabline'
@@ -40,5 +41,4 @@ call plug#begin("~/.vim/plugged")
 
 " Comment code
 	Plug 'tpope/vim-commentary'
-
 call plug#end()

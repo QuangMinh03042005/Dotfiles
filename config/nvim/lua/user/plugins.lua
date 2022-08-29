@@ -46,10 +46,10 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("kyazdani42/nvim-web-devicons")
 
-    -- File manager
+	-- File manager
 	use("kyazdani42/nvim-tree.lua")
 
-    -- Tab close
+	-- Tab close
 	use("moll/vim-bbye")
 
 	-- Status line
@@ -70,7 +70,7 @@ return packer.startup(function(use)
 
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 
-    -- Never forget your key bindings
+	-- Never forget your key bindings
 	use("folke/which-key.nvim")
 
 	-- Colorschemes
@@ -111,6 +111,7 @@ return packer.startup(function(use)
 
 	-- File search
 	use("nvim-telescope/telescope.nvim")
+	use("dylanaraps/fff.vim")
 
 	-- Treesitter for syntax highlighting
 	use({
@@ -135,7 +136,7 @@ return packer.startup(function(use)
 	use("kevinhwang91/rnvimr")
 
 	-- Functions list
-	-- use("simrat39/symbols-outline.nvim")
+	use("simrat39/symbols-outline.nvim")
 
 	-- Pretty list diagnostics
 	use({

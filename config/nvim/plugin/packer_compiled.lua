@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/dracula",
     url = "https://github.com/dracula/vim"
   },
+  ["fff.vim"] = {
+    loaded = true,
+    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/fff.vim",
+    url = "https://github.com/dylanaraps/fff.vim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -283,6 +288,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/rnvimr",
     url = "https://github.com/kevinhwang91/rnvimr"
+  },
+  ["symbols-outline.nvim"] = {
+    loaded = true,
+    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
+    url = "https://github.com/simrat39/symbols-outline.nvim"
   },
   tagbar = {
     loaded = true,
