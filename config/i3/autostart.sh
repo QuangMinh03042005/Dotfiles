@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Wallpaper
-feh --bg-fill ~/wallpapers/pacman-macchiato.png &
+feh --bg-fill ~/wallpapers/nordic.jpg &
 
 # Polybar
 sh $HOME/.config/polybar/launch.sh &

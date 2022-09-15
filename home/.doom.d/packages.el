@@ -56,6 +56,6 @@
 (package! monokai-theme)
 (package! solarized-theme)
 (package! rust-mode)
-(package! gruber-darker-theme)
+; (package! gruber-darker-theme)
 (package! hl-line :disable t)
 

@@ -86,6 +86,7 @@ return packer.startup(function(use)
 	})
 	use("Mofiqul/vscode.nvim")
 	use("tanvirtin/monokai.nvim")
+	use("olimorris/onedarkpro.nvim")
 
 	-- Cmp plugins
 	use("hrsh7th/nvim-cmp")

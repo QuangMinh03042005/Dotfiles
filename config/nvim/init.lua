@@ -40,3 +40,8 @@ vim.cmd [[
     " Vertical split (NERDtree style).
     let g:fff#split = "10new"
 ]]
+
+vim.cmd[[ 
+    set guicursor=n-v-c-i:block
+    "set guicursor=i:hor50
+]]

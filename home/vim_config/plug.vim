@@ -1,5 +1,12 @@
 call plug#begin("~/.vim/plugged")
 
+" Statusline
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+
+" Icon
+	Plug 'ryanoasis/vim-devicons'
+
 " Colorscheme
 	Plug 'w0ng/vim-hybrid'
 	Plug 'nanotech/jellybeans.vim'
@@ -7,8 +14,8 @@ call plug#begin("~/.vim/plugged")
 	Plug 'morhetz/gruvbox'
 
 " Better syntax
-	Plug 'sheerun/vim-polyglot'
-	Plug 'uiiaoo/java-syntax.vim'
+	" Plug 'sheerun/vim-polyglot'
+	" Plug 'uiiaoo/java-syntax.vim'
 
 " Autocomplete
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -34,7 +41,7 @@ call plug#begin("~/.vim/plugged")
 	Plug 'dylanaraps/fff.vim'
 
 " Tabline
-	Plug 'pacha/vem-tabline'
+	" Plug 'pacha/vem-tabline'
 
 " Format code without lsp
 	Plug 'vim-autoformat/vim-autoformat'

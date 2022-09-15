@@ -1,7 +1,7 @@
 "set guifont=Iosevka\ 20
 "set guiheadroom=0
 set hidden
-set laststatus=3
+set laststatus=2
 set nu rnu
 set showtabline=2
 set showmode
@@ -33,6 +33,7 @@ set linespace=0
 set scrolloff=4
 set sidescrolloff=4
 " set laststatus=1
+set cmdheight=1
 
 " Enable copying from vim to clipboard
 if has('win32')
@@ -58,16 +59,17 @@ source ~/vim_config/coc.vim
 source ~/vim_config/ctrlp.vim
 source ~/vim_config/keymaps.vim
 source ~/vim_config/floatterm.vim
+source ~/vim_config/airline.vim
 
 "let g:acp_behaviorKeywordLength = 1
 
 " Set colorscheme
 set background=dark
 let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+" colorscheme jellybeans
 
 " seoul256 (dark):
 "   Range:   233 (darkest) ~ 239 (lightest)
 "   Default: 237
-" let g:seoul256_background = 235 
-" colo seoul256
+let g:seoul256_background = 235 
+colo seoul256

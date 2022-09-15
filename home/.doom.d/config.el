@@ -4,10 +4,10 @@
 (setq org-directory "~/org/")
 
 ;; theme and font
-;; (add-to-list 'custom-theme-load-path
-;;              "~/.doom.d/themes/gruber-darker-theme.el")
+(add-to-list 'custom-theme-load-path
+             "~/.doom.d/theme/")
 
-(setq doom-theme 'doom-one
+(setq doom-theme 'gruber-darker
       doom-font (font-spec :family "Iosevka" :size 25 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "Iosevka" :size 20))
 
@@ -18,14 +18,14 @@
   (setq neo-theme 'icons))
 
 ;; company
-(add-hook 'after-init-hook 'global-company-mode)
+;; (add-hook 'after-init-hook 'global-company-mode)
 (after! company
   (setq company-idle-delay 0.0
         company-echo-delay 0.0
-        company-tooltip-align-annotations t
+        ;; company-tooltip-align-annotations t
         company-tooltip-minimum-width 1
         company-tooltip-maximum-width 40
-        company-frontends '(company-pseudo-tooltip-frontend)
+        ;; company-frontends '(company-pseudo-tooltip-frontend)
         company-backends '((
                             company-dabbrev-code
                             company-capf
@@ -33,16 +33,16 @@
                             company-semantic
                             ))
         company-minimum-prefix-length 1
-        gc-cons-threshold (* 100 1024 1024)
-        read-process-output-max (* 1024 1024)
-        company-selection-wrap-around t
+        ;; gc-cons-threshold (* 100 1024 1024)
+        ;; read-process-output-max (* 1024 1024)
+        ;; company-selection-wrap-around t
         company-tooltip-limit           10
-        company-transformers '(company-sort-by-occurrence)
-        company-dabbrev-other-buffers   t
-        company-preview-overlay t
-        company-tooltip-align-annotations t
-        company-dabbrev-other-buffers t
-        company-tooltip-margin 0
+        ;; company-transformers '(company-sort-by-occurrence)
+        ;; company-dabbrev-other-buffers   t
+        ;; company-preview-overlay t
+        ;; company-tooltip-align-annotations t
+        ;; company-dabbrev-other-buffers t
+        ;; company-tooltip-margin 1
 ))
 
 (set-company-backend! '(c-mode c++-mode java-mode python-mode rust-mode text-mode)
@@ -63,12 +63,12 @@
 (setq visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow))
 
 ;; doom-modeline
-(setq doom-modeline-buffer-file-name-style 'file-name)
-(setq doom-modeline-icon (display-graphic-p))
-(setq doom-modeline-major-mode-icon t)
-(setq doom-modeline-major-mode-color-icon t)
-(setq doom-modeline-buffer-state-icon t)
-(setq doom-modeline-buffer-modification-icon t)
+; (setq doom-modeline-buffer-file-name-style 'file-name)
+; (setq doom-modeline-icon (display-graphic-p))
+; (setq doom-modeline-major-mode-icon t)
+; (setq doom-modeline-major-mode-color-icon t)
+; (setq doom-modeline-buffer-state-icon t)
+; (setq doom-modeline-buffer-modification-icon t)
 
 ;; ranger
 (setq ranger-show-hidden t)
@@ -95,8 +95,8 @@
 ;;       ;;evil-normal-state-cursor '(box "purple")
 ;;       )
 
-(setq evil-insert-state-cursor '((hbar . 4)))
-;; (setq evil-insert-state-cursor '((box . 4)))
+;; (setq evil-insert-state-cursor '((hbar . 4)))
+(setq evil-insert-state-cursor '((box . 4)))
 
 ;; tab width
 (setq-default indent-tab-mode nil)
@@ -157,4 +157,3 @@
   (lambda () (rainbow-mode 1)))
 
 (my-global-rainbow-mode 1)
-

@@ -17,6 +17,7 @@ nnoremap <C-y> <C-v>
 " Better switching buffer
 noremap <Tab> :bn<CR>
 noremap <S-Tab> :bp<CR>
+nnoremap <A-q> :bdelete<CR>
 
 " Delete tab
 noremap bd :bd<CR>
