@@ -115,7 +115,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias emconf="cd ~/.emacs.d"
+alias emconf="cd ~/.doom.d"
 alias i3conf="cd ~/.config/i3"
 alias alaconf="nvim ~/.config/alacritty/alacritty.yml"
 alias polyconf="cd ~/.config/polybar"
@@ -158,6 +158,7 @@ alias de="cd ~/Desktop"
 alias enw='emacs -nw'
 #alias neovide="neovide --multigrid"
 alias getPacmanPkg="pacman -Qet | awk '{print $1}' > ~/Desktop/MinhCoder-dotfiles/pacman.txt"
+alias nvim="~/Downloads/nvim-linux64/bin/nvim"
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus

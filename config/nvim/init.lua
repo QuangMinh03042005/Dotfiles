@@ -42,6 +42,6 @@ vim.cmd [[
 ]]
 
 vim.cmd[[ 
-    set guicursor=n-v-c-i:block
+    "set guicursor=n-v-c-i:block
     "set guicursor=i:hor50
 ]]
