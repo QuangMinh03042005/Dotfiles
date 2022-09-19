@@ -129,6 +129,7 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "treesitter" },
+        { name = "cmdline"}
 		-- { name = "nvim_lsp_signature_help" },
 	},
 	confirm_opts = {

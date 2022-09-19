@@ -182,6 +182,7 @@ ttf-anonymous-pro
 ttf-fira-code
 ttf-fira-sans
 ttf-font-awesome
+ttf-hack
 tumbler
 unrar
 unzip

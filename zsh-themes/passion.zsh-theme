@@ -82,9 +82,11 @@ function update_command_status() {
     export COMMAND_RESULT=$COMMAND_RESULT
     if $COMMAND_RESULT;
     then
-        arrow="%{$fg_bold[red]%}❱%{$fg_bold[yellow]%}❱%{$fg_bold[green]%}❱";
+        # arrow="%{$fg_bold[red]%}❱%{$fg_bold[yellow]%}❱%{$fg_bold[green]%}❱";
+        arrow="%{$fg_bold[green]%}λ";
     else
-        arrow="%{$fg_bold[red]%}❱❱❱";
+        # arrow="%{$fg_bold[red]%}❱❱❱";
+        arrow="%{$fg_bold[red]%}λ";
     fi
     COMMAND_STATUS="${arrow}${reset_font}${color_reset}";
 }
