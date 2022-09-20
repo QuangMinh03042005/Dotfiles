@@ -79,7 +79,7 @@
         company-minimum-prefix-length 10
         ;; gc-cons-threshold (* 100 1024 1024)
         ;; gc-cons-threshold 100000000
-        read-process-output-max (* 1024 1024)
+        ; read-process-output-max (* 1024 1024)
         company-selection-wrap-around t
         company-tooltip-limit           10
         company-transformers '(company-sort-by-occurrence)
@@ -139,7 +139,8 @@
 ;;       )
 
 ;; (setq evil-insert-state-cursor '((hbar . 4)))
-(setq evil-insert-state-cursor '((box . 4)))
+;; (setq evil-insert-state-cursor '((box . 4)))
+(setq evil-insert-state-cursor '((bar . 3)))
 
 ;; tab width
 (setq-default indent-tab-mode nil)
@@ -151,30 +152,6 @@
 (setq centaur-tabs-height 10)
 (setq centaur-tabs-set-bar 'under)
 (setq x-underline-at-descent-line t)
-
-;; keymaps
-(map! :nv
-      "C-d" #'evil-multiedit-match-symbol-and-next
-      "C-D" #'evil-multiedit-match-symbol-and-prev
-      "<f1>" #'vterm
-      "<f2>" #'neotree
-      "<f4>" #'helm-lsp--workspace-symbol
-      "<f6>" #'ranger
-      "C-;" #'smex
-      "C-h" #'evil-window-left
-      "C-j" #'evil-window-down
-      "C-k" #'evil-window-up
-      "C-l" #'evil-window-right
-      "M-q" #'centaur-tabs--kill-this-buffer-dont-ask
-      ;; "C-SPC"#'company-mode
-      "C-n"#'company-dabbrev-code
-)
-
-(define-key evil-normal-state-map (kbd "<tab>") 'centaur-tabs-forward)
-(define-key evil-normal-state-map (kbd "<backtab>") 'centaur-tabs-backward)
-(define-key evil-normal-state-map (kbd "R") 'recompile)
-(define-key evil-normal-state-map (kbd "/") 'swiper)
-(define-key evil-normal-state-map (kbd "K") 'lsp-ui-doc-show)
 
 ;; lsp
 (setq   lsp-eldoc-hook nil
@@ -240,3 +217,29 @@
 ;; GCMH - the Garbage Collector Magic Hack
 (gcmh-mode 1)
 (setq gcmh-high-cons-threshold most-positive-fixnum)
+
+;; keymaps
+(map! :nv
+      "C-d" #'evil-multiedit-match-symbol-and-next
+      "C-D" #'evil-multiedit-match-symbol-and-prev
+      "<f1>" #'vterm
+      "<f2>" #'neotree
+      "<f4>" #'helm-lsp--workspace-symbol
+      "<f6>" #'ranger
+      "C-;" #'smex
+      "C-h" #'evil-window-left
+      "C-j" #'evil-window-down
+      "C-k" #'evil-window-up
+      "C-l" #'evil-window-right
+      "M-q" #'centaur-tabs--kill-this-buffer-dont-ask
+      ;; "C-SPC"#'company-mode
+      "C-n"#'company-dabbrev-code
+)
+
+(with-eval-after-load 'evil-maps
+    (define-key evil-normal-state-map (kbd "/")         'swiper)
+    (define-key evil-normal-state-map (kbd"<tab>")      'centaur-tabs-forward)
+    (define-key evil-normal-state-map (kbd"<backtab>")  'centaur-tabs-backward)
+    (define-key evil-normal-state-map (kbd"R")          'recompile)
+    (define-key evil-normal-state-map (kbd"K")          'lsp-ui-doc-show)
+)
