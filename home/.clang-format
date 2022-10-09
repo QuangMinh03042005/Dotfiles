@@ -7,3 +7,4 @@ ExperimentalAutoDetectBinPacking: 'false'
 FixNamespaceComments: 'true'
 PointerAlignment: Left
 IndentWidth:   4
+ColumnLimit:     100

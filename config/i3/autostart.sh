@@ -7,7 +7,7 @@ feh --bg-fill ~/wallpapers/nordic.jpg &
 sh $HOME/.config/polybar/launch.sh &
 
 # Configuration keyboard repeat speed
-xset r rate 200 36 &
+xset r rate 190 45 &
 
 # cpu power
 cpupower-gui -p &

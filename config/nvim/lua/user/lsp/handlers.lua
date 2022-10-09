@@ -1,12 +1,7 @@
 local M = {}
 
--- TODO: backfill this to template
 M.setup = function()
 	local signs = {
-		-- { name = "DiagnosticSignError", text = "" },
-		-- { name = "DiagnosticSignWarn", text = "" },
-		-- { name = "DiagnosticSignHint", text = "" },
-		-- { name = "DiagnosticSignInfo", text = "" },
 		{ name = "DiagnosticSignError", text = "" },
 		{ name = "DiagnosticSignWarn", text = "" },
 		{ name = "DiagnosticSignHint", text = "" },
@@ -79,17 +74,55 @@ local function lsp_keymaps(bufnr)
 	)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format{async=true}' ]])
 end
 
 M.on_attach = function(client, bufnr)
-	-- vim.notify(client.name .. " starting...")
+	vim.notify = require("notify")
+	vim.notify(client.name .. " starting...", "info", { title = "[LSP]" })
 	-- TODO: refactor this into a method that checks if string in list
 	if client.name == "tsserver" then
 		client.resolved_capabilities.document_formatting = false
 	end
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
+	local navic = require("nvim-navic")
+
+	navic.setup({
+		icons = {
+			File = " ",
+			Module = " ",
+			Namespace = " ",
+			Package = " ",
+			Class = " ",
+			Method = " ",
+			Property = " ",
+			Field = " ",
+			Constructor = " ",
+			Enum = "",
+			Interface = "蘒",
+			Function = " ",
+			Variable = "[] ",
+			Constant = " ",
+			String = " ",
+			Number = " ",
+			Boolean = "◩ ",
+			Array = " ",
+			Object = "[] ",
+			Key = " ",
+			Null = "Ø ",
+			EnumMember = " ",
+			Struct = "  ",
+			Event = " ",
+			Operator = " ",
+			TypeParameter = "<> ",
+		},
+		highlight = true,
+		separator = " > ",
+	})
+	if client.server_capabilities.documentSymbolProvider then
+		navic.attach(client, bufnr)
+	end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

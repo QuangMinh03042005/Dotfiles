@@ -1,6 +1,13 @@
 colorscheme vscode
 
 hi TSType guifg=#569cd6
+
+hi Define guifg=#C586C0    guibg=none
+
+hi! link TSConstMacro Define
+
+highlight TSKeywordOperator guifg=#DCDCAA
+
 " gray
 highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
 " blue

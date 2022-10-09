@@ -5,7 +5,7 @@ end
 
 local lspconfig = require("lspconfig")
 
-local servers = { "clangd", "jsonls", "sumneko_lua"}
+local servers = { "clangd", "jsonls", "sumneko_lua" }
 
 lsp_installer.setup({
 	ensure_installed = servers,
@@ -25,17 +25,3 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-lspconfig.emmet_ls.setup({
-	-- on_attach = on_attach,
-	capabilities = capabilities,
-	filetypes = { "html", "js", "typescriptreact", "javascriptreact", "sass", "scss", "less" },
-	init_options = {
-		html = {
-			options = {
-				-- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
-				["bem.enabled"] = true,
-			},
-		},
-	},
-})

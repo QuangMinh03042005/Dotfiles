@@ -6,3 +6,4 @@ end
 require("user.lsp.configs")
 require("user.lsp.handlers").setup()
 require("user.lsp.null-ls")
+vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"

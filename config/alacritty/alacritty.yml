@@ -68,6 +68,7 @@ font:
     # Style can be specified to pick a specific face.
     normal:
         family: JetBrains Mono
+        # family: Monaco
         # family: Fantasque Sans Mono
         # style: Regular
         style: Medium
@@ -78,6 +79,7 @@ font:
     # The bold font face
     bold:
         family: JetBrains Mono
+        # family: Monaco
         # family: Fantasque Sans Mono
         style: Bold
         # family: "Fira Code"
@@ -86,6 +88,7 @@ font:
     # The italic font face
     italic:
         family: JetBrains Mono
+        # family: Monaco
         # family: Fantasque Sans Mono
         style: Italic
         # style: "Light Oblique"
@@ -184,7 +187,7 @@ cursor:
 
     # If this is `true`, the cursor will be rendered as a hollow box when the
     # window is not focused.
-    unfocused_hollow: true
+    # unfocused_hollow: true
 
 # dynamic_title: false
 
@@ -305,7 +308,8 @@ schemes:
     ### Onedark ###
     Onedark: &Onedark
         primary:
-            background: "#282c34"
+            # background: "#282c34"
+            background: "#1e222a"
             foreground: "#abb2bf"
         cursor:
             text: CellBackground
@@ -365,6 +369,7 @@ schemes:
       primary:
         # hard contrast: background = '0x1d2021'
         background: '0x282828'
+        # background: '#1d2021'
         # soft contrast: background = '0x32302f'
         foreground: '0xebdbb2'
 
@@ -389,6 +394,25 @@ schemes:
         cyan:    '0x8ec07c'
         white:   '0xebdbb2'
 
+    Darcula: &Darcula
+        # Default colors
+        primary:
+            background: '#2B2B2B' # base03
+            foreground: '#A9B7C6' # base0
+        # Cursor colors
+        cursor:
+            text:   '#2B2B2B' # base03
+            cursor: '#BBBBBB' # base0
+        # Normal colors
+        normal:
+            black:   '#2B2B2B' # base02
+            red:     '#FF6B68' # red
+            green:   '#6A8759' # green
+            yellow:  '#FFC66D' # yellow
+            blue:    '#6897BB' # blue
+            magenta: '#9876AA' # magenta
+            cyan:    '#385570' # cyan
+            white:   '#BBBBBB' # base2
     Gruber-darker: &Gruber-darker
         # Default colors
         primary:
@@ -870,7 +894,8 @@ schemes:
 # *mocha
 # *Vscode
 # *Github_dark
-colors: *Dracula
+# *Darcula
+colors: *Onedark
 
 key_bindings:
     # (Windows, Linux, and BSD only)

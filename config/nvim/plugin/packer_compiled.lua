@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["Onedarker.nvim"] = {
+    loaded = true,
+    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/Onedarker.nvim",
+    url = "https://github.com/lunarvim/Onedarker.nvim"
+  },
   ["alpha-nvim"] = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/alpha-nvim",
@@ -124,11 +129,6 @@ _G.packer_plugins = {
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["cmp-treesitter"] = {
-    loaded = true,
-    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/cmp-treesitter",
-    url = "https://github.com/ray-x/cmp-treesitter"
-  },
   cmp_luasnip = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
@@ -138,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/cool-substitute.nvim",
     url = "https://github.com/otavioschwanck/cool-substitute.nvim"
+  },
+  darcula = {
+    loaded = true,
+    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/darcula",
+    url = "https://github.com/doums/darcula"
   },
   ["doom-one.nvim"] = {
     loaded = true,
@@ -158,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -244,6 +254,16 @@ _G.packer_plugins = {
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-navic"] = {
+    loaded = true,
+    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/nvim-navic",
+    url = "https://github.com/SmiteshP/nvim-navic"
+  },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
+  },
   ["nvim-transparent"] = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/nvim-transparent",
@@ -299,6 +319,11 @@ _G.packer_plugins = {
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/rnvimr",
     url = "https://github.com/kevinhwang91/rnvimr"
   },
+  ["seoul256.vim"] = {
+    loaded = true,
+    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/seoul256.vim",
+    url = "https://github.com/junegunn/seoul256.vim"
+  },
   ["symbols-outline.nvim"] = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
@@ -318,6 +343,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/LunarVim/tokyonight.nvim"
   },
   ["trouble.nvim"] = {
     loaded = true,

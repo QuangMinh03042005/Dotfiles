@@ -15,31 +15,22 @@ local check_backspace = function()
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
---   פּ ﯟ   some other good icons
 local kind_icons = {
 	Text = "",
-	-- Text = "",
-	--[[ Method = "m",
-	Function = "", ]]
 	Constructor = "",
 	Method = "",
 	Function = "",
 	Field = "",
 	Variable = "[]",
 	Class = "",
-	-- Class = "פּ",
-	-- Interface = "",
 	Interface = "蘒",
-	-- Module = "",
 	Module = "",
 	Property = "",
 	Unit = "",
 	Value = "",
 	Enum = "",
 	Keyword = "",
-	-- Snippet = "",
-	-- Snippet = "",
-    Snippet = "",
+	Snippet = "",
 	Color = "",
 	File = "",
 	Reference = "",
@@ -51,7 +42,6 @@ local kind_icons = {
 	Operator = "",
 	TypeParameter = "<>",
 }
--- find more here: https://www.nerdfonts.com/cheat-sheet
 
 cmp.setup({
 	snippet = {
@@ -60,8 +50,8 @@ cmp.setup({
 		end,
 	},
 	mapping = {
-		["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
+		["<C-p>"] = cmp.mapping.select_prev_item(),
+		["<C-n>"] = cmp.mapping.select_next_item(),
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -107,18 +97,12 @@ cmp.setup({
 		format = function(entry, vim_item)
 			-- Kind icons
 			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			--		vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			vim_item.menu = ({
-				--[[ nvim_lsp = "",
-        path = "",
-        luasnip = "",
-        buffer = "﬘",
-        treesitter = "", ]]
-				nvim_lsp = "[LS]",
-				luasnip = "[S]",
-				buffer = "[B]",
-				path = "[F]",
-				treesitter = "[TS]",
+				nvim_lsp = "[LSP]",
+				luasnip = "[Snippet]",
+				buffer = "[Buffer]",
+				path = "[Path]",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -128,9 +112,6 @@ cmp.setup({
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
-		{ name = "treesitter" },
-        { name = "cmdline"}
-		-- { name = "nvim_lsp_signature_help" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
@@ -139,16 +120,13 @@ cmp.setup({
 	window = {
 		completion = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
-			col_offset = 0,
-			side_padding = 1,
 		},
 		documentation = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 		},
-	},
-	experimental = {
-		ghost_text = false,
-		native_menu = false,
+		experimental = {
+			ghost_text = false,
+			native_menu = true,
+		},
 	},
 })

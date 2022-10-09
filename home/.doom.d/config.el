@@ -1,3 +1,9 @@
+(setq locale-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
 (setq
         ;; No need to see GNU agitprop.
         inhibit-startup-screen t
@@ -18,9 +24,9 @@
         ;; search should be case-sensitive by default
         case-fold-search nil
         ;; no need to prompt for the read command _every_ time
-        compilation-read-command nil
+        ;; compilation-read-command nil
         ;; scroll to first error
-        compilation-scroll-output 'first-error
+        ;; compilation-scroll-output 'first-error
         ;; accept 'y' or 'n' instead of yes/no
         ;; the documentation advises against setting this variable
         ;; the documentation can get bent imo
@@ -139,8 +145,8 @@
 ;;       )
 
 ;; (setq evil-insert-state-cursor '((hbar . 4)))
-;; (setq evil-insert-state-cursor '((box . 4)))
-(setq evil-insert-state-cursor '((bar . 3)))
+(setq evil-insert-state-cursor '((box . 4)))
+;; (setq evil-insert-state-cursor '((bar . 3)))
 
 ;; tab width
 (setq-default indent-tab-mode nil)

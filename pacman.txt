@@ -21,6 +21,8 @@ cool-retro-term
 cowsay
 cryptsetup
 ctags
+cups
+cups-pdf
 dconf-editor
 diffutils
 dmenu
@@ -56,6 +58,7 @@ gtk-engines
 gtkmm
 gtkmm-4.0
 gulp
+gutenprint
 gvim
 htop
 hyperfine
@@ -70,6 +73,7 @@ jdk-openjdk
 kitty
 libconfig
 libreoffice-still
+libvterm
 lightdm
 lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
@@ -98,6 +102,7 @@ networkmanager
 nilfs-utils
 ninja
 nlohmann-json
+nmap
 nodejs
 notepadqq
 npm

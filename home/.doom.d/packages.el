@@ -7,4 +7,4 @@
 (package! rust-mode)
 ; (package! gruber-darker-theme)
 (package! hl-line :disable t)
-
+(package! atom-one-dark-theme)

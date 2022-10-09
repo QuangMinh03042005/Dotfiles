@@ -1,4 +1,4 @@
-vim.cmd [[
+vim.cmd([[
   augroup _general_settings
     autocmd!
     autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR> 
@@ -28,35 +28,27 @@ vim.cmd [[
     autocmd!
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
-]]
+]])
 
 -- Autoformat
-vim.cmd[[
+vim.cmd([[
 "augroup _lsp
 "  autocmd!
 "  autocmd BufWritePre * lua vim.lsp.buf.formatting()
 "augroup end
-]]
+]])
 
 -- i3 syntax highlight
-vim.cmd[[
+vim.cmd([[
 aug i3config_ft_detection
   au!
   au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
 aug end
-]]
+]])
 
-
-vim.cmd[[
+vim.cmd([[
 aug colorizer
   au!
   au BufNewFile,BufRead * ColorizerToggle
 aug end
-]]
-
-vim.cmd[[
-    aug polybarconfig_ft_detection
-        au!
-        au BufNewFile,BufRead ~/.config/polybar/i3wm/config set filetype=dosini
-    aug end
-]]
+]])

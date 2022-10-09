@@ -87,6 +87,11 @@ return packer.startup(function(use)
 	use("Mofiqul/vscode.nvim")
 	use("tanvirtin/monokai.nvim")
 	use("olimorris/onedarkpro.nvim")
+	use("doums/darcula")
+	use("junegunn/seoul256.vim")
+	use({ "projekt0n/github-nvim-theme" })
+	use("LunarVim/tokyonight.nvim")
+	use("lunarvim/Onedarker.nvim")
 
 	-- Cmp plugins
 	use("hrsh7th/nvim-cmp")
@@ -95,7 +100,6 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-cmdline")
 	use("saadparwaiz1/cmp_luasnip")
 	use("hrsh7th/cmp-nvim-lsp")
-	use("ray-x/cmp-treesitter")
 
 	-- Code snippets
 	use("L3MON4D3/LuaSnip")
@@ -109,7 +113,10 @@ return packer.startup(function(use)
 	use({
 		"ray-x/lsp_signature.nvim",
 	})
-
+	use({
+		"SmiteshP/nvim-navic",
+		requires = "neovim/nvim-lspconfig",
+	})
 	-- File search
 	use("nvim-telescope/telescope.nvim")
 	use("dylanaraps/fff.vim")
@@ -180,6 +187,7 @@ return packer.startup(function(use)
 	-- Picking windows
 	use("gbrlsnchs/winpick.nvim")
 
+	use("rcarriga/nvim-notify")
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
