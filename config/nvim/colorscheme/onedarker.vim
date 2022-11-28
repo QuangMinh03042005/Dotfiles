@@ -1,11 +1,18 @@
 colorscheme onedarker
 
-hi Type guifg=#d5b06b guibg=none gui=bold
-hi Repeat guifg=#b668cd guibg=none
-hi Statement guifg=#b668cd guibg=none
-hi Conditional guifg=#b668cd guibg=none
-hi Operator guifg=#b668cd guibg=none
-hi Define          guifg=#b668cd    guibg=none
+highlight @type guifg=#d5b06b guibg=none gui=bold
+highlight @repeat guifg=#b668cd guibg=none
+highlight @statement guifg=#b668cd guibg=none
+highlight @conditional guifg=#b668cd guibg=none
+highlight @operator guifg=#b668cd guibg=none
+highlight @define          guifg=#b668cd    guibg=none
+highlight @parameter guifg=#d05c65
+hi! link @field @parameter
+hi! link @property @parameter
+hi! link @variable.builtin @repeat
+hi! link @namespace TSNamespace
 
-hi! link TSOperator Operator 
-hi! link TSConstMacro Define
+hi! link TSOperator @operator 
+hi! link TSConstMacro @define
+hi! link TSType @type
+

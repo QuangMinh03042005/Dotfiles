@@ -1,8 +1,10 @@
 call plug#begin("~/.vim/plugged")
 
 " Statusline
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
+	" Plug 'vim-airline/vim-airline'
+	" Plug 'vim-airline/vim-airline-themes'
+	Plug 'pacha/vem-tabline'
+	Plug 'pacha/vem-statusline'
 
 " Icon
 	Plug 'ryanoasis/vim-devicons'
@@ -12,6 +14,7 @@ call plug#begin("~/.vim/plugged")
 	Plug 'nanotech/jellybeans.vim'
 	Plug 'junegunn/seoul256.vim'
 	Plug 'morhetz/gruvbox'
+	Plug 'pacha/vem-dark'
 
 " Better syntax
 	" Plug 'sheerun/vim-polyglot'

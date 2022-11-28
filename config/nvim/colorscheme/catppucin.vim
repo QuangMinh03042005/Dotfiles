@@ -1,3 +1,4 @@
-let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
+"let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
+colorscheme catppuccin-frappe
 
-colorscheme catppuccin
+hi! link TSParameter @parameter

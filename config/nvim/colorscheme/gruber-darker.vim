@@ -207,3 +207,5 @@ hi! link  NvimTreeCursorLine CursorLine
 " hi! link NvimTreeSymlink 
 hi NvimTreeRootFolder guifg=#96a6c8 guibg=none gui=bold
 hi NvimTreeExecFile guifg=#ffdd33 guibg=none gui=bold
+
+hi! link @variable.builtin @type

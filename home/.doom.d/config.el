@@ -5,44 +5,44 @@
 (prefer-coding-system 'utf-8)
 
 (setq
-        ;; No need to see GNU agitprop.
-        inhibit-startup-screen t
-        ;; No need to remind me what a scratch buffer is.
-        initial-scratch-message nil
-        ;; Double-spaces after periods is morally wrong.
-        sentence-end-double-space nil
-        ;; Never ding at me, ever.
-        ring-bell-function 'ignore
-        ;; Save existing clipboard text into the kill ring before replacing it.
-        save-interprogram-paste-before-kill t
-        ;; Prompts should go in the minibuffer, not in a GUI.
-        use-dialog-box nil
-        ;; Fix undo in commands affecting the mark.
-        mark-even-if-inactive nil
-        ;; Let C-k delete the whole line.
-        kill-whole-line t
-        ;; search should be case-sensitive by default
-        case-fold-search nil
-        ;; no need to prompt for the read command _every_ time
-        ;; compilation-read-command nil
-        ;; scroll to first error
-        ;; compilation-scroll-output 'first-error
-        ;; accept 'y' or 'n' instead of yes/no
-        ;; the documentation advises against setting this variable
-        ;; the documentation can get bent imo
-        use-short-answers t
-        ;; my source directory
-        ;; default-directory "~/src/"
-        ;; eke out a little more scrolling performance
-        fast-but-imprecise-scrolling t
-        ;; prefer newer elisp files
-        load-prefer-newer t
-        ;; when I say to quit, I mean quit
-        confirm-kill-processes nil
-        ;; if native-comp is having trouble, there's not very much I can do
-        native-comp-async-report-warnings-errors 'silent
-        ;; unicode ellipses are better
-        truncate-string-ellipsis "…"
+ ;; No need to see GNU agitprop.
+ inhibit-startup-screen t
+ ;; No need to remind me what a scratch buffer is.
+ initial-scratch-message nil
+ ;; Double-spaces after periods is morally wrong.
+ sentence-end-double-space nil
+ ;; Never ding at me, ever.
+ ring-bell-function 'ignore
+ ;; Save existing clipboard text into the kill ring before replacing it.
+ save-interprogram-paste-before-kill t
+ ;; Prompts should go in the minibuffer, not in a GUI.
+ use-dialog-box nil
+ ;; Fix undo in commands affecting the mark.
+ mark-even-if-inactive nil
+ ;; Let C-k delete the whole line.
+ kill-whole-line t
+ ;; search should be case-sensitive by default
+ case-fold-search nil
+ ;; no need to prompt for the read command _every_ time
+ ;; compilation-read-command nil
+ ;; scroll to first error
+ ;; compilation-scroll-output 'first-error
+ ;; accept 'y' or 'n' instead of yes/no
+ ;; the documentation advises against setting this variable
+ ;; the documentation can get bent imo
+ use-short-answers t
+ ;; my source directory
+ ;; default-directory "~/src/"
+ ;; eke out a little more scrolling performance
+ fast-but-imprecise-scrolling t
+ ;; prefer newer elisp files
+ load-prefer-newer t
+ ;; when I say to quit, I mean quit
+ confirm-kill-processes nil
+ ;; if native-comp is having trouble, there's not very much I can do
+ native-comp-async-report-warnings-errors 'silent
+ ;; unicode ellipses are better
+ truncate-string-ellipsis "…"
  )
 
 ;; display line number
@@ -58,7 +58,7 @@
              "~/.doom.d/theme/")
 
 (setq doom-theme 'gruber-darker
-      doom-font (font-spec :family "Iosevka" :size 25 :weight 'regular)
+      doom-font (font-spec :family "Iosevka" :size 26 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "Iosevka" :size 20))
 
 ;; neotree
@@ -75,6 +75,7 @@
         company-tooltip-align-annotations t
         company-tooltip-minimum-width 1
         company-tooltip-maximum-width 40
+        company-minimum-prefix-length 10
         company-frontends '(company-pseudo-tooltip-frontend)
         company-backends '((
                             company-dabbrev-code
@@ -82,28 +83,27 @@
                             company-files
                             company-semantic
                             ))
-        company-minimum-prefix-length 10
-        ;; gc-cons-threshold (* 100 1024 1024)
-        ;; gc-cons-threshold 100000000
-        ; read-process-output-max (* 1024 1024)
+        gc-cons-threshold (* 100 1024 1024)
+        ;;;gc-cons-threshold 100000000
+        read-process-output-max (* 1024 1024)
         company-selection-wrap-around t
-        company-tooltip-limit           10
+        company-tooltip-limit           15
         company-transformers '(company-sort-by-occurrence)
         company-dabbrev-other-buffers   t
         company-preview-overlay t
         company-tooltip-align-annotations t
         company-dabbrev-other-buffers t
         company-tooltip-margin 1
-))
+        ))
 
 (set-company-backend! '(c-mode c++-mode java-mode python-mode rust-mode text-mode)
-'(:separate
-        company-capf
-        company-dabbrev-code
-        company-files
-        company-semantic
-        company-yasnippet
-))
+  '(:separate
+    company-capf
+    company-dabbrev-code
+    company-files
+    company-semantic
+    company-yasnippet
+    ))
 (after! doom-themes (setq doom-neotree-file-icons t))
 
 ;; word wrap
@@ -112,7 +112,7 @@
 (setq visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow))
 
 ;; doom-modeline
-; (setq doom-modeline-buffer-file-name-style 'file-name)
+                                        ; (setq doom-modeline-buffer-file-name-style 'file-name)
 (setq doom-modeline-icon (display-graphic-p))
 (setq doom-modeline-major-mode-icon t)
 (setq doom-modeline-major-mode-color-icon t)
@@ -165,8 +165,8 @@
         lsp-signature-auto-activate nil)
 
 (after! lsp-ui
- (setq lsp-ui-sideline-enable nil  ; no more useful than flycheck
-       lsp-ui-doc-enable nil))     ; redundant with K
+  (setq lsp-ui-sideline-enable nil  ; no more useful than flycheck
+        lsp-ui-doc-enable nil))     ; redundant with K
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Compilation mode
@@ -187,38 +187,36 @@
 (my-global-rainbow-mode 1)
 
 ;;; Whitespace mode
-(setq whitespace-style '(
-    face
-    trailing
-    tabs
-    spaces
-    empty
-    space-mark
-    tab-mark))
+;; (setq whitespace-style '(
+;;                          face
+;;                          trailing
+;;                          tabs
+;;                          spaces
+;;                          empty
+;;                          space-mark
+;;                          tab-mark))
 
-(defun rc/set-up-whitespace-handling ()
-  (interactive)
-  (whitespace-mode 1)
-  (add-to-list 'write-file-functions 'delete-trailing-whitespace))
-
-(add-hook 'tuareg-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'c++-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'c-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'emacs-lisp-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'java-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'lua-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'rust-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'scala-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'markdown-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'haskell-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'python-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'erlang-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'asm-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'nasm-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'go-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'nim-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'yaml-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'porth-mode-hook 'rc/set-up-whitespace-handling)
+;; (defun rc/set-up-whitespace-handling ()
+;;   (interactive)
+;;   (whitespace-mode 1)
+;;   (add-to-list 'write-file-functions 'delete-trailing-whitespace))
+;; (add-hook 'tuareg-mode-hook 'rc/set-up-whitespace-handling)
+;; (add-hook 'c++-mode-hook 'rc/set-up-whitespace-handling)
+;; (add-hook 'c-mode-hook 'rc/set-up-whitespace-handling)
+;; (add-hook 'emacs-lisp-mode-hook 'rc/set-up-whitespace-handling)
+;; (add-hook 'java-mode-hook 'rc/set-up-whitespace-handling)
+;; (add-hook 'lua-mode-hook 'rc/set-up-whitespace-handling)
+;; (add-hook 'rust-mode-hook 'rc/set-up-whitespace-handling)
+;; (add-hook 'scala-mode-hook 'rc/set-up-whitespace-handling)
+;; (add-hook 'markdown-mode-hook 'rc/set-up-whitespace-handling)
+;; (add-hook 'haskell-mode-hook 'rc/set-up-whitespace-handling)
+;; ;;(add-hook 'python-mode-hook 'rc/set-up-whitespace-handling)
+;; (add-hook 'erlang-mode-hook 'rc/set-up-whitespace-handling)
+;; (add-hook 'asm-mode-hook 'rc/set-up-whitespace-handling)
+;; (add-hook 'nasm-mode-hook 'rc/set-up-whitespace-handling)
+;; (add-hook 'go-mode-hook 'rc/set-up-whitespace-handling)
+;; (add-hook 'nim-mode-hook 'rc/set-up-whitespace-handling)
+;; (add-hook 'yaml-mode-hook 'rc/set-up-whitespace-handling)
 
 ;; GCMH - the Garbage Collector Magic Hack
 (gcmh-mode 1)
@@ -238,14 +236,14 @@
       "C-k" #'evil-window-up
       "C-l" #'evil-window-right
       "M-q" #'centaur-tabs--kill-this-buffer-dont-ask
-      ;; "C-SPC"#'company-mode
+      "C-SPC"#'company-mode
       "C-n"#'company-dabbrev-code
-)
+      )
 
 (with-eval-after-load 'evil-maps
-    (define-key evil-normal-state-map (kbd "/")         'swiper)
-    (define-key evil-normal-state-map (kbd"<tab>")      'centaur-tabs-forward)
-    (define-key evil-normal-state-map (kbd"<backtab>")  'centaur-tabs-backward)
-    (define-key evil-normal-state-map (kbd"R")          'recompile)
-    (define-key evil-normal-state-map (kbd"K")          'lsp-ui-doc-show)
-)
+  (define-key evil-normal-state-map (kbd "/")         'swiper)
+  (define-key evil-normal-state-map (kbd"<tab>")      'centaur-tabs-forward)
+  (define-key evil-normal-state-map (kbd"<backtab>")  'centaur-tabs-backward)
+  (define-key evil-normal-state-map (kbd"R")          'recompile)
+  (define-key evil-normal-state-map (kbd"K")          'lsp-ui-doc-show)
+  )

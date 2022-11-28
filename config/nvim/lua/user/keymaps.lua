@@ -96,7 +96,7 @@ keymap("v", "<A-l>", ":MoveHBlock(1)<CR>", opts)
 keymap("v", "<A-h>", ":MoveHBlock(-1)<CR>", opts)
 
 keymap("n", "<F6>", "<cmd>Trouble<cr>", opts)
-keymap("n", "<A-q>", "<cmd>Bdelete<cr>", opts)
+keymap("n", "<A-q>", "<cmd>Bdelete!<cr>", opts)
 
 keymap("n", "<C-y>", "<C-v>", opts)
 

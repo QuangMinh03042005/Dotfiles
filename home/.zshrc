@@ -15,8 +15,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case, to know which specific one was loaded, run: echo $RANDOM_THEME See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="tjkirch"
-ZSH_THEME="passion"
-# ZSH_THEME="bira"
+# ZSH_THEME="passion"
+ZSH_THEME="ubuntu"
 #❱❱❱
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 # Set list of themes to pick from when loading at random
@@ -116,6 +116,7 @@ source $ZSH/oh-my-zsh.sh
 alias emconf="cd ~/.doom.d"
 alias i3conf="cd ~/.config/i3"
 alias alaconf="nvim ~/.config/alacritty/alacritty.yml"
+alias kittyconf="nvim ~/.config/kitty/kitty.conf"
 alias polyconf="cd ~/.config/polybar"
 alias cls="clear"
 alias q="exit"
@@ -137,6 +138,8 @@ alias nvconf="cd ~/.config/nvim"
 # alias neofetch="clear && neofetch --ascii_distro ubuntu"
 alias neofetch="clear && neofetch"
 alias lolban="figlet -c -f ~/Desktop/figlet-fonts/3d.flf"
+alias vim="TERM=xterm-kitty vim"
+
 
 # Cloudflare
 alias warp="sudo systemctl start warp-svc"
@@ -188,14 +191,15 @@ autopair-init
 # export FZF_DEFAULT_COMMAND='find .'
 # export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 # export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
-export FZF_DEFAULT_COMMAND="find -L"
+# export FZF_DEFAULT_COMMAND="find -L"
 # fzf ctrl-r and alt-c behavior
 export FZF_DEFAULT_OPTS='--color=bg+:#302D41,bg:#1E1E2E,spinner:#F8BD96,hl:#F28FAD --color=fg:#D9E0EE,header:#F28FAD,info:#DDB6F2,pointer:#F8BD96 --color=marker:#F8BD96,fg+:#F2CDCD,prompt:#DDB6F2,hl+:#F28FAD'
+export FZF_DEFAULT_COMMAND='find * .'
 
-export FFF_HIDDEN=1
+
+# export FFF_HIDDEN=1
 
 # link cac khoa hoc
 # https://huydeveloper.glitch.me/?fbclid=IwAR3MeBjWzZG9QMGNvQ5gDSfuyPg9CUloD-5HkOJkP9CGMOnImKB7XiEodYI
 
 # https://github.com/luong-komorebi/Awesome-Linux-Software
-

@@ -27,3 +27,8 @@ noremap <C-t> :tabnew<CR>
 
 " Format code
 nnoremap fm :Autoformat<CR>
+
+" Visual
+" Stay in indent mode
+vnoremap < <gv
+vnoremap > >gv

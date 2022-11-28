@@ -1,5 +1,9 @@
 colorscheme doom-one
 
+highlight @variable guifg=#bbc2cf
+hi! link @method @function
+hi! link TSMethod @function
+
 highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#3f444a
 highlight! CmpItemAbbrMatch guibg=NONE guifg=#2257a0
 highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#2257a0

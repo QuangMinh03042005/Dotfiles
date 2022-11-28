@@ -4,8 +4,6 @@ if not status_ok then
 end
 
 configs.setup({
-	sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-	ignore_install = { "" }, -- List of parsers to ignore installing
 	autopairs = {
 		enable = true,
 	},
@@ -20,3 +18,31 @@ configs.setup({
 		enable_autocmd = false,
 	},
 })
+
+require("hlargs").setup({
+	paint_arg_declarations = true,
+	paint_arg_usages = true,
+	paint_catch_blocks = {
+		declarations = false,
+		usages = false,
+	},
+	extras = {
+		named_parameters = false,
+	},
+	hl_priority = 10000,
+	excluded_argnames = {
+		declarations = {},
+		usages = {
+			python = { "self", "cls" },
+			lua = { "self" },
+			rust = { "self" },
+			cpp = { "this" },
+			c = { "this" },
+		},
+	},
+	performance = {
+		parse_delay = 1,
+		slow_parse_delay = 0,
+	},
+})
+-- (You may omit the settings whose defaults you're ok with)

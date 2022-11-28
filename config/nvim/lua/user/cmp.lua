@@ -17,19 +17,24 @@ end
 
 local kind_icons = {
 	Text = "",
-	Constructor = "",
+	-- Constructor = "",
+	Constructor = "",
 	Method = "",
 	Function = "",
-	Field = "",
-	Variable = "[]",
-	Class = "",
-	Interface = "蘒",
-	Module = "",
-	Property = "",
+	Field = "",
+	-- Variable = "",
+	Variable = "",
+	-- Class = "",
+	Class = "",
+	Interface = "",
+	Module = "",
+	Property = "",
 	Unit = "",
-	Value = "",
-	Enum = "",
-	Keyword = "",
+	Value = "",
+	-- Enum = "",
+	Enum = "",
+	-- Keyword = "",
+	Keyword = "",
 	Snippet = "",
 	Color = "",
 	File = "",
@@ -37,11 +42,16 @@ local kind_icons = {
 	Folder = "",
 	EnumMember = "",
 	Constant = "",
-	Struct = "",
-	Event = "",
-	Operator = "",
-	TypeParameter = "<>",
+	-- Struct = "",
+	Struct = "",
+	Event = "",
+	Operator = "",
+	TypeParameter = "",
 }
+
+require("lspkind").init({
+	symbol_map = kind_icons,
+})
 
 cmp.setup({
 	snippet = {
@@ -92,21 +102,30 @@ cmp.setup({
 			"s",
 		}),
 	},
+
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
+
 		format = function(entry, vim_item)
 			-- Kind icons
-			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-			vim_item.menu = ({
-				nvim_lsp = "[LSP]",
-				luasnip = "[Snippet]",
-				buffer = "[Buffer]",
-				path = "[Path]",
-			})[entry.source.name]
-			return vim_item
+			local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+			local strings = vim.split(kind.kind, "%s", { trimempty = true })
+			kind.kind = " " .. strings[1] .. " "
+			kind.menu = "    (" .. strings[2] .. ")"
+			return kind
+
+			-- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+			-- -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+			-- vim_item.menu = ({
+			-- 	nvim_lsp = "[LSP]",
+			-- 	luasnip = "[Snippet]",
+			-- 	buffer = "[Buffer]",
+			-- 	path = "[Path]",
+			-- })[entry.source.name]
+			-- return vim_item
 		end,
 	},
+
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
@@ -118,15 +137,40 @@ cmp.setup({
 		select = false,
 	},
 	window = {
-		completion = {
-			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-		},
-		documentation = {
-			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-		},
-		experimental = {
-			ghost_text = false,
-			native_menu = true,
-		},
+		-- completion = {
+		-- 	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+		-- },
+		-- documentation = {
+		-- 	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+		-- },
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.disable,
+	},
+	-- experimental = {
+	-- 	ghost_text ={ hl_group = "@comment" },
+	-- },
+	performance = { throttle = 0, debounce = 0, fetching_timeout = 0 },
+})
+
+-- `:` cmdline setup.
+-- cmp.setup.cmdline(":", {
+-- 	mapping = cmp.mapping.preset.cmdline(),
+-- 	sources = cmp.config.sources({
+-- 		{ name = "path" },
+-- 	}, {
+-- 		{
+-- 			name = "cmdline",
+-- 			option = {
+-- 				ignore_cmds = { "Man", "!" },
+-- 			},
+-- 		},
+-- 	}),
+-- })
+
+-- `/` cmdline setup.
+cmp.setup.cmdline("/", {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = {
+		{ name = "buffer" },
 	},
 })

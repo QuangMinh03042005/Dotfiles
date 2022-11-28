@@ -54,6 +54,7 @@ return packer.startup(function(use)
 
 	-- Status line
 	use("nvim-lualine/lualine.nvim")
+	use("arkav/lualine-lsp-progress")
 
 	-- Tabline
 	use("akinsho/bufferline.nvim")
@@ -62,13 +63,18 @@ return packer.startup(function(use)
 	use("akinsho/toggleterm.nvim")
 
 	use("ahmedkhalf/project.nvim")
+
+    -- Speed up loading Lua modules in Neovim to improve startup time.
 	use("lewis6991/impatient.nvim")
+
+    -- This plugin adds indentation guides to all lines (including empty lines).
 	use("lukas-reineke/indent-blankline.nvim")
 
 	-- Dashboard
 	use("goolord/alpha-nvim")
 
-	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
+    -- This is needed to fix lsp doc highlight
+	use("antoinemadec/FixCursorHold.nvim")
 
 	-- Never forget your key bindings
 	use("folke/which-key.nvim")
@@ -89,17 +95,21 @@ return packer.startup(function(use)
 	use("olimorris/onedarkpro.nvim")
 	use("doums/darcula")
 	use("junegunn/seoul256.vim")
-	use({ "projekt0n/github-nvim-theme" })
+	use("projekt0n/github-nvim-theme")
 	use("LunarVim/tokyonight.nvim")
 	use("lunarvim/Onedarker.nvim")
+	use("ishan9299/nvim-solarized-lua")
+	use("phha/zenburn.nvim")
+	use("liuchengxu/space-vim-dark")
+	use("rmehri01/onenord.nvim")
 
 	-- Cmp plugins
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-cmdline")
-	use("saadparwaiz1/cmp_luasnip")
 	use("hrsh7th/cmp-nvim-lsp")
+	use("saadparwaiz1/cmp_luasnip")
 
 	-- Code snippets
 	use("L3MON4D3/LuaSnip")
@@ -107,7 +117,8 @@ return packer.startup(function(use)
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
-	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
+	use({ "williamboman/mason.nvim" }) -- simple to use language server installer
+	use({ "williamboman/mason-lspconfig.nvim" })
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use({
@@ -117,18 +128,31 @@ return packer.startup(function(use)
 		"SmiteshP/nvim-navic",
 		requires = "neovim/nvim-lspconfig",
 	})
+	use("onsails/lspkind.nvim")
+	use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+	})
+
+	-- Debugging
+	use("mfussenegger/nvim-dap")
+
 	-- File search
 	use("nvim-telescope/telescope.nvim")
-	use("dylanaraps/fff.vim")
 
 	-- Treesitter for syntax highlighting
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+	use("nvim-treesitter/playground")
+	use({
+		"m-demare/hlargs.nvim",
+		requires = { "nvim-treesitter/nvim-treesitter" },
+	})
 
 	-- Git
-	use("lewis6991/gitsigns.nvim")
+	-- use("lewis6991/gitsigns.nvim")
 
 	--Comment
 	use("b3nj5m1n/kommentary")
@@ -152,19 +176,6 @@ return packer.startup(function(use)
 		requires = "kyazdani42/nvim-web-devicons",
 	})
 
-	-- Better CodeActionMenu
-	-- use{
-	--      'weilbith/nvim-code-action-menu',
-	--      cmd = 'CodeActionMenu',
-	--    }
-
-	-- Better rename
-	use({
-		"filipdutescu/renamer.nvim",
-		branch = "master",
-		requires = { { "nvim-lua/plenary.nvim" } },
-	})
-
 	-- Pretty preview color
 	use("norcalli/nvim-colorizer.lua")
 
@@ -175,7 +186,7 @@ return packer.startup(function(use)
 	use("skywind3000/asyncrun.vim")
 
 	-- Toggle transparent background
-	use("xiyaowong/nvim-transparent")
+	-- use("xiyaowong/nvim-transparent")
 
 	-- Format code without lsp
 	use("vim-autoformat/vim-autoformat")
@@ -187,7 +198,17 @@ return packer.startup(function(use)
 	-- Picking windows
 	use("gbrlsnchs/winpick.nvim")
 
-	use("rcarriga/nvim-notify")
+	-- Surround
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
+	})
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

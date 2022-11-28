@@ -19,21 +19,21 @@ local options = {
 	termguicolors = true, -- set term gui colors (most terminals support this)
 	timeoutlen = 100, -- time to wait for a mapped sequence to complete (in milliseconds)
 	undofile = true, -- enable persistent undo
-	updatetime = 300, -- faster completion (4000ms default)
+	updatetime = 0, -- faster completion (4000ms default)
 	writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 	expandtab = true, -- convert tabs to spaces
 	shiftwidth = 4, -- the number of spaces inserted for each indentation
 	tabstop = 4, -- insert 2 spaces for a tab
-	cursorline = true, -- highlight the current line
+	cursorline = false, -- highlight the current line
 	number = true, -- set numbered lines
 	relativenumber = true, -- set relative numbered lines
 	numberwidth = 4, -- set number column width to 2 {default 4}
-	signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
+	signcolumn = "no", -- always show the sign column, otherwise it would shift the text each time
 	wrap = true, -- display lines as one long line
 	scrolloff = 4, -- is one of my fav
 	sidescrolloff = 4,
-    laststatus = 3,
-    ttimeoutlen = 0,
+	laststatus = 3,
+	whichwrap = "bs<>[]hl", -- which "horizontal" keys are allowed to travel to prev/next line
 }
 
 vim.opt.shortmess:append("c")
@@ -41,17 +41,17 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
-vim.cmd("set encoding=UTF-8")
-vim.cmd("set whichwrap+=<,>,[,],h,l")
-vim.cmd([[set iskeyword+=-]])
-vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
-vim.cmd("set foldmethod=indent")
-vim.cmd("set foldnestmax=10")
-vim.cmd("set foldenable")
---vim.cmd "set foldlevel=2"
-
-vim.cmd([[
+vim.cmd([[ 
 if !has('gui_running')
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
+
+set encoding=UTF-8
+set whichwrap+=<,>,[,],h,l
+set iskeyword+=-
+set formatoptions-=cro "-- TODO: this doesn't seem to work
+set foldmethod=indent
+set foldnestmax=10
+set foldenable
+ "set foldlevel=2
 ]])

@@ -1,5 +1,6 @@
 "set guifont=Iosevka\ 20
 "set guiheadroom=0
+set confirm
 set hidden
 set laststatus=2
 set nu rnu
@@ -25,7 +26,7 @@ set ignorecase 				" Enable case-sensitive
 " set termguicolors
 let mapleader=" "
 " Disable backup
-set nobackup
+set nobackup 
 set nowb
 set noswapfile
 set encoding=UTF-8
@@ -34,6 +35,7 @@ set scrolloff=4
 set sidescrolloff=4
 " set laststatus=1
 set cmdheight=1
+set updatetime=100
 
 " Enable copying from vim to clipboard
 if has('win32')
@@ -54,22 +56,35 @@ autocmd FileChangedShellPost *
 		\ | echo "File changed on disk. Buffer reloaded."
 		\ | echohl None
 
+" Disable auto comment
+au FileType * set fo-=c fo-=r fo-=o
+
 source ~/vim_config/plug.vim
 source ~/vim_config/coc.vim
 source ~/vim_config/ctrlp.vim
 source ~/vim_config/keymaps.vim
 source ~/vim_config/floatterm.vim
-source ~/vim_config/airline.vim
+source ~/vim_config/plug.vim
+source ~/vim_config/fzf.vim
+"source ~/vim_config/airline.vim
 
 "let g:acp_behaviorKeywordLength = 1
+
+" Fix kitty not render background
+if &term == 'xterm-kitty'
+    let &t_ut=''
+endif
 
 " Set colorscheme
 set background=dark
 let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
+
+"colorscheme vem-dark
 " colorscheme jellybeans
 
 " seoul256 (dark):
 "   Range:   233 (darkest) ~ 239 (lightest)
 "   Default: 237
 let g:seoul256_background = 235 
-colo seoul256
+"colo seoul256
