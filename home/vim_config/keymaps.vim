@@ -15,9 +15,8 @@ nnoremap <silent> <F4> :TagbarToggle<cr>
 nnoremap <C-y> <C-v>
 
 " Better switching buffer
-noremap <Tab> :bn<CR>
-noremap <S-Tab> :bp<CR>
-nnoremap <A-q> :bdelete<CR>
+nnoremap <Tab> :bn<CR>
+nnoremap <S-Tab> :bp<CR>
 
 " Delete tab
 noremap bd :bd<CR>
@@ -32,3 +31,5 @@ nnoremap fm :Autoformat<CR>
 " Stay in indent mode
 vnoremap < <gv
 vnoremap > >gv
+
+vnoremap <silent> gc :call nerdcommenter#Comment('x', 'toggle')<CR>

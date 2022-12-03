@@ -64,16 +64,16 @@ return packer.startup(function(use)
 
 	use("ahmedkhalf/project.nvim")
 
-    -- Speed up loading Lua modules in Neovim to improve startup time.
+	-- Speed up loading Lua modules in Neovim to improve startup time.
 	use("lewis6991/impatient.nvim")
 
-    -- This plugin adds indentation guides to all lines (including empty lines).
+	-- This plugin adds indentation guides to all lines (including empty lines).
 	use("lukas-reineke/indent-blankline.nvim")
 
 	-- Dashboard
 	use("goolord/alpha-nvim")
 
-    -- This is needed to fix lsp doc highlight
+	-- This is needed to fix lsp doc highlight
 	use("antoinemadec/FixCursorHold.nvim")
 
 	-- Never forget your key bindings
@@ -92,8 +92,6 @@ return packer.startup(function(use)
 	})
 	use("Mofiqul/vscode.nvim")
 	use("tanvirtin/monokai.nvim")
-	use("olimorris/onedarkpro.nvim")
-	use("doums/darcula")
 	use("junegunn/seoul256.vim")
 	use("projekt0n/github-nvim-theme")
 	use("LunarVim/tokyonight.nvim")
@@ -101,13 +99,12 @@ return packer.startup(function(use)
 	use("ishan9299/nvim-solarized-lua")
 	use("phha/zenburn.nvim")
 	use("liuchengxu/space-vim-dark")
-	use("rmehri01/onenord.nvim")
+	use("ii14/onedark.nvim")
 
 	-- Cmp plugins
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("saadparwaiz1/cmp_luasnip")
 

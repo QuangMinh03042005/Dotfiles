@@ -12,4 +12,4 @@ pacman -Qqen > pacman.txt  # save
 pacman -S - < pacman.txt   # install
 
 # key github
-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
+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

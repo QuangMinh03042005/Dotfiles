@@ -114,11 +114,6 @@ _G.packer_plugins = {
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
-  ["cmp-cmdline"] = {
-    loaded = true,
-    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
-    url = "https://github.com/hrsh7th/cmp-cmdline"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -138,11 +133,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/cool-substitute.nvim",
     url = "https://github.com/otavioschwanck/cool-substitute.nvim"
-  },
-  darcula = {
-    loaded = true,
-    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/darcula",
-    url = "https://github.com/doums/darcula"
   },
   ["doom-one.nvim"] = {
     loaded = true,
@@ -305,15 +295,10 @@ _G.packer_plugins = {
     path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  ["onedarkpro.nvim"] = {
+  ["onedark.nvim"] = {
     loaded = true,
-    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
-    url = "https://github.com/olimorris/onedarkpro.nvim"
-  },
-  ["onenord.nvim"] = {
-    loaded = true,
-    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/onenord.nvim",
-    url = "https://github.com/rmehri01/onenord.nvim"
+    path = "/home/minhcoder/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/ii14/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,

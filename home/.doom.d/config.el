@@ -57,7 +57,7 @@
 (add-to-list 'custom-theme-load-path
              "~/.doom.d/theme/")
 
-(setq doom-theme 'gruber-darker
+(setq doom-theme 'doom-one
       doom-font (font-spec :family "Iosevka" :size 26 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "Iosevka" :size 20))
 
@@ -67,6 +67,8 @@
   (setq doom-themes-neotree-enable-file-icons 'icons)
   (setq neo-theme 'icons))
 
+(setq truncate-partial-width-windows t)
+
 ;; company
 (add-hook 'after-init-hook 'global-company-mode)
 (after! company
@@ -75,7 +77,7 @@
         company-tooltip-align-annotations t
         company-tooltip-minimum-width 1
         company-tooltip-maximum-width 40
-        company-minimum-prefix-length 10
+        company-minimum-prefix-length 1
         company-frontends '(company-pseudo-tooltip-frontend)
         company-backends '((
                             company-dabbrev-code
@@ -97,13 +99,13 @@
         ))
 
 (set-company-backend! '(c-mode c++-mode java-mode python-mode rust-mode text-mode)
-  '(:separate
-    company-capf
-    company-dabbrev-code
-    company-files
-    company-semantic
-    company-yasnippet
-    ))
+                      '(:separate
+                        company-capf
+                        company-yasnippet
+                        company-files
+                        ;; company-dabbrev-code
+                        ;; company-semantic
+                        ))
 (after! doom-themes (setq doom-neotree-file-icons t))
 
 ;; word wrap
@@ -145,8 +147,8 @@
 ;;       )
 
 ;; (setq evil-insert-state-cursor '((hbar . 4)))
-(setq evil-insert-state-cursor '((box . 4)))
-;; (setq evil-insert-state-cursor '((bar . 3)))
+;; (setq evil-insert-state-cursor '((box . 4)))
+(setq evil-insert-state-cursor '((bar . 3)))
 
 ;; tab width
 (setq-default indent-tab-mode nil)

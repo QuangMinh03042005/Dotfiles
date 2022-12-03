@@ -4,5 +4,4 @@
 (package! zenburn-theme)
 (package! gruber-darker-theme)
 (package! hl-line :disable t)
-(package! rust-mode)
-(unpin! straight)
+;;(package! rust-mode)

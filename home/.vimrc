@@ -5,16 +5,19 @@ set hidden
 set laststatus=2
 set nu rnu
 set showtabline=2
-set showmode
+set noshowmode
 set wildmenu
+set wildoptions=pum
+set pumheight=10
 syntax on
+set nocompatible
 set hlsearch
 set guioptions-=m  "menu bar
 set guioptions-=T  "toolbar
 set guioptions-=r  "scrollbar
 set ttimeoutlen=0
 filetype plugin indent on
-:set mouse=a 				" Enable mouse
+set mouse=a 				" Enable mouse
 set tabstop=4 				" 
 set shiftwidth=4 			" 
 "set listchars=tab:\¦\ 		" Tab charactor 
@@ -23,7 +26,7 @@ set foldmethod=indent 		"
 set foldlevelstart=99 		"  
 set number 					" Show line number
 set ignorecase 				" Enable case-sensitive 
-" set termguicolors
+set termguicolors
 let mapleader=" "
 " Disable backup
 set nobackup 
@@ -78,13 +81,24 @@ endif
 " Set colorscheme
 set background=dark
 let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+" colorscheme gruvbox
 
 "colorscheme vem-dark
-" colorscheme jellybeans
+colorscheme jellybeans
 
 " seoul256 (dark):
 "   Range:   233 (darkest) ~ 239 (lightest)
 "   Default: 237
 let g:seoul256_background = 235 
 "colo seoul256
+
+" Reference chart of values:
+"   Ps = 0  -> blinking block.
+"   Ps = 1  -> blinking block (default).
+"   Ps = 2  -> steady block.
+"   Ps = 3  -> blinking underline.
+"   Ps = 4  -> steady underline.
+"   Ps = 5  -> blinking bar (xterm).
+"   Ps = 6  -> steady bar (xterm).
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"

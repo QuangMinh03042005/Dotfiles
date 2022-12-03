@@ -15,10 +15,11 @@ call plug#begin("~/.vim/plugged")
 	Plug 'junegunn/seoul256.vim'
 	Plug 'morhetz/gruvbox'
 	Plug 'pacha/vem-dark'
+	Plug 'joshdick/onedark.vim'
 
 " Better syntax
-	" Plug 'sheerun/vim-polyglot'
-	" Plug 'uiiaoo/java-syntax.vim'
+	Plug 'sheerun/vim-polyglot'
+	Plug 'uiiaoo/java-syntax.vim'
 
 " Autocomplete
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -50,5 +51,7 @@ call plug#begin("~/.vim/plugged")
 	Plug 'vim-autoformat/vim-autoformat'
 
 " Comment code
-	Plug 'tpope/vim-commentary'
+	" Plug 'tpope/vim-commentary'
+	Plug 'preservim/nerdcommenter'
 call plug#end()
+" autocmd FileType apache setlocal commentstring=#\ %s

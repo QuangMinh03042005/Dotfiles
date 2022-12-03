@@ -64,8 +64,7 @@ cmp.setup({
 		["<C-n>"] = cmp.mapping.select_next_item(),
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-		["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
 		["<C-e>"] = cmp.mapping({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
@@ -107,22 +106,11 @@ cmp.setup({
 		fields = { "kind", "abbr", "menu" },
 
 		format = function(entry, vim_item)
-			-- Kind icons
 			local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
 			local strings = vim.split(kind.kind, "%s", { trimempty = true })
 			kind.kind = " " .. strings[1] .. " "
 			kind.menu = "    (" .. strings[2] .. ")"
 			return kind
-
-			-- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			-- -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-			-- vim_item.menu = ({
-			-- 	nvim_lsp = "[LSP]",
-			-- 	luasnip = "[Snippet]",
-			-- 	buffer = "[Buffer]",
-			-- 	path = "[Path]",
-			-- })[entry.source.name]
-			-- return vim_item
 		end,
 	},
 
@@ -137,12 +125,6 @@ cmp.setup({
 		select = false,
 	},
 	window = {
-		-- completion = {
-		-- 	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-		-- },
-		-- documentation = {
-		-- 	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-		-- },
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.disable,
 	},
@@ -150,27 +132,4 @@ cmp.setup({
 	-- 	ghost_text ={ hl_group = "@comment" },
 	-- },
 	performance = { throttle = 0, debounce = 0, fetching_timeout = 0 },
-})
-
--- `:` cmdline setup.
--- cmp.setup.cmdline(":", {
--- 	mapping = cmp.mapping.preset.cmdline(),
--- 	sources = cmp.config.sources({
--- 		{ name = "path" },
--- 	}, {
--- 		{
--- 			name = "cmdline",
--- 			option = {
--- 				ignore_cmds = { "Man", "!" },
--- 			},
--- 		},
--- 	}),
--- })
-
--- `/` cmdline setup.
-cmp.setup.cmdline("/", {
-	mapping = cmp.mapping.preset.cmdline(),
-	sources = {
-		{ name = "buffer" },
-	},
 })
