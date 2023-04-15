@@ -1,3 +1,3 @@
 CompileFlags:
   # Treat code as C++, use C++17 standard, enable more warnings.
-  Add: [-Wall, -Wno-missing-prototypes] #-xc++, -std=c++17,
+  Add: [-Wall, -Wno-missing-prototypes]

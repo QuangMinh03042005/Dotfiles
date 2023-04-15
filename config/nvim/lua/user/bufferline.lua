@@ -1,4 +1,9 @@
-require("bufferline").setup({
+local status_ok, buffline = pcall(require, "bufferline")
+if not status_ok then
+	return
+end
+
+buffline.setup({
 	options = {
 		numbers = "none",
 		--number_style = "superscript",

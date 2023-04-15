@@ -77,7 +77,6 @@ endif
 	Plug 'junegunn/seoul256.vim'
 	Plug 'NTBBloodbath/doom-one.nvim'
 	Plug 'overcache/NeoSolarized'
-	Plug 'sainnhe/everforest'
 
 " Pretty preview color
 	Plug 'norcalli/nvim-colorizer.lua'
@@ -225,13 +224,7 @@ lua << EOF
 require('kommentary.config').configure_language("default", {
     prefer_single_line_comments = true,
 })
-EOF
 
-"hor50
-"block
-" set guicursor=i:block
-
-lua << EOF
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
@@ -239,6 +232,3 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
-
-" source ~/.config/nvim/colorscheme/gruber-darker.vim
-

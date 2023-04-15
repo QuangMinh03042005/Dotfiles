@@ -1,10 +1,10 @@
 call plug#begin("~/.vim/plugged")
 
 " Statusline
-	" Plug 'vim-airline/vim-airline'
-	" Plug 'vim-airline/vim-airline-themes'
-	Plug 'pacha/vem-tabline'
-	Plug 'pacha/vem-statusline'
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+	" Plug 'pacha/vem-tabline'
+	" Plug 'pacha/vem-statusline'
 
 " Icon
 	Plug 'ryanoasis/vim-devicons'
@@ -16,14 +16,19 @@ call plug#begin("~/.vim/plugged")
 	Plug 'morhetz/gruvbox'
 	Plug 'pacha/vem-dark'
 	Plug 'joshdick/onedark.vim'
+	Plug 'ericbn/vim-solarized'
+	Plug 'mhinz/vim-janah'
+	Plug 'drsooch/gruber-darker-vim'
+    Plug 'nordtheme/vim'
 
 " Better syntax
-	Plug 'sheerun/vim-polyglot'
-	Plug 'uiiaoo/java-syntax.vim'
+	"Plug 'sheerun/vim-polyglot'
+	"Plug 'uiiaoo/java-syntax.vim'
 
 " Autocomplete
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	" Plug 'vim-scripts/AutoComplPop'
+	"Plug 'LunarWatcher/auto-pairs'
 
 " Terminal
 	Plug 'voldikss/vim-floaterm'
@@ -51,7 +56,9 @@ call plug#begin("~/.vim/plugged")
 	Plug 'vim-autoformat/vim-autoformat'
 
 " Comment code
-	" Plug 'tpope/vim-commentary'
-	Plug 'preservim/nerdcommenter'
+	Plug 'tpope/vim-commentary'
+	"Plug 'preservim/nerdcommenter'
+
+" Move text
+	Plug 'matze/vim-move'
 call plug#end()
-" autocmd FileType apache setlocal commentstring=#\ %s

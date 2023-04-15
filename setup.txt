@@ -8,6 +8,17 @@ warp-cli status
 warp-cli connect
 warp-cli disconnect
 
+# setup printer
+https://forum.manjaro.org/t/org-cups-cupsd-service-socket-path-not-found/40316/8
+https://forum.endeavouros.com/t/no-printer-in-xfce-settings/7639/2
+sudo pacman -S cups cups-filters cups-pdf system-config-printer --needed
+sudo systemctl disable --now org.cups.cupsd.socket
+sudo systemctl disable --now org.cups.cupsd.service
+sudo systemctl disable --now org.cups.cupsd.path
+sudo systemctl enable --now cups.service
+sudo systemctl enable --now cups.socket
+sudo systemctl enable --now cups.path
+
 pacman -Qqen > pacman.txt  # save
 pacman -S - < pacman.txt   # install
 

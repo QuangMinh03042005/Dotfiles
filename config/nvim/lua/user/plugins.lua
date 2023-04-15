@@ -47,20 +47,24 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 
 	-- File manager
-	use("kyazdani42/nvim-tree.lua")
+	use({
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional, for file icons
+		},
+	})
 
 	-- Tab close
 	use("moll/vim-bbye")
 
 	-- Status line
 	use("nvim-lualine/lualine.nvim")
-	use("arkav/lualine-lsp-progress")
 
 	-- Tabline
 	use("akinsho/bufferline.nvim")
 
 	-- Terminal
-	use("akinsho/toggleterm.nvim")
+	use({ "akinsho/toggleterm.nvim", tag = "main" })
 
 	use("ahmedkhalf/project.nvim")
 
@@ -72,9 +76,6 @@ return packer.startup(function(use)
 
 	-- Dashboard
 	use("goolord/alpha-nvim")
-
-	-- This is needed to fix lsp doc highlight
-	use("antoinemadec/FixCursorHold.nvim")
 
 	-- Never forget your key bindings
 	use("folke/which-key.nvim")
@@ -92,14 +93,15 @@ return packer.startup(function(use)
 	})
 	use("Mofiqul/vscode.nvim")
 	use("tanvirtin/monokai.nvim")
-	use("junegunn/seoul256.vim")
 	use("projekt0n/github-nvim-theme")
 	use("LunarVim/tokyonight.nvim")
 	use("lunarvim/Onedarker.nvim")
 	use("ishan9299/nvim-solarized-lua")
 	use("phha/zenburn.nvim")
-	use("liuchengxu/space-vim-dark")
 	use("ii14/onedark.nvim")
+	use({ "briones-gabriel/darcula-solid.nvim", requires = "rktjmp/lush.nvim" })
+	use("rebelot/kanagawa.nvim")
+	use("marko-cerovac/material.nvim")
 
 	-- Cmp plugins
 	use("hrsh7th/nvim-cmp")
@@ -107,6 +109,7 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("saadparwaiz1/cmp_luasnip")
+	-- use("hrsh7th/cmp-cmdline")
 
 	-- Code snippets
 	use("L3MON4D3/LuaSnip")
@@ -126,10 +129,6 @@ return packer.startup(function(use)
 		requires = "neovim/nvim-lspconfig",
 	})
 	use("onsails/lspkind.nvim")
-	use({
-		"glepnir/lspsaga.nvim",
-		branch = "main",
-	})
 
 	-- Debugging
 	use("mfussenegger/nvim-dap")
@@ -138,24 +137,24 @@ return packer.startup(function(use)
 	use("nvim-telescope/telescope.nvim")
 
 	-- Treesitter for syntax highlighting
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
-	})
-	use("nvim-treesitter/playground")
-	use({
-		"m-demare/hlargs.nvim",
-		requires = { "nvim-treesitter/nvim-treesitter" },
-	})
+	-- use({
+	-- 	"nvim-treesitter/nvim-treesitter",
+	-- 	run = ":TSUpdate",
+	-- })
+	-- use("nvim-treesitter/playground")
+	-- use({
+	-- 	"m-demare/hlargs.nvim",
+	-- 	requires = { "nvim-treesitter/nvim-treesitter" },
+	-- })
 
 	-- Git
-	-- use("lewis6991/gitsigns.nvim")
+	use("lewis6991/gitsigns.nvim")
 
 	--Comment
 	use("b3nj5m1n/kommentary")
 
 	--Move text
-	use("fedepujol/move.nvim")
+	use("booperlv/nvim-gomove")
 
 	--Multiple cursors
 	use("terryma/vim-multiple-cursors")
@@ -198,7 +197,7 @@ return packer.startup(function(use)
 	-- Surround
 	use({
 		"kylechui/nvim-surround",
-		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		tag = "main", -- Use for stability; omit to use `main` branch for the latest features
 		config = function()
 			require("nvim-surround").setup({
 				-- Configuration here, or leave empty to use defaults

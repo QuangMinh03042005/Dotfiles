@@ -124,10 +124,10 @@ vim.cmd([[
 
 --Resize pane
 vim.cmd([[
-	nmap <M-Right> :vertical resize +1<CR> 		
-	nmap <M-Left> :vertical resize -1<CR>
-	nmap <M-Down> :resize +1<CR>
-	nmap <M-Up> :resize -1<CR>
+	nmap <M-Right> :vertical resize -1<CR> 		
+	nmap <M-Left> :vertical resize +1<CR>
+	nmap <M-Down> :resize -1<CR>
+	nmap <M-Up> :resize +1<CR>
 ]])
 
 vim.cmd("nnoremap fm :Format<CR>")

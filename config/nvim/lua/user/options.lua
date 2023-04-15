@@ -34,6 +34,7 @@ local options = {
 	sidescrolloff = 4,
 	laststatus = 3,
 	whichwrap = "bs<>[]hl", -- which "horizontal" keys are allowed to travel to prev/next line
+    writedelay = 0,
 }
 
 vim.opt.shortmess:append("c")
@@ -50,8 +51,14 @@ set encoding=UTF-8
 set whichwrap+=<,>,[,],h,l
 set iskeyword+=-
 set formatoptions-=cro "-- TODO: this doesn't seem to work
-set foldmethod=indent
-set foldnestmax=10
-set foldenable
- "set foldlevel=2
+"set foldmethod=indent
+"set foldnestmax=10
+"set foldenable
+"set foldlevel=2
 ]])
+
+
+-- vim.o.statuscolumn =
+-- 	'%=%{v:relnum?v:relnum:v:lnum} %s%#FoldColumn#%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? "" : "") : " " }%* %T'
+
+-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:,diff:╱]]

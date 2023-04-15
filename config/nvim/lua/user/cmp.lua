@@ -17,8 +17,8 @@ end
 
 local kind_icons = {
 	Text = "",
-	-- Constructor = "",
-	Constructor = "",
+	Constructor = "",
+	--Constructor = "",
 	Method = "",
 	Function = "",
 	Field = "",
@@ -27,27 +27,57 @@ local kind_icons = {
 	-- Class = "",
 	Class = "",
 	Interface = "",
-	Module = "",
+	Module = "",
 	Property = "",
 	Unit = "",
 	Value = "",
-	-- Enum = "",
 	Enum = "",
-	-- Keyword = "",
-	Keyword = "",
+	Keyword = "",
+	--Keyword = "",
 	Snippet = "",
 	Color = "",
 	File = "",
 	Reference = "",
 	Folder = "",
 	EnumMember = "",
+	-- EnumMember = "",
 	Constant = "",
 	-- Struct = "",
 	Struct = "",
 	Event = "",
-	Operator = "",
-	TypeParameter = "",
+	Operator = "",
+	TypeParameter = "",
 }
+
+--   פּ ﯟ   some other good icons
+-- local kind_icons = {
+-- 	Text = "",
+-- 	--Method = "m",
+-- 	Method = "",
+-- 	Function = "",
+-- 	Constructor = "",
+-- 	Field = "",
+-- 	Variable = "",
+-- 	Class = "",
+-- 	Interface = "",
+-- 	Module = "",
+-- 	Property = "",
+-- 	Unit = "",
+-- 	Value = "",
+-- 	Enum = "",
+-- 	Keyword = "",
+-- 	Snippet = "",
+-- 	Color = "",
+-- 	File = "",
+-- 	Reference = "",
+-- 	Folder = "",
+-- 	EnumMember = "",
+-- 	Constant = "",
+-- 	Struct = "",
+-- 	Event = "",
+-- 	Operator = "",
+-- 	TypeParameter = "",
+-- }
 
 require("lspkind").init({
 	symbol_map = kind_icons,
@@ -64,7 +94,8 @@ cmp.setup({
 		["<C-n>"] = cmp.mapping.select_next_item(),
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+		["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
 		["<C-e>"] = cmp.mapping({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
@@ -101,19 +132,33 @@ cmp.setup({
 			"s",
 		}),
 	},
-
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
 
 		format = function(entry, vim_item)
 			local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
 			local strings = vim.split(kind.kind, "%s", { trimempty = true })
-			kind.kind = " " .. strings[1] .. " "
-			kind.menu = "    (" .. strings[2] .. ")"
+			-- kind.kind = " " .. strings[1] .. " "
+			kind.kind = strings[1]
+			-- kind.menu = "    (" .. strings[2] .. ")"
+			kind.menu = "    " .. strings[2]
 			return kind
 		end,
-	},
 
+		-- fields = { "kind", "abbr", "menu" },
+		-- format = function(entry, vim_item)
+		-- 	-- Kind icons
+		-- 	vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+		-- 	-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+		-- 	vim_item.menu = ({
+		-- 		nvim_lsp = "[LSP]",
+		-- 		luasnip = "[Snippet]",
+		-- 		buffer = "[Buffer]",
+		-- 		path = "[Path]",
+		-- 	})[entry.source.name]
+		-- 	return vim_item
+		-- end,
+	},
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
@@ -125,11 +170,27 @@ cmp.setup({
 		select = false,
 	},
 	window = {
-		completion = cmp.config.window.bordered(),
+		--completion = cmp.config.window.bordered(),
+		completion = cmp.config.window.disable,
 		documentation = cmp.config.disable,
 	},
 	-- experimental = {
 	-- 	ghost_text ={ hl_group = "@comment" },
 	-- },
+	performance = { throttle = 0.5, debounce = 0.5, fetching_timeout = 0.5 },
+})
+
+-- `/` cmdline setup.
+-- cmp.setup.cmdline("/", {
+-- 	mapping = cmp.mapping.preset.cmdline(),
+-- 	sources = {
+-- 		{ name = "buffer" },
+-- 	},
+-- })
+--
+cmp.setup.filetype({ "css", "scss" }, {
+	sources = {
+		{ name = "nvim_lsp" },
+	},
 	performance = { throttle = 0, debounce = 0, fetching_timeout = 0 },
 })

@@ -1,11 +1,11 @@
 colorscheme onedarker
 
-highlight @type guifg=#d5b06b guibg=none gui=bold
-highlight @repeat guifg=#b668cd guibg=none
-highlight @statement guifg=#b668cd guibg=none
-highlight @conditional guifg=#b668cd guibg=none
-highlight @operator guifg=#b668cd guibg=none
-highlight @define          guifg=#b668cd    guibg=none
+highlight Type guifg=#d5b06b guibg=none gui=bold
+highlight Repeat guifg=#b668cd guibg=none
+highlight Statement guifg=#b668cd guibg=none
+highlight Conditional guifg=#b668cd guibg=none
+highlight Operator guifg=#b668cd guibg=none
+highlight Define          guifg=#b668cd    guibg=none
 
 highlight @parameter guifg=#d05c65
 highlight @field guifg=#d05c65

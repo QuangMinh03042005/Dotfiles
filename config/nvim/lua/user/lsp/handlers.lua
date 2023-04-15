@@ -76,16 +76,17 @@ M.on_attach = function(client, bufnr)
 	navic.setup({
 		icons = {
 			File = " ",
-			Module = " ",
-			Namespace = " ",
-			Package = " ",
+			Module = " ",
+			Namespace = " ",
+			Package = " ",
 			Class = " ",
 			Method = " ",
 			Property = " ",
 			Field = " ",
-			Constructor = " ",
-			Enum = " ",
-			Interface = " ",
+			-- Constructor = " ",
+			Constructor = " ",
+			Enum = " ",
+			Interface = " ",
 			Function = " ",
 			Variable = " ",
 			Constant = " ",
@@ -93,17 +94,18 @@ M.on_attach = function(client, bufnr)
 			Number = " ",
 			Boolean = " ",
 			Array = " ",
-			Object = " ",
+			Object = " ",
 			Key = " ",
 			Null = " ",
 			EnumMember = " ",
 			Struct = " ",
+			-- Struct = " ",
 			Event = " ",
-			Operator = " ",
-			TypeParameter = " ",
+			Operator = " ",
+			TypeParameter = "<> ",
 		},
 		highlight = true,
-		separator = " > ",
+		separator = "  ",
 	})
 	if client.server_capabilities.documentSymbolProvider then
 		navic.attach(client, bufnr)
@@ -113,7 +115,7 @@ M.on_attach = function(client, bufnr)
 		client.server_capabilities.documentFormattingProvider = false
 	end
 
-	if client.name == "sumneko_lua" then
+	if client.name == "lua_ls" then
 		client.server_capabilities.documentFormattingProvider = false
 	end
 

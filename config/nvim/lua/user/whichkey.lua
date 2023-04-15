@@ -131,7 +131,8 @@ local mappings = {
 
 	l = {
 		name = "LSP",
-		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+		-- a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+		a = { "<cmd>CodeActionMenu<cr>", "Code Action" },
 		d = {
 			"<cmd>Telescope lsp_document_diagnostics<cr>",
 			"Document Diagnostics",
@@ -154,22 +155,23 @@ local mappings = {
 		},
 		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
-		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+		--r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+		r = { "<cmd>lua require('renamer').rename()<cr>", "Rename" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			"Workspace Symbols",
 		},
 	},
-	L = {
-		name = "Lspsaga",
-		a = { "<cmd>Lspsaga code_action<CR>", "Code Action" },
-		r = { "<cmd>Lspsaga rename<CR>", "Rename" },
-		L = { "<cmd>Lspsaga show_line_diagnostics<CR>", "Show Line Diagnostics" },
-		p = { "<cmd>Lspsaga peek_definition<CR>", "Peed Definition" },
-		d = { "<cmd>Lspsaga show_cursor_diagnostics<CR>", "Show Cursor Diagnostics" },
-		l = { "<cmd>Lspsaga show_line_diagnostics<CR>", "Show Line Diagnostics" },
-	},
+	-- L = {
+	-- 	name = "Lspsaga",
+	-- 	a = { "<cmd>Lspsaga code_action<CR>", "Code Action" },
+	-- 	r = { "<cmd>Lspsaga rename<CR>", "Rename" },
+	-- 	L = { "<cmd>Lspsaga show_line_diagnostics<CR>", "Show Line Diagnostics" },
+	-- 	p = { "<cmd>Lspsaga peek_definition<CR>", "Peed Definition" },
+	-- 	d = { "<cmd>Lspsaga show_cursor_diagnostics<CR>", "Show Cursor Diagnostics" },
+	-- 	l = { "<cmd>Lspsaga show_line_diagnostics<CR>", "Show Line Diagnostics" },
+	-- },
 	s = {
 		name = "Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },

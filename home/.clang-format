@@ -5,6 +5,13 @@ AllowShortLoopsOnASingleLine: 'false'
 DerivePointerAlignment: 'false'
 ExperimentalAutoDetectBinPacking: 'false'
 FixNamespaceComments: 'true'
-PointerAlignment: Left
+PointerAlignment: Right
 IndentWidth:   4
 ColumnLimit:     100
+AllowShortFunctionsOnASingleLine: false
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AlignEscapedNewlines: Left
+UseTab: Never

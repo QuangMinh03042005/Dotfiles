@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -13,10 +6,10 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case, to know which specific one was loaded, run: echo $RANDOM_THEME See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 #ZSH_THEME="tjkirch"
-# ZSH_THEME="passion"
-ZSH_THEME="ubuntu"
+ZSH_THEME="passion"
+# ZSH_THEME="minh2"
 #❱❱❱
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 # Set list of themes to pick from when loading at random
@@ -126,7 +119,7 @@ alias bspconf="cd ~/.config/bspwm"
 alias sxconf="cd ~/.config/sxhkd"
 alias tmux="env TERM=xterm-256color tmux"
 alias picomconf="cd ~/.config/picom"
-alias clock="tty-clock -sc"
+alias clock="tty-clock -sc -f %d-%m-20%y"
 alias tree="lsd --tree"
 alias ls="lsd"
 alias l="lsd -l"
@@ -138,8 +131,8 @@ alias nvconf="cd ~/.config/nvim"
 # alias neofetch="clear && neofetch --ascii_distro ubuntu"
 alias neofetch="clear && neofetch"
 alias lolban="figlet -c -f ~/Desktop/figlet-fonts/3d.flf"
-alias vim="TERM=xterm-kitty vim"
-
+#alias vim="TERM=xterm-kitty vim"
+alias nv="nvim -u ~/.vimrc"
 
 # Cloudflare
 alias warp="sudo systemctl start warp-svc"
@@ -159,12 +152,12 @@ alias sh_p="cd ~/Desktop/code/shellscript"
 alias de="cd ~/Desktop"
 alias enw='emacs -nw'
 #alias neovide="neovide --multigrid"
-alias getPacmanPkg="pacman -Qet | awk '{print $1}' > ~/Desktop/MinhCoder-dotfiles/pacman.txt"
+alias getPacmanPkg="pacman -Qet | awk '{print $1}' >"
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
-# Dành cho những phần mềm dựa trên qt4
+# Dành cho những phần mềm dựa trên qt5
 export QT5_IM_MODULE=ibus
 # Dành cho những phần mềm dùng thư viện đồ họa clutter/OpenGL
 export CLUTTER_IM_MODULE=ibus
@@ -173,9 +166,6 @@ pidof ibus-daemon > /dev/null || ibus-daemon -drx
 
 export VISUAL=nvim;
 export EDITOR=nvim;
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 if [[ ! -d ~/.zsh-autopair ]]; then
   git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair
@@ -203,3 +193,11 @@ export FZF_DEFAULT_COMMAND='find * .'
 # https://huydeveloper.glitch.me/?fbclid=IwAR3MeBjWzZG9QMGNvQ5gDSfuyPg9CUloD-5HkOJkP9CGMOnImKB7XiEodYI
 
 # https://github.com/luong-komorebi/Awesome-Linux-Software
+
+# https://github.com/elken/doom
+# https://www.geeksforgeeks.org/dynamically-growing-array-in-c/
+
+# .zshrc
+#sudo npm install --global pure-prompt
+# autoload -U promptinit; promptinit
+# prompt pure

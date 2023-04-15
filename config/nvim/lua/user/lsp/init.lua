@@ -6,6 +6,6 @@ end
 require("user.lsp.mason")
 require("user.lsp.handlers").setup()
 require("user.lsp.null-ls")
-require("user.lsp.lsp_saga")
-
-vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+require("user.lsp.emmet")
+require("user.lsp.renamer")
+require("user.lsp.code-action")

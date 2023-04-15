@@ -9,6 +9,7 @@ local mode = {
 		return " " .. str
 	end,
 }
+
 local visual_str = {
 	["v"] = true, -- Visual by character
 	["vs"] = true, -- Visual by character using |v_CTRL-O| in Select mode
@@ -69,17 +70,16 @@ configs.setup({
 		lualine_a = { mode },
 		lualine_b = { "branch", "diff" },
 		lualine_c = {
-            {
-                "filetype",
-                icons_enabled = true, -- Enables the display of icons alongside the component.
-                colored = true, -- Displays filetype icon in color if set to true
-                icon_only = true, -- Display only an icon for filetype
-                separator = "",
-                padding = {left = 1,right = -1},
-            },
-            "filename",
+			{
+				"filetype",
+				icons_enabled = true, -- Enables the display of icons alongside the component.
+				colored = true, -- Displays filetype icon in color if set to true
+				icon_only = true, -- Display only an icon for filetype
+				separator = "",
+				padding = { left = 1, right = -1 },
+			},
+			"filename",
 			lsp_server_name,
-			"lsp_progress",
 		},
 		--lualine_x = {'encoding', 'fileformat', 'filetype'},
 		lualine_x = { "diagnostics" },
@@ -93,7 +93,7 @@ configs.setup({
 					mac = "", -- e711
 				},
 			},
-            "encoding",
+			"encoding",
 		},
 		-- lualine_z = { "location" },
 

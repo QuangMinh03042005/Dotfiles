@@ -8,15 +8,15 @@ local default = {
 	defaults = {
 		vimgrep_arguments = {
 			"rg",
-			"--color=never",
-			"--no-heading",
-			"--with-filename",
+			--"--color=never",
+			--"--no-heading",
+			--"--with-filename",
 			"--line-number",
-			"--column",
+			--"--column",
 			"--smart-case",
-            "--hidden",
-            "--ignore",
-            "--files",
+			"--hidden",
+			"--ignore",
+			"--files",
 		},
 		prompt_prefix = "   ",
 		selection_caret = ">",
@@ -57,6 +57,7 @@ local default = {
 }
 
 local M = {}
+
 M.setup = function(override_flag)
 	if override_flag then
 		default = require("core.utils").tbl_override_req("telescope", default)
