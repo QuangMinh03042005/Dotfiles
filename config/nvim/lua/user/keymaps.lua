@@ -35,10 +35,6 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<tab>", ":bnext<CR>", opts)
 keymap("n", "<S-tab>", ":bprevious<CR>", opts)
 
--- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
-
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -112,14 +108,6 @@ let g:multi_cursor_next_key            = '<C-n>'
 let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
-]])
-
-vim.cmd([[
-	if has('win32')
-		nnoremap <silent> <F10> :AsyncRun -mode=term -pos=ToggleTerm -rows=10 make.bat<CR>
-	else
-		nnoremap <silent> <F10> :AsyncRun -mode=term -pos=ToggleTerm -rows=10 make<CR>
-	endif
 ]])
 
 --Resize pane

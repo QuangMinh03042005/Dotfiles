@@ -7,4 +7,19 @@ hi! link CmpItemKindKeyword     @keyword
 hi! link CmpItemKindProperty    @field
 hi! link CmpItemKindUnit        @field
 hi! link CmpItemKindSnippet     @keyword 
-
+hi! link  CmpItemKindConstructor @constructor
+hi! link  CmpItemKindClass      Structure
+hi! link  CmpItemKindEnum   Constant
+hi! link  CmpItemKindEvent @keyword
+hi! link  CmpItemKindStruct Structure
+hi! link  CmpItemKindField @field
+hi! link  CmpItemKindEnumMember Constant
+hi! link  CmpItemKindConstant Constant
+hi! link  CmpItemKindModule @namespace
+hi! link  CmpItemKindValue @number
+hi! link  CmpItemKindFile @keyword
+hi! link  CmpItemKindFolder @function
+hi! link  CmpItemKindColor @variable
+hi! link  CmpItemKindReference @variable
+hi! link  CmpItemKindOperator @operator
+hi! link  CmpItemKindTypeParameter @parameter

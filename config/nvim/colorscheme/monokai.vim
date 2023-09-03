@@ -1,17 +1,22 @@
 colorscheme monokai
 
-hi Normal guibg=#2e2e2e
-highlight! CmpItemKindFunction guibg=NONE guifg=#a6e22e
-highlight! CmpItemKindMethod guibg=NONE guifg=#a6e22e
+highlight Include guifg=#f92672 gui=none
+highlight @include guifg=#f92672 gui=none
 
-highlight TSType guifg=#66d9ef gui=italic
-highlight TSKeywordFunction guifg=#66d9ef gui=italic
-highlight TSParameter guifg=#fd971f gui=italic
-highlight TSParameterReference guifg=#fd971f gui=italic
-highlight TSTypeBuiltin guifg=#66d9ef gui=italic
-highlight TSStructure guifg=#66d9ef gui=italic
+highlight Type guifg=#66d9ef gui=italic
+highlight @type guifg=#66d9ef gui=italic
+highlight @type.builtin guifg=#66d9ef gui=italic
 
-hi @parameter guifg=#fd971f
-hi! link @type TSType
-hi! link @type.definition TSTypeBuiltin
-hi! link @structure TSStructure
+highlight Structure guifg=#66d9ef gui=italic
+
+highlight Function guifg=#a6e22e gui=none
+highlight @function guifg=#a6e22e gui=none
+
+highlight Normal guibg=#272822 guifg=#f8f8f2
+highlight LineNr guibg=#272822 guifg=#88846f
+
+highlight @parameter guifg=#fd971f gui=italic
+highlight @macro guifg=#a6e22e gui=none
+
+hi! link  @define @keyword
+hi! link @namespace @type

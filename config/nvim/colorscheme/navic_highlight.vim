@@ -24,5 +24,5 @@ hi! link NavicIconsStruct            Structure
 hi! link NavicIconsEvent             @constant
 hi! link NavicIconsOperator          @operator
 hi! link NavicIconsTypeParameter     @type
-hi! link NavicText                   @string
+hi! link NavicText                   Normal
 hi! link NavicSeparator              @keyword.operator

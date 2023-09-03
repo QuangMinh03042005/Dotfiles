@@ -29,16 +29,10 @@ vim.cmd([[
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
     augroup end
 
-    " i3 syntax highlight
-    aug i3config_ft_detection
-      au!
-      au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+    aug colorizer
+    au!
+    au BufNewFile,BufRead * ColorizerDetachFromBuffer
     aug end
-
-    "aug colorizer
-    "au!
-    "au BufNewFile,BufRead * ColorizerToggle
-    "aug end
 
     " Autoformat
     "augroup _lsp

@@ -1,13 +1,12 @@
 call plug#begin("~/.vim/plugged")
 
 " Statusline
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
-	" Plug 'pacha/vem-tabline'
-	" Plug 'pacha/vem-statusline'
+	" Plug 'vim-airline/vim-airline'
+	" Plug 'vim-airline/vim-airline-themes'
+	Plug 'pacha/vem-statusline'
 
 " Icon
-	Plug 'ryanoasis/vim-devicons'
+	"Plug 'ryanoasis/vim-devicons'
 
 " Colorscheme
 	Plug 'w0ng/vim-hybrid'
@@ -17,18 +16,19 @@ call plug#begin("~/.vim/plugged")
 	Plug 'pacha/vem-dark'
 	Plug 'joshdick/onedark.vim'
 	Plug 'ericbn/vim-solarized'
-	Plug 'mhinz/vim-janah'
 	Plug 'drsooch/gruber-darker-vim'
-    Plug 'nordtheme/vim'
+	Plug 'KabbAmine/yowish.vim'
+	Plug 'Yggdroot/duoduo'
+	Plug 'zacanger/angr.vim'
 
 " Better syntax
 	"Plug 'sheerun/vim-polyglot'
 	"Plug 'uiiaoo/java-syntax.vim'
 
 " Autocomplete
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	"Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
 	" Plug 'vim-scripts/AutoComplPop'
-	"Plug 'LunarWatcher/auto-pairs'
+	Plug 'LunarWatcher/auto-pairs'
 
 " Terminal
 	Plug 'voldikss/vim-floaterm'
@@ -40,24 +40,22 @@ call plug#begin("~/.vim/plugged")
 	Plug 'junegunn/fzf', 
 		\ { 'do': { -> fzf#install() } } 
 	Plug 'junegunn/fzf.vim'
-	Plug 'ctrlpvim/ctrlp.vim'
 
 " Zoom font gvim
 	Plug 'thinca/vim-fontzoom'
 
 " File explorer
 	Plug 'preservim/nerdTree'
-	Plug 'dylanaraps/fff.vim'
 
 " Tabline
-	" Plug 'pacha/vem-tabline'
+	Plug 'pacha/vem-tabline'
 
 " Format code without lsp
 	Plug 'vim-autoformat/vim-autoformat'
+	Plug 'rhysd/vim-clang-format'
 
 " Comment code
 	Plug 'tpope/vim-commentary'
-	"Plug 'preservim/nerdcommenter'
 
 " Move text
 	Plug 'matze/vim-move'

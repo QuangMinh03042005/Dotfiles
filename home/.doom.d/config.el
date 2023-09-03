@@ -14,6 +14,22 @@
       jit-lock-stealth-load 0.0
       jit-lock-context-time 0.0)
 
+(setq use-file-dialog nil)
+(setq use-dialog-box nil)
+
+;;; Disable electrict indent
+(when (bound-and-true-p electric-indent-mode)
+  (electric-indent-mode -1))
+
+;;; Disable VC
+(setq vc-handled-backends '())
+
+;;; Fix scrolling
+(setq mouse-wheel-progressive-speed nil)
+(setq scroll-margin 4)
+(setq scroll-conservatively 100000)
+(setq scroll-preserve-screen-position 'always)
+
 (setq
  ;; No need to see GNU agitprop.
  inhibit-startup-screen t
@@ -57,7 +73,24 @@
  ;;gc-cons-threshold (* 100 1024 1024)
  ;; gc-cons-threshold 100000000
  ;;read-process-output-max (* 1024 1024)
+
+ make-backup-files nil
+ backup-inhibited nil
+ create-lockfiles nil
+ native-comp-async-report-warnings-errors 'silent
+ compile-command ""
+
  )
+
+;; Don't Lock Files
+(setq-default create-lockfiles nil)
+
+;; Better Compilation
+(setq-default compilation-always-kill t) ; kill compilation process before starting another
+
+(setq-default compilation-ask-about-save nil) ; save all buffers on `compile'
+
+(setq-default compilation-scroll-output t)
 
 ;; display line number
 (setq display-line-numbers-type 'relative)
@@ -74,10 +107,10 @@
       user-mail-address "quangminh736.2020@gmail.com")
 (add-to-list 'custom-theme-load-path "~/.doom.d/themes/")
 ;; theme and font
-(setq doom-theme 'jetbrains-darcula
-      doom-font (font-spec :family "JetBrains Mono" :size 26) ;;:weight 'regular)
-      doom-variable-pitch-font (font-spec :family "JetBrains Mono" :size 26)
-      doom-big-font (font-spec :family "JetBrains Mono" :size 30))
+(setq doom-theme 'zenburn
+      doom-font (font-spec :family "Monaco" :size 26) ;;:weight 'regular)
+      doom-variable-pitch-font (font-spec :family "Monaco" :size 24)
+      doom-big-font (font-spec :family "Monaco" :size 30))
 
 ;; neotree
 (after! neotree
@@ -89,22 +122,12 @@
 
 (setq truncate-partial-width-windows t)
 
-;; power ranger file manager
-(use-package ranger
-  :config
-  (setq ranger-show-hidden t
-        ranger-width-preview 0.40
-        ranger-parent-depth 2
-        ranger-width-parents 0.40
-        ranger-max-parent-width 0.40)
-  )
-
 ;; company
 ;; (add-hook 'after-init-hook 'global-company-mode)
 (after! company
-  (setq company-idle-delay 0.5
-        company-echo-delay 0.5
-        company-minimum-prefix-length 10
+  (setq company-idle-delay 0.0
+        company-echo-delay 0.0
+        company-minimum-prefix-length 5
         company-frontends '(company-pseudo-tooltip-frontend)
         company-selection-wrap-around t
         company-dabbrev-other-buffers   t
@@ -114,7 +137,7 @@
         company-tooltip-margin 1
         company-tooltip-align-annotations t
         ;;company-tooltip-minimum-width 30
-        company-tooltip-idle-delay 0.5
+        company-tooltip-idle-delay 0.0
         )
 
   (set-company-backend! '(text-mode)
@@ -149,8 +172,15 @@
       doom-modeline-major-mode-color-icon t
       doom-modeline-buffer-state-icon t
       doom-modeline-buffer-modification-icon t
-      doom-modeline-enable-word-count nil
+      doom-modeline-enable-word-count t
+      doom-modeline-modal-icon t
       )
+(add-hook! 'doom-modeline-mode-hook
+  (progn
+    (set-face-attribute 'header-line nil
+                        :background (face-background 'mode-line)
+                        :foreground (face-foreground 'mode-line))
+    ))
 
 
 ;; Disable confirm
@@ -180,8 +210,8 @@
 ;;       )
 
 ;; (setq evil-insert-state-cursor '((hbar . 4)))
-;; (setq evil-insert-state-cursor '((box . 4)))
-(setq evil-insert-state-cursor '((bar . 3)))
+(setq evil-insert-state-cursor '((box . 4)))
+;; (setq evil-insert-state-cursor '((bar . 3)))
 
 
 ;; tab width
@@ -209,9 +239,12 @@
         lsp-eldoc-render-all nil
         lsp-signature-doc-lines 0
         lsp-signature-render-documentation nil
-        lsp-idle-delay 0
+        lsp-idle-delay 0.0
         lsp-modeline-diagnostics-enable nil
+        lsp-enable-folding nil
         )
+
+  (setq lsp-log-io nil) ; if set to true can cause a performance hit
 
   (setq flycheck-posframe-border-width 1
         flycheck-posframe-warning-prefix "W: "
@@ -224,20 +257,20 @@
 
   )
 
-(after! lsp-ui
-  (setq
-   lsp-ui-sideline-enable nil  ; no more useful than flycheck
-   ;; lsp-ui-doc-enable t ; redundant with K
-   ;;lsp-signature-auto-activate nil
-   ;; lsp-signature-function 'lsp-signature-posframe)
-   lsp-enable-symbol-highlighting nil
-   ;;lsp-ui-doc-max-width 120
-   lsp-ui-doc-max-height 22
-   lsp-ui-doc-delay 0.0
-   lsp-ui-doc-position 'bottom
-   lsp-ui-imenu-window-width 25
-   )
-  )
+;;(after! lsp-ui
+(setq
+ lsp-ui-sideline-enable nil  ; no more useful than flycheck
+ ;; lsp-ui-doc-enable t ; redundant with K
+ ;;lsp-signature-auto-activate nil
+ ;; lsp-signature-function 'lsp-signature-posframe)
+ lsp-enable-symbol-highlighting nil
+ ;;lsp-ui-doc-max-width 120
+ lsp-ui-doc-max-height 22
+ lsp-ui-doc-delay 0.0
+ lsp-ui-doc-position 'bottom
+ lsp-ui-imenu-window-width 25
+ )
+;;)
 
 
 
@@ -278,12 +311,18 @@
       )
 
 (with-eval-after-load 'evil-maps
-  (define-key evil-normal-state-map (kbd "/")         'swiper)
-  (define-key evil-normal-state-map (kbd"<tab>")      'centaur-tabs-forward)
-  (define-key evil-normal-state-map (kbd"<backtab>")  'centaur-tabs-backward)
-  (define-key evil-normal-state-map (kbd"R")          'recompile)
-  (define-key evil-normal-state-map (kbd"K")          'lsp-ui-doc-show)
-  (define-key evil-normal-state-map (kbd"<f1>")       '+vterm/toggle)
+  (define-key evil-normal-state-map (kbd "/")           'swiper)
+  ;; (define-key evil-normal-state-map (kbd"<tab>")        'centaur-tabs-forward)
+  ;; (define-key evil-normal-state-map (kbd"<backtab>")    'centaur-tabs-backward)
+
+  (define-key evil-normal-state-map (kbd"<tab>")        'awesome-tab-forward-tab)
+  (define-key evil-normal-state-map (kbd"<backtab>")    'awesome-tab-backward-tab)
+
+  (define-key evil-normal-state-map (kbd"R")            'recompile)
+  (define-key evil-normal-state-map (kbd"K")            'lsp-ui-doc-show)
+  (define-key evil-normal-state-map (kbd"<f1>")         '+vterm/toggle)
+  (define-key evil-normal-state-map (kbd"fm")           'format-all-buffer)
+
 
   (define-key evil-normal-state-map (kbd"C-h") 'evil-window-left)
   (define-key evil-normal-state-map (kbd"C-j") 'evil-window-down)
@@ -293,7 +332,9 @@
 
 (setq evil-escape-delay 0.0
       evil-auto-indent nil
-      evil-flash-delay 0)
+      evil-flash-delay 0
+      evil-echo-state nil
+      )
 
 (setq swiper-isearch-highlight-delay 0)
 
@@ -316,44 +357,51 @@
 
 (setq vterm-timer-delay 0
       vterm-kill-buffer-on-exit nil
+      vterm-always-compile-module t
       )
 
+(setq
+ which-key-idle-delay 0
+ which-key-idle-secondary-delay 0
+ )
 
 ;; https://github.com/elken/doom
-;; (custom-theme-set-faces! '(doom-one doom-gruvbox doom-monokai-classic gruber-darker atom-one-dark zenburn)
+;; (custom-theme-set-faces! '(solarized-dark-high-contrast doom-one doom-gruvbox doom-monokai-classic gruber-darker atom-one-dark zenburn)
 
-;;   `(tree-sitter-hl-face:number :inherit highlight-numbers)
-;;   `(tree-sitter-hl-face:attribute :inherit font-lock-keyword-face)
 
-;;   ;;const
-;;   `(tree-sitter-hl-face:constant.builtin :inherit font-lock-builtin-face)
-;;   `(tree-sitter-hl-face:constant :inherit font-lock-constant-face)
 
-;;   ;; `(tree-sitter-hl-face:label )
-;;   `(tree-sitter-hl-face:operator :inherit default)
+;;   ;; `(tree-sitter-hl-face:number :inherit highlight-numbers)
+;;   ;; `(tree-sitter-hl-face:attribute :inherit font-lock-keyword-face)
 
-;;   `(tree-sitter-hl-face:variable.parameter :inherit font-lock-variable-name-face)
-;;   `(tree-sitter-hl-face:variable.special :inherit font-lock-variable-name-face)
+;;   ;; ;;const
+;;   ;; `(tree-sitter-hl-face:constant.builtin :inherit font-lock-builtin-face)
+;;   ;; `(tree-sitter-hl-face:constant :inherit font-lock-constant-face)
 
-;;   `(tree-sitter-hl-face:type :inherit font-lock-type-face)
-;;   `(tree-sitter-hl-face:type.builtin :inherit font-lock-builtin-face)
+;;   ;; ;; `(tree-sitter-hl-face:label )
+;;   ;; `(tree-sitter-hl-face:operator :inherit default)
 
-;;   `(tree-sitter-hl-face:string :inherit font-lock-string-face)
+;;   ;; `(tree-sitter-hl-face:variable.parameter :inherit font-lock-variable-name-face)
+;;   ;; `(tree-sitter-hl-face:variable.special :inherit font-lock-variable-name-face)
 
-;;   `(tree-sitter-hl-face:property :inherit font-lock-variable-name-face)
+;;   ;; `(tree-sitter-hl-face:type :inherit font-lock-type-face)
+;;   ;; `(tree-sitter-hl-face:type.builtin :inherit font-lock-builtin-face)
 
-;;   `(tree-sitter-hl-face:keyword :inherit font-lock-keyword-face)
+;;   ;; `(tree-sitter-hl-face:string :inherit font-lock-string-face)
 
-;;   ;;`(tree-sitter-hl-face:tag :foreground, (doom-color 'blue))
+;;   ;; `(tree-sitter-hl-face:property :inherit font-lock-variable-name-face)
 
-;;   ;; function
-;;   `(tree-sitter-hl-face:constructor :inherit font-lock-function-name-face :weight normal)
-;;   `(tree-sitter-hl-face:method :inherit font-lock-function-name-face :weight normal)
-;;   `(tree-sitter-hl-face:function :inherit font-lock-function-name-face :weight normal)
-;;   `(tree-sitter-hl-face:function.builtin :inherit font-lock-function-name-face :weight normal)
-;;   `(tree-sitter-hl-face:function.call :inherit font-lock-function-name-face :weight normal)
-;;   `(tree-sitter-hl-face:function.macro :inherit font-lock-function-name-face :weight normal)
-;;   `(tree-sitter-hl-face:function.special :inherit font-lock-function-name-face :weight normal)
+;;   ;; `(tree-sitter-hl-face:keyword :inherit font-lock-keyword-face)
+
+;;   ;; ;;`(tree-sitter-hl-face:tag :foreground, (doom-color 'blue))
+
+;;   ;; ;; function
+;;   ;; `(tree-sitter-hl-face:constructor :inherit font-lock-function-name-face :weight normal)
+;;   ;; `(tree-sitter-hl-face:method :inherit font-lock-function-name-face :weight normal)
+;;   ;; `(tree-sitter-hl-face:function :inherit font-lock-function-name-face :weight normal)
+;;   ;; `(tree-sitter-hl-face:function.builtin :inherit font-lock-function-name-face :weight normal)
+;;   ;; `(tree-sitter-hl-face:function.call :inherit font-lock-function-name-face :weight normal)
+;;   ;; `(tree-sitter-hl-face:function.macro :inherit font-lock-function-name-face :weight normal)
+;;   ;; `(tree-sitter-hl-face:function.special :inherit font-lock-function-name-face :weight normal)
 
 ;;   )
 
@@ -361,4 +409,19 @@
 ;;       +doom-dashboard-banner-padding '(0 . 2)
 ;;)
 
-(set-frame-parameter nil 'background-mode 'dark)
+
+(use-package all-the-icons-ibuffer
+  :ensure t
+  :hook (ibuffer-mode . all-the-icons-ibuffer-mode)
+  :config (setq all-the-icons-ibuffer-display-predicate #'display-graphic-p)
+  )
+
+(custom-theme-set-faces! '(solarized-dark-high-contrast solarized-dark )
+  `(company-tooltip-selection        :background "#268bd2" :foreground "#002b36")
+  `(button :underline nil)
+  `(mode-line :underline nil)
+  `(helm-grep-file :underline nil)
+  `(helm-M-x-key :underline nil)
+  `(helm-selection :underline nil)
+  `(helm-moccur-buffer :underline nil)
+  )

@@ -1,5 +1,9 @@
-colorscheme github_light
+colorscheme github_dark_dimmed
 
-highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#6a737d
-highlight! CmpItemAbbrMatch guibg=NONE guifg=#79b8ff
-highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#79b8ff
+hi @label guifg=#6bc46d
+hi! link @punctuation.bracket Normal
+hi! link @punctuation.delimiter Normal
+hi! link @operator Normal
+hi! link @namespace Normal
+hi! link @property Normal
+hi! link @field Normal

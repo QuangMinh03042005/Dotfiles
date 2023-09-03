@@ -73,9 +73,9 @@ ZSH_THEME="QM"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
+    # git
     zsh-autosuggestions
-    zsh-syntax-highlighting
+    # zsh-syntax-highlighting
 )
 # plugins=(zsh-autosuggestions)
 # plugins=(zsh-syntax-highlighting)
@@ -136,6 +136,7 @@ alias nv="nvim -u ~/.vimrc"
 
 # Cloudflare
 alias warp="sudo systemctl start warp-svc"
+alias unwarp="sudo systemctl stop warp-svc"
 alias warp-cn="warp-cli connect"
 alias warp-dcn="warp-cli disconnect"
 alias warp-tus="warp-cli status"
@@ -148,31 +149,22 @@ alias rust_p="cd ~/Desktop/code/rust"
 alias fe_p="cd ~/Desktop/code/front_end"
 alias js_p="cd ~/Desktop/code/javascript"
 alias sh_p="cd ~/Desktop/code/shellscript"
+alias memcheck="valgrind --leak-check=full --show-leak-kinds=all"
 
 alias de="cd ~/Desktop"
 alias enw='emacs -nw'
 #alias neovide="neovide --multigrid"
 alias getPacmanPkg="pacman -Qet | awk '{print $1}' >"
 
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-# Dành cho những phần mềm dựa trên qt5
-export QT5_IM_MODULE=ibus
-# Dành cho những phần mềm dùng thư viện đồ họa clutter/OpenGL
-export CLUTTER_IM_MODULE=ibus
-export GLFW_IM_MODULE=ibus
-pidof ibus-daemon > /dev/null || ibus-daemon -drx
-
 export VISUAL=nvim;
 export EDITOR=nvim;
 
-if [[ ! -d ~/.zsh-autopair ]]; then
-  git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair
-fi
+# if [[ ! -d ~/.zsh-autopair ]]; then
+#   git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair
+# fi
 
-source ~/.zsh-autopair/autopair.zsh
-autopair-init
+# source ~/.zsh-autopair/autopair.zsh
+# autopair-init
 
 # figlet -c -f ~/Desktop/figlet-fonts/3d.flf $USER | lolcat
 

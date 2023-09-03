@@ -1,26 +1,55 @@
 # setup cloudflare-warp 
-yay -S cloudflared-bin cloudflare-warp-bin
+    yay -S cloudflared-bin cloudflare-warp-bin
 
 # use warp in commandline
-sudo systemctl start warp-svc
-warp-cli register
-warp-cli status
-warp-cli connect
-warp-cli disconnect
+    sudo systemctl start warp-svc
+    warp-cli register
+    warp-cli status
+    warp-cli connect
+    warp-cli disconnect
 
 # setup printer
-https://forum.manjaro.org/t/org-cups-cupsd-service-socket-path-not-found/40316/8
-https://forum.endeavouros.com/t/no-printer-in-xfce-settings/7639/2
-sudo pacman -S cups cups-filters cups-pdf system-config-printer --needed
-sudo systemctl disable --now org.cups.cupsd.socket
-sudo systemctl disable --now org.cups.cupsd.service
-sudo systemctl disable --now org.cups.cupsd.path
-sudo systemctl enable --now cups.service
-sudo systemctl enable --now cups.socket
-sudo systemctl enable --now cups.path
+    https://forum.manjaro.org/t/org-cups-cupsd-service-socket-path-not-found/40316/8
+    https://forum.endeavouros.com/t/no-printer-in-xfce-settings/7639/2
+    sudo pacman -S cups cups-filters cups-pdf system-config-printer --needed
+    sudo systemctl disable --now org.cups.cupsd.socket
+    sudo systemctl disable --now org.cups.cupsd.service
+    sudo systemctl disable --now org.cups.cupsd.path
+    sudo systemctl enable --now cups.service
+    sudo systemctl enable --now cups.socket
+    sudo systemctl enable --now cups.path
 
+# install package
 pacman -Qqen > pacman.txt  # save
 pacman -S - < pacman.txt   # install
+
+#cpupower
+    sudo pacman -S cpupower
+    Set governor='performance' in /etc/default/cpupower to change the default governor.
+    Enable the service at boot: sudo systemctl enable cpupower.service
+
+#swappinnes
+    https://opensource.com/article/22/9/swappiness-startup-linux
+    in /etc/default/grub
+    GRUB_CMDLINE_LINUX="vm.swappiness=1"
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+#Severe lag when typing in address bar
+    https://www.reddit.com/r/chrome/comments/ptmk6s/comment/he7rgze/?utm_source=share&utm_medium=web2x&context=3
+    chrome://flags/
+    change #omnibox-bookmark-paths to disable
+
+# How to clear swap memory in Linux?
+    Check space: # free -m 
+    Disable swap: # sudo swapoff -a 
+
+    Wait approx 30 sec 
+    (use free -m to see the amount of swap used/available decrease over time)
+
+    Enable swap: # sudo swapon -a 
+
+# npm update error in arch
+# https://github.com/nodesource/distributions/issues/636
 
 # key github
 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
